@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">
+<head>
+<!-- 2023-10-20 dv. 10:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mòdul Professional 6 - UF1: TREBALL - Implementar política de contrasenyes a Linux (Debian 11)</title>
+<meta name="author" content="Raul Gimenez Herrada" />
+<meta name="description" content="Apunts sobre NFTables. Sota llicència de Creative Commons." />
+<meta name="keywords" content="Apunts" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mòdul Professional 6 - UF1: TREBALL - Implementar política de contrasenyes a Linux (Debian 11)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndex</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org901329d">1. ISOs i recursos</a>
+<ul>
+<li><a href="#org62f0be5">1.1. Repositoris</a></li>
+</ul>
+</li>
+<li><a href="#org42625c9">2. Objectius</a></li>
+<li><a href="#orge725b52">3. Enunciat</a>
+<ul>
+<li><a href="#orga5adf22">3.1. Recordatoris generals</a></li>
+<li><a href="#orgabfcd99">3.2. Mòduls PAM</a>
+<ul>
+<li><a href="#org577dd60">3.2.1. Pam Pwquality</a></li>
+<li><a href="#org92d76fe">3.2.2. Pam Faillock</a></li>
+<li><a href="#org4a41714">3.2.3. Login.defs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd8c1780">4. Activitat</a></li>
+<li><a href="#orgb2d7f54">5. Entrega</a></li>
+<li><a href="#orge1f9ab2">6. Valoració</a></li>
+<li><a href="#org44ee2c7">7. FAQs</a>
+<ul>
+<li><a href="#org2ad591a">7.1. No puc instal·lar el paquet&#x2026;</a></li>
+<li><a href="#org9e1dcb0">7.2. Tot i configurar l'arxiu <code>/etc/security/pwquality.conf</code> al crear un usuari nou ignora la configuració</a></li>
+<li><a href="#org93790a4">7.3. Al configurar el <code>faillock</code> ja no puc entrar al sistema</a></li>
+<li><a href="#orgbaa8e6a">7.4. Com verifico la caducitat de la contrasenya?</a></li>
+</ul>
+</li>
+<li><a href="#org8da10b5">8. WebGrafia</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org901329d" class="outline-2">
+<h2 id="org901329d"><span class="section-number-2">1.</span> ISOs i recursos</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="http://robust.infla.cat/~rgimenez/ISO/debian-11.5.0-amd64-DVD-1.iso">ISO Debian 11 al ROBUST. (intern INS Lacetània)</a></li>
+<li><a href="https://drive.google.com/file/d/1rlXpNqd20gGQ2c25mNmxwQdQXuyR4oHm/view?usp=sharing">ISO Debian 11 al Drive.</a></li>
+</ul>
+</div>
+<div id="outline-container-org62f0be5" class="outline-3">
+<h3 id="org62f0be5"><span class="section-number-3">1.1.</span> Repositoris</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Els repositoris (Arxiu <code>/etc/apt/sources.list</code>) de Debian 11 han de ser:
+</p>
+
+<p>
+S'ha de comentar, la línia del <code>cdrom</code>.
+</p>
+<blockquote>
+<p>
+deb <a href="http://ftp.caliu.cat/debian/">http://ftp.caliu.cat/debian/</a> bullseye main
+</p>
+
+<p>
+deb-src <a href="http://ftp.caliu.cat/debian/">http://ftp.caliu.cat/debian/</a> bullseye main
+</p>
+
+
+<p>
+deb <a href="http://security.debian.org/debian-security">http://security.debian.org/debian-security</a> bullseye-security main contrib
+</p>
+
+<p>
+deb-src <a href="http://security.debian.org/debian-security">http://security.debian.org/debian-security</a> bullseye-security main contrib
+</p>
+
+<p>
+deb <a href="http://ftp.caliu.cat/debian/">http://ftp.caliu.cat/debian/</a> bullseye-updates main contrib
+</p>
+
+<p>
+deb-src <a href="http://ftp.caliu.cat/debian/">http://ftp.caliu.cat/debian/</a> bullseye-updates main contrib
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-org42625c9" class="outline-2">
+<h2 id="org42625c9"><span class="section-number-2">2.</span> Objectius</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Implementació de política de contrasenyes a Linux.</li>
+<li>Hàbit d'interpretar la sortida del sistema.</li>
+<li>Hàbit de fer verificacions de funcionalitat i no-funcionalitat.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge725b52" class="outline-2">
+<h2 id="orge725b52"><span class="section-number-2">3.</span> Enunciat</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Com hem vist, la implementació d'una política de contrasenyes a Linux és més complexa alhora que més flexible i personalitzable.  Podem fer-nos una idea de la de coses que podem remenar simplement executant <code>apt-cache search libpam</code> i veient tots els paquets relacionats amb el sistema d'autenticació de Linux.
+</p>
+
+<p>
+En aquesta pràctica buscarem tant aprendre com configurar les contrasenyes a Linux com acostumar-nos a fer verificacions, ser curosos amb els arxius de configuració i interpretar les respostes del sistema.  Tot això habilitats imprescindibles per a un informàtic.
+</p>
+</div>
+<div id="outline-container-orga5adf22" class="outline-3">
+<h3 id="orga5adf22"><span class="section-number-3">3.1.</span> Recordatoris generals</h3>
+<div class="outline-text-3" id="text-3-1">
+<blockquote>
+<p>
+<b>ALERTA</b>
+</p>
+<ul class="org-ul">
+<li>Aquesta pràctica la podeu fer amb entorn gràfic si voleu, però és MOLT recomanable fer totes les configuracions i verificacions per terminal.</li>
+<li>Que el sistema es queixi, no vol dir que no ho deixi fer.</li>
+<li>Interpreteu sempre els missatges del sistema, molts cops us guiaràn cap a la solució.</li>
+<li>Si quelcom no funciona i no sabem el motiu, cal consultar els registres (/var/log/syslog).</li>
+<li>Si cal afegir línies en un fitxer PAM el lloc en el que es posen les línies és molt important. Fer-ho malament pot fer que no es pugui entrar més en el sistema o que es pugui entrar sempre&#x2026;</li>
+<li>Mireu la webgrafia.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgabfcd99" class="outline-3">
+<h3 id="orgabfcd99"><span class="section-number-3">3.2.</span> Mòduls PAM</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-org577dd60" class="outline-4">
+<h4 id="org577dd60"><span class="section-number-4">3.2.1.</span> Pam Pwquality</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+El mòdul <i>pam_ pwquality</i> ofereix la possibilitat de forçar als usuaris a tenir <b>contrasenyes complexes</b>. Per fer-ho es poden afegir tota una sèrie de paràmetres que indiquen la llargada mínima, la complexitat de la contrasenya (quantes majúscules, minúscules, números i símbols ha de tenir la contrasenya) i com han de diferir les contrasenyes.
+</p>
+
+<p>
+Primer de tot caldrà instal·lar el mòdul amb <code>apt install libpam-pwquality</code>.  Després tan sols cal buscar el fitxer <code>/etc/security/pwquality.conf</code> i modificar-ho de forma que s'adeqüi al que volem aconseguir.
+</p>
+</div>
+</div>
+<div id="outline-container-org92d76fe" class="outline-4">
+<h4 id="org92d76fe"><span class="section-number-4">3.2.2.</span> Pam Faillock</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+El mòdul <i>pam_ faillock</i> és el responsable de <b>bloquejar els comptes</b> dels usuaris que han fallat un número determinat de vegades les contrasenyes.  Generalment està instal·lat per defecte i per configurar-lo només cal “afegir” unes línies en un arxiu del <code>/etc/pam.d/common-auth</code>.
+Caldrà afegir:
+</p>
+<blockquote>
+<p>
+auth    required pam_ faillock.so preauth audit deny=3 fail_ interval=60 unlock_ time=300
+</p>
+</blockquote>
+<p>
+Abans de la línia <code>auth    [success=1 default=ignore]      pam_unix.so nullok</code>.
+</p>
+
+<p>
+I també les línies:
+</p>
+<blockquote>
+<p>
+auth    [default=die] pam_ faillock.so authfail audit deny=3 fail_ interval=60 unlock_ time=300
+</p>
+
+<p>
+auth    sufficient pam_ faillock.so authsucc audit deny=3 fail_ interval=60 unlock_ time=300
+</p>
+</blockquote>
+<p>
+Abans de la línia <code>auth    requisite                       pam_deny.so</code>.
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li><b>ALERTA</b>: No feu copy/paste, ja que per format hi han uns espais que "sobren" despres de "_".</li>
+<li><b>ALERTA</b>: Ja que us pauto aquest apartat, caldrà que a la memòria expliqueu molt bé què fa cadascun els paràmetres que apareixen en aquestes línies de configuració. I també per a que serveix cada línia.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org4a41714" class="outline-4">
+<h4 id="org4a41714"><span class="section-number-4">3.2.3.</span> Login.defs</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+La <b>caducitat per defecte de les contrasenyes</b> es poden definir en l'arxiu <code>/etc/login.defs</code>.  Aquestes modificacions afectaràn a tots els usuaris.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd8c1780" class="outline-2">
+<h2 id="orgd8c1780"><span class="section-number-2">4.</span> Activitat</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+L'activitat consta de reproduïr la política de contrasenyes vista en l'activitat anterior, però en aquest cas en una Debian 11:
+</p>
+<ol class="org-ol">
+<li>En una màquina virtual amb Debian 11 definiu-hi tres usuaris amb contrasenyes simples: “12345”, “1Ab”, “patata” (en cas que existeixi una política de contrasenyes vigent, elimineu-la per a poder crear aquests comptes amb contrasenyes poc segures).</li>
+<li>Definiu una política de contrasenyes que obligui als usuaris a:
+<ul class="org-ul">
+<li>Tenir contrasenyes de 9 o més caràcters amb complexitat (números, lletres i símbols).</li>
+<li>Que caduquin cada any.</li>
+<li>Que bloquegi el compte si l'usuari falla la contrasenya tres vegades seguides i que calgui esperar-se 5 minuts per tornar a intentar entrar.</li>
+</ul></li>
+<li>Reinicieu el sistema</li>
+<li>Intenteu entrar amb un dels usuaris creats anteriorment. Què fa el sistema?</li>
+<li>Intenteu crear un usuari nou amb una contrasenya senzilla que no compleixi la política i comproveu que el sistema no el deixa crear.</li>
+<li>Amb un usuari qualsevol intenteu entrar en el sistema fallant la contrasenya 4 vegades. Què passa?</li>
+<li>Busqueu com podeu fer per, com administrador, desbloquejar un compte bloquejat (que no calgui esperar els 5 minuts).</li>
+<li>Finalment, creeu un nou usuari i verifiqueu al <code>/etc/shadow</code> que la data de caducitat del nou compte és d'aquí 365 dies.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb2d7f54" class="outline-2">
+<h2 id="orgb2d7f54"><span class="section-number-2">5.</span> Entrega</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+L'entrega ha de constar d'un PDF amb portada i índex, respectant la normativa de treballs i demostrant qualitat de documentació tècnica a nivell professional.
+</p>
+
+<p>
+Hi han de mostrar-se <b>captures</b> a un tamany suficient per ser llegibles de les <b>configuracions</b> i de les <b>proves</b> de bon funcionament.
+</p>
+<blockquote>
+<p>
+<b>IMPORTANT</b>: Cal captura completa del resultat de la comanda.  No retalleu!
+</p>
+</blockquote>
+
+<p>
+En aquest treball serà especialment important realitzar <b>explicacions de les configuracions</b> fetes, així com <b>interpretar els resultats</b> de les proves.
+</p>
+</div>
+</div>
+<div id="outline-container-orge1f9ab2" class="outline-2">
+<h2 id="orge1f9ab2"><span class="section-number-2">6.</span> Valoració</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Aquest treball computa com <b>QUATRE</b> activitats normals. La valoració del treball es realitzarà sobre la rúbrica que podeu consultar en l'entrega.
+</p>
+<blockquote>
+<p>
+<b>IMPORTANT</b>: En aquest treball es valoraràn especialment:
+</p>
+<ul class="org-ul">
+<li>Les bones explicacions de les configuracions, especialment de l'apartat <b>Faillock</b>.</li>
+<li>Les interpretacions de les proves fetes.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org44ee2c7" class="outline-2">
+<h2 id="org44ee2c7"><span class="section-number-2">7.</span> FAQs</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org2ad591a" class="outline-3">
+<h3 id="org2ad591a"><span class="section-number-3">7.1.</span> No puc instal·lar el paquet&#x2026;</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Et va <code>ping 8.8.8.8</code>?</li>
+<li>Et va <code>ping google.com</code>?</li>
+<li>Has configurat els <i>repositoris en xarxa</i> durant la instal·lació?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e1dcb0" class="outline-3">
+<h3 id="org9e1dcb0"><span class="section-number-3">7.2.</span> Tot i configurar l'arxiu <code>/etc/security/pwquality.conf</code> al crear un usuari nou ignora la configuració</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>Has configurat l'arxiu però no instal·lat el paquet <code>libpam-pwquality</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93790a4" class="outline-3">
+<h3 id="org93790a4"><span class="section-number-3">7.3.</span> Al configurar el <code>faillock</code> ja no puc entrar al sistema</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Al configurar el <code>faillock</code> segurament t'has equivocat en escriure quelcom o ho has escrit en una línia (posició) que no toca.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbaa8e6a" class="outline-3">
+<h3 id="orgbaa8e6a"><span class="section-number-3">7.4.</span> Com verifico la caducitat de la contrasenya?</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>Recorda que afecta als usuaris creats posteriorment a la modificació de la configuració.</li>
+<li>La caducitat es pot veure a <code>/etc/shadow</code> tal com es va explicar a la teoria.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8da10b5" class="outline-2">
+<h2 id="org8da10b5"><span class="section-number-2">8.</span> WebGrafia</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Fer que caduquin manualment (per fer proves): <a href="https://rm-rf.es/comando-chage-tiempo-de-vida-de-claves-y-usuarios-en-gnulinux/">rm-rf</a></li>
+<li>Complexitat: <a href="https://www.server-world.info/en/note?os=Debian_11&amp;p=pam&amp;f=1">Server-World</a>.</li>
+<li>Bloqueig d’intents fallits: <a href="https://kifarunix.com/lock-linux-user-account-after-multiple-failed-login-attempts/">KifarUnix</a>.</li>
+<li>Error típic de deixar saltar política a usuaris "super": <a href="https://www.rosehosting.com/blog/how-to-enforce-password-quality-in-linux/">rosehosting</a> A l'últim comentari.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Data: 2022-02-10 dj. 00:00</p>
+<p class="author">Autor: Raul Gimenez Herrada</p>
+<p class="date">Created: 2023-10-20 dv. 10:43</p>
+</div>
+</body>
+</html>

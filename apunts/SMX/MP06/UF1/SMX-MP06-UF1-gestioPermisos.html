@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8"/>
+<title>Mòdul Professional 6 - UF1: Gestió de permisos</title>
+<meta name="author" content="Raul Gimenez Herrada"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://alquimiabinaria.cat/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://alquimiabinaria.cat/reveal.js/dist/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://alquimiabinaria.cat/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Mòdul Professional 6 - UF1: Gestió de permisos</h1><p class="subtitle">#SMXMP06UF1</p>
+<h2 class="author">Raul Gimenez Herrada</h2><h2 class="date">2023-02-10 dv. 00:00</h2><p class="date">Created: 2023-10-03 dt. 12:24</p>
+</section>
+<section id="sec-table-of-contents"><div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndex</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-org5aa57ac">1. Llicència d'ús</a></li>
+<li><a href="#/slide-org36f17da">2. Permisos a sistemes de fitxers</a></li>
+<li><a href="#/slide-orgf1ccef7">3. Gestió de permisos a Windows</a></li>
+<li><a href="#/slide-org7c07e19">4. Gestió de permisos a Linux</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-org5aa57ac">
+<h2 id="org5aa57ac"><span class="section-number-2">1.</span> Llicència d'ús</h2>
+<div class="org-center">
+
+<div id="org31541d7" class="figure">
+<p><img src="http://alquimiabinaria.cat/by-nc-sa-eu_.png" alt="by-nc-sa-eu_.png" />
+</p>
+</div>
+
+<p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca">https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca</a>
+</p>
+
+<p>
+2023 Raul Gimenez Herrada
+</p>
+
+<p>
+<a href="https://alquimiabinaria.cat/">https://alquimiabinaria.cat/</a>
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org36f17da">
+<h2 id="org36f17da"><span class="section-number-2">2.</span> Permisos a sistemes de fitxers</h2>
+<p>
+Permisos típics de lectura, escriptura i execució.
+</p>
+<blockquote >
+<p>
+<b>RECORDAR</b>: Sempre MÍNIMS permisos.
+</p>
+</blockquote>
+</section>
+<section id="slide-org1a148cd">
+<h3 id="org1a148cd"><span class="section-number-3">2.1.</span> Com gestionar-los</h3>
+<ul>
+<li>Mínims permisos possibles.</li>
+<li>Agrupacions d'usuaris per grups.</li>
+<li>Particularitats del sistema de fitxers.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf1ccef7">
+<h2 id="orgf1ccef7"><span class="section-number-2">3.</span> Gestió de permisos a Windows</h2>
+
+<div id="org9654614" class="figure">
+<p><img src="permisosWindows.png" alt="permisosWindows.png" />
+</p>
+</div>
+</section>
+<section id="slide-org508ea75">
+<h3 id="org508ea75"><span class="section-number-3">3.1.</span> Pestanya Seguretat</h3>
+<ul>
+<li>Gestiona els permisos del sistema de fitxers local.</li>
+<li>Tot usuari que hi accedeixi quedarà filtrat (tant si accedeix localment com remot).</li>
+<li>Cal ser el més restrictiu possible.</li>
+<li><i>Denegar</i> preval sobre <i>Permetre</i>.</li>
+<li><i>Herència</i> a <i>opcions avançades</i>.</li>
+
+</ul>
+</section>
+<section id="slide-orge9f19c5">
+<h3 id="orge9f19c5"><span class="section-number-3">3.2.</span> Pestanya Compartir</h3>
+<ul>
+<li>Gestiona els permisos de les carpetes compartides (accedides remotament).</li>
+<li>Han de ser més restrictius que la pestanya <i>Seguretat</i>, sinó no té sentit.</li>
+<li><i>Denegar</i> preval sobre <i>Permetre</i>.</li>
+<li><i>Herència</i> a <i>opcions avançades</i>.</li>
+
+</ul>
+</section>
+<section id="slide-orge1f0e9c">
+<h3 id="orge1f0e9c"><span class="section-number-3">3.3.</span> ALERTA!</h3>
+<p>
+Coses a recordar:
+</p>
+<ul>
+<li><i>Seguretat</i> preval per sobre <i>Compartir</i>.</li>
+<li><i>Denegar</i> preval sobre <i>Permetre</i>.</li>
+<li>Propietats heretades.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org7c07e19">
+<h2 id="org7c07e19"><span class="section-number-2">4.</span> Gestió de permisos a Linux</h2>
+
+<div id="org090ea99" class="figure">
+<p><img src="permisosLinux.jpg" alt="permisosLinux.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-org7638731">
+<h3 id="org7638731"><span class="section-number-3">4.1.</span> Comandes per gestionar Grups</h3>
+<p>
+Amb les comandes:
+</p>
+<dl>
+<dt><code>grupadd</code></dt><dd>Crear un grup nou.</dd>
+<dt><code>grupdel</code></dt><dd>Eliminar grup.</dd>
+<dt><code>grupmod</code></dt><dd>Modificar grup.</dd>
+<dt><code>cat /etc/group</code></dt><dd>LListar grups existents.</dd>
+<dt><code>getent</code></dt><dd>Saber els membres (usuaris) d'un grup.</dd>
+
+</dl>
+</section>
+<section id="slide-org0c213ea">
+<h3 id="org0c213ea"><span class="section-number-3">4.2.</span> Comandes per gestionar Usuaris</h3>
+<p>
+Amb les comandes:
+</p>
+<dl>
+<dt><code>adduser</code></dt><dd>Crear usuaris.</dd>
+<dt><code>usermod</code></dt><dd>Modificar un usuari (afegir-lo a un grup per exemple).</dd>
+<dt><code>userdel</code></dt><dd>Eliminar usuari.</dd>
+<dt><code>groups</code></dt><dd>Veure grups de l'usuari.</dd>
+
+</dl>
+</section>
+<section id="slide-org02dd0b1">
+<h3 id="org02dd0b1"><span class="section-number-3">4.3.</span> Comandes per gestionar Permisos</h3>
+<p>
+Amb les comandes:
+</p>
+<dl>
+<dt><code>ls -l</code></dt><dd>Llistar el directori i mostrant permisos.</dd>
+<dt><code>chmod</code></dt><dd>Canvi de permisos.</dd>
+<dt><code>chown</code></dt><dd>Canvi propietari.</dd>
+<dt><code>chgrp</code></dt><dd>Canvi grup.</dd>
+
+</dl>
+</section>
+</section>
+</div>
+</div>
+<script src="https://alquimiabinaria.cat/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://alquimiabinaria.cat/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://alquimiabinaria.cat/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://alquimiabinaria.cat/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://alquimiabinaria.cat/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+});
+
+</script>
+</body>
+</html>
