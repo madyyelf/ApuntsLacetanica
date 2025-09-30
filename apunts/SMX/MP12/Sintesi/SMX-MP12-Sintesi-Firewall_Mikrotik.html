@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">
+<head>
+<!-- 2024-05-14 dt. 10:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mòdul Professional 12 - Síntesi: Firewall amb Mikrotik</title>
+<meta name="author" content="Raul Gimenez Herrada" />
+<meta name="description" content="Enunciat de treball. Llicència de Creative Commons." />
+<meta name="keywords" content="Apunts" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mòdul Professional 12 - Síntesi: Firewall amb Mikrotik</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndex</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8261f00">1. Recordatoris genèrics</a></li>
+<li><a href="#orgc47de7f">2. Implementar llistes blanques</a></li>
+<li><a href="#org5ac0e20">3. Regles genèriques</a>
+<ul>
+<li><a href="#orgfd2cfe4">3.1. PINGs</a></li>
+<li><a href="#org47d67b2">3.2. Respostes</a></li>
+</ul>
+</li>
+<li><a href="#org5e00885">4. Redireccions (NAT)</a>
+<ul>
+<li><a href="#org584d68f">4.1. Connexió a Internet</a></li>
+<li><a href="#orga18fb91">4.2. Connexió des de Internet a serveis de la DMZ</a></li>
+</ul>
+</li>
+<li><a href="#orgc8214a6">5. Com obrir servei a servei</a></li>
+<li><a href="#orgb59dcb5">6. Verificacions</a>
+<ul>
+<li><a href="#org564bcb1">6.1. Tràfic en les regles</a></li>
+<li><a href="#orgcdbbc55">6.2. És problema del tallafocs?</a></li>
+<li><a href="#orgf18497c">6.3. Sniffers</a></li>
+<li><a href="#org2ac9172">6.4. Logs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="org-center">
+
+<div id="org768f12a" class="figure">
+<p><img src="http://lacetanica.cat/by-nc-sa-eu_.png" alt="by-nc-sa-eu_.png" />
+</p>
+</div>
+
+<p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca">https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca</a>
+</p>
+
+<p>
+2024 Raul Gimenez Herrada
+</p>
+
+<p>
+<a href="https://lacetanica.cat/">https://lacetanica.cat/</a>
+</p>
+</div>
+<div id="outline-container-org8261f00" class="outline-2">
+<h2 id="org8261f00"><span class="section-number-2">1.</span> Recordatoris genèrics</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Les regles es verifiquen de dalt a abaix i sempre s'aplica la primera regla que el filtratge coincideix amb el paquet.  Per tant <b>cal ordenar correctament les regles</b>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc47de7f" class="outline-2">
+<h2 id="orgc47de7f"><span class="section-number-2">2.</span> Implementar llistes blanques</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Recordeu que el tallafocs a implementar ha de ser de <i>llistes blanques</i> per garantir major seguretat al projecte.  Per fer-ho s'ha de denegar tot el tràfic per defecte.  Això ho aconseguirem afegint tres regles finals de <code>DROP</code>, una per <code>INPUT</code> una per <code>OUTPUT</code> i una per <code>FORWARD</code>.
+</p>
+<blockquote>
+<p>
+<b>ATENCIÓ:</b> Un cop creades aquestes regles, si no heu permés cap tràfic, el tallafocs no deixarà passar res i per tant podeu tenir problemes de connectivitat.
+</p>
+</blockquote>
+
+<p>
+Des de terminal podem crear les regles amb les comandes següents:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ip firewall filter add <span style="color: #dcaeea;">chain</span>=input <span style="color: #dcaeea;">action</span>=drop
+ip firewall filter add <span style="color: #dcaeea;">chain</span>=output <span style="color: #dcaeea;">action</span>=drop
+ip firewall filter add <span style="color: #dcaeea;">chain</span>=forward <span style="color: #dcaeea;">action</span>=drop
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ac0e20" class="outline-2">
+<h2 id="org5ac0e20"><span class="section-number-2">3.</span> Regles genèriques</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+De forma general, podem crear un seguit de regles que s'utilitzaràn de forma habitual en tots els projectes.
+</p>
+</div>
+<div id="outline-container-orgfd2cfe4" class="outline-3">
+<h3 id="orgfd2cfe4"><span class="section-number-3">3.1.</span> PINGs</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">ip firewall filter add <span style="color: #dcaeea;">chain</span>=input <span style="color: #dcaeea;">protocol</span>=icmp <span style="color: #dcaeea;">action</span>=accept
+ip firewall filter add <span style="color: #dcaeea;">chain</span>=output <span style="color: #dcaeea;">protocol</span>=icmp <span style="color: #dcaeea;">action</span>=accept
+ip firewall filter add <span style="color: #dcaeea;">chain</span>=forward <span style="color: #dcaeea;">protocol</span>=icmp <span style="color: #dcaeea;">action</span>=accept
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org47d67b2" class="outline-3">
+<h3 id="org47d67b2"><span class="section-number-3">3.2.</span> Respostes</h3>
+<div class="outline-text-3" id="text-3-2">
+<div class="org-src-container">
+<pre class="src src-shell">ip firewall filter add <span style="color: #dcaeea;">chain</span>=input connection-state=established,related <span style="color: #dcaeea;">action</span>=accept
+ip firewall filter add <span style="color: #dcaeea;">chain</span>=output connection-state=established,related <span style="color: #dcaeea;">action</span>=accept
+ip firewall filter add <span style="color: #dcaeea;">chain</span>=forward connection-state=established,related <span style="color: #dcaeea;">action</span>=accept
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5e00885" class="outline-2">
+<h2 id="org5e00885"><span class="section-number-2">4.</span> Redireccions (NAT)</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org584d68f" class="outline-3">
+<h3 id="org584d68f"><span class="section-number-3">4.1.</span> Connexió a Internet</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Suposant que la interfície que connecta a Internet és <code>ether1</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ip firewall nat add <span style="color: #dcaeea;">chain</span>=srcnat out-interface=ether1 <span style="color: #dcaeea;">action</span>=masquerade
+</pre>
+</div>
+<p>
+A més cal permetre mitjançant <code>filter</code> les connexions que vulgueu.
+</p>
+</div>
+</div>
+<div id="outline-container-orga18fb91" class="outline-3">
+<h3 id="orga18fb91"><span class="section-number-3">4.2.</span> Connexió des de Internet a serveis de la DMZ</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Suposant que la interfície que connecta a Internet és <code>ether1</code> i la IP del servidor web sigui <code>192.168.10.10</code> i la vlan de la DMZ s'anomena <code>DMZ</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-nil">ip firewall nat add chain=dstnat in-interface=ether1 protocol=tcp dst-port=80,443 action=redirect to-address=192.168.10.10
+ip firewall filter add chain=forward in-interface=ether1 out-interface=DMZ dst-address=192.168.10.10 protocol=tcp dst-port=80,443 action=accept
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8214a6" class="outline-2">
+<h2 id="orgc8214a6"><span class="section-number-2">5.</span> Com obrir servei a servei</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Hem de recordar que la funció del <i>router</i> és connectar xarxes diferents, i la del <i>tallafocs</i> gestionar aquestes connexions.  Per tant sempre que obrim una connexió entre dues xarxes filtrarem els paquets tant com puguem i inclourem de forma general els següents filtes:
+</p>
+<dl class="org-dl">
+<dt>chain</dt><dd>Cadena per on passa el paquet.</dd>
+<dt>in-interface</dt><dd>Interfície per on entra el paquet al <i>router</i>, podeu jugar amb una <i>ether</i> o una <i>vlan</i>.</dd>
+<dt>out-interface</dt><dd>Interfície per on surt el paquet del <i>router</i>, podeu jugar amb una <i>ether</i> o una <i>vlan</i>.</dd>
+<dt>protocol</dt><dd>Protoocl del packet.  Si no el sabeu cal investigar a Internet preferentment a fonts oficials.</dd>
+<dt>dst-port</dt><dd>Ports de destí del paquet.  Si no coneixeu quins ports utilitza un servei caldrà investigar a Internet preferentment utilitzant fonts oficials.</dd>
+<dt>dst-address</dt><dd>Adreça de destí del paquet, aquesta pot ser una <code>IP</code> (p.e.: 192.168.10.20) o un rang (p.e.: 192.168.10.0/24), depenent del que vulgueu aconseguir.</dd>
+<dt>src-address</dt><dd>Adreça d'origen del paquet, els valors poden ser els mateixos que a <code>dst-address</code>. No ho utilitzareu gaire.</dd>
+</dl>
+<p>
+Per tant una regla típica per permetre una connexió serà:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ip firewall filter add <span style="color: #dcaeea;">chain</span>=forward in-interface=ADMINS out-interface=SRV_INTERNS <span style="color: #dcaeea;">protocol</span>=tcp dst-port=<span style="color: #da8548; font-weight: bold;">22</span> <span style="color: #dcaeea;">action</span>=accept
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb59dcb5" class="outline-2">
+<h2 id="orgb59dcb5"><span class="section-number-2">6.</span> Verificacions</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org564bcb1" class="outline-3">
+<h3 id="org564bcb1"><span class="section-number-3">6.1.</span> Tràfic en les regles</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Si una regla té al camp <code>Bytes</code> un valor de <code>0Kb</code> de tràfic vol dir que no estan passant paquets per aquí&#x2026; o no funciona o els paquets estan passant per una regla anterior.
+</p>
+
+
+<div id="orgc86def6" class="figure">
+<p><img src="SMX-MP12-Sintesi-Firewall_Mikrotik-0Bytes.png" alt="SMX-MP12-Sintesi-Firewall_Mikrotik-0Bytes.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Cal de les dues regles de NAT està capturant tràfic, per tant té pinta que no funcionen.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcdbbc55" class="outline-3">
+<h3 id="orgcdbbc55"><span class="section-number-3">6.2.</span> És problema del tallafocs?</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Si algun servei de xarxa no funciona i creieu que pot ser el tallafocs podeu fer una prova ràpida: Pareu el tallafocs deshabilitant les tres últimes regles de <code>DROP</code>.
+</p>
+
+<p>
+Si a partir d'aquí us funciona el servei és senyal que el problema el teniu al tallafocs.  Si per contra continua sense funcionar podreu estar segurs que el tallafocs no és el problema (o no el únic problema).
+</p>
+
+<blockquote>
+<p>
+<b>ATENCIÓ:</b> Recordeu sempre tornar a habilitar les tres regles finals de <code>DROP</code>, si no el tallafocs no estarà funcionant!!!
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgf18497c" class="outline-3">
+<h3 id="orgf18497c"><span class="section-number-3">6.3.</span> Sniffers</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Si voleu veure el tràfic que passa pel <i>router</i> recordeu que teniu l'eina <code>torch</code>.  Allà podreu veure les connexions que hi passen, el protocol i els ports.
+</p>
+</div>
+</div>
+<div id="outline-container-org2ac9172" class="outline-3">
+<h3 id="org2ac9172"><span class="section-number-3">6.4.</span> Logs</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Data: 2024-05-13 dl. 00:00</p>
+<p class="author">Autor: Raul Gimenez Herrada</p>
+<p class="date">Created: 2024-05-14 dt. 10:56</p>
+</div>
+</body>
+</html>
