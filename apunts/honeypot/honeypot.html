@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cat" xml:lang="cat">
+<head>
+<!-- 2023-10-03 dt. 08:27 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HoneyPots</title>
+<meta name="author" content="Raul Gimenez Herrada" />
+<meta name="description" content="Apunts sobre honeypots, instal·lació i configuració de /TPot/." />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">HoneyPots</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7aa117b">1. Introducció</a>
+<ul>
+<li><a href="#orga6edb86">1.1. Què és un <i>honeypot</i>?</a></li>
+<li><a href="#orgd98d6f8">1.2. Tipus de honeypots</a></li>
+<li><a href="#org90d25b7">1.3. Utilitat d'un honeypot</a></li>
+</ul>
+</li>
+<li><a href="#org3add735">2. Laboratori amb TPotCE</a>
+<ul>
+<li><a href="#org1097fb1">2.1. Projecte TPotCE</a></li>
+<li><a href="#orgddac49c">2.2. Muntatge</a>
+<ul>
+<li><a href="#org71b1bcf">2.2.1. Descàrrega</a></li>
+<li><a href="#orga3b7743">2.2.2. Configuració de la VM</a></li>
+<li><a href="#org5d24861">2.2.3. Instal·lació</a></li>
+<li><a href="#orga49b59d">2.2.4. Configuració del router</a></li>
+<li><a href="#org43cedf1">2.2.5. Configuració del tallafocs</a></li>
+<li><a href="#org2a8f556">2.2.6. Verificació</a></li>
+</ul>
+</li>
+<li><a href="#orgfd696e8">2.3. Anàlisis de resultats</a></li>
+<li><a href="#orgf1022ea">2.4. Verificació del HoneyPot (Alternativa a exposar el honeypot)</a>
+<ul>
+<li><a href="#orgb38bf00">2.4.1. Atac de força bruta contra Cowrie</a></li>
+<li><a href="#orge682822">2.4.2. Accedir al honeypot</a></li>
+<li><a href="#org7eefc0f">2.4.3. Accions malicioses</a></li>
+<li><a href="#org8ee8e9d">2.4.4. Anàlisis captura de xarxa</a></li>
+<li><a href="#org493290c">2.4.5. Conclusions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1d5ad9c">3. <span class="todo ___">[ ]</span> ToDo</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7aa117b" class="outline-2">
+<h2 id="org7aa117b"><span class="section-number-2">1.</span> Introducció</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orga6edb86" class="outline-3">
+<h3 id="orga6edb86"><span class="section-number-3">1.1.</span> Què és un <i>honeypot</i>?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+És un programari que implementa o simula un servei vulnerable amb l'intenció d'atraure els possibles atacants.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd98d6f8" class="outline-3">
+<h3 id="orgd98d6f8"><span class="section-number-3">1.2.</span> Tipus de honeypots</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Es divideixen en tres nivells d'interacció:
+</p>
+<dl class="org-dl">
+<dt>Interacció baixa</dt><dd>Tan sols simula els procés d'autenticació (login).  Són útils per detectar atacants dins de la xarxa.</dd>
+<dt>Interacció mitja</dt><dd>Permeten l'autenticació i simulen un servei funcional, permetent estudiar les intencions i l'operativa del atacant dins del servei simualt.  Tanmateix, al ser simulat aquest servei no té un impacte real, tant en l'equip com en l'exterior.</dd>
+<dt>Interacció alta</dt><dd>Són un servei totalment funcional i permeten veure tota la interacció de l'atacant amb el servei i la resta de la xarxa.  Aquests tipus de honeypots no són recomanables si es deixen sense vigilància ja que permetrien ser utilitzats de forma normal per un atacant i que aquest els aprofiter per fer altres activitats delictives.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org90d25b7" class="outline-3">
+<h3 id="org90d25b7"><span class="section-number-3">1.3.</span> Utilitat d'un honeypot</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Bàsicament podem donar dos utilitats a un honeypot:
+</p>
+<dl class="org-dl">
+<dt>Alerta d'atacant</dt><dd>Ens pot ser útil per aixecar una alarma conforme tenim un atacant dins de la xarxa, que fins ara no hem detectat per altres mitjans.</dd>
+<dt>Estudi d'operatives d'atacs</dt><dd>Pot ser extremadament útil per estudiar el comportament d'un atacant, les seves intencions, les eines que utilitza, etc&#x2026;  Aquesta utilitat tan sols es dona en honeypots de nivell d'interacció mig o alt.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org3add735" class="outline-2">
+<h2 id="org3add735"><span class="section-number-2">2.</span> Laboratori amb TPotCE</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org1097fb1" class="outline-3">
+<h3 id="org1097fb1"><span class="section-number-3">2.1.</span> Projecte TPotCE</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Aglutina varis honeypots, permet enviar resultats a la comunitat i a més implementa eines d'anàlisis i visualització molt potents.
+</p>
+</div>
+</div>
+<div id="outline-container-orgddac49c" class="outline-3">
+<h3 id="orgddac49c"><span class="section-number-3">2.2.</span> Muntatge</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org71b1bcf" class="outline-4">
+<h4 id="org71b1bcf"><span class="section-number-4">2.2.1.</span> Descàrrega</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li><a href="https://github.com/telekom-security/tpotce">GitHub de Telekom-security del projecte TPotCE</a></li>
+</ul>
+
+<p>
+Hi han varies versions, la més sencilla d'instal·lar és la <a href="https://github.com/telekom-security/tpotce/releases">ISO pre-compilada</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-orga3b7743" class="outline-4">
+<h4 id="orga3b7743"><span class="section-number-4">2.2.2.</span> Configuració de la VM</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Requereix molts recursos per funcionar bé, us recomano una VM amb:
+</p>
+<ul class="org-ul">
+<li>Cores: 3 cores</li>
+<li>RAM: 5MB</li>
+<li>HD: 40Gb</li>
+<li><p>
+Xarxa: Adaptador pont.
+</p>
+
+
+<div id="org5816c6b" class="figure">
+<p><img src="requisits.png" alt="requisits.png" />
+</p>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5d24861" class="outline-4">
+<h4 id="org5d24861"><span class="section-number-4">2.2.3.</span> Instal·lació</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+El procés d'instal·lació és el de una Debian normal, però el primer cop que reinicieu haureu de crear el password per a la compta d'usuari <code>tsec</code> i un nou usuari per a poder accedir via web.
+</p>
+</div>
+</div>
+<div id="outline-container-orga49b59d" class="outline-4">
+<h4 id="orga49b59d"><span class="section-number-4">2.2.4.</span> Configuració del router</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+Cal redirigir els ports dels honeypots que ens interessin des del router cap al honeypot.  En l'exemple de sota veureu que es redirigeix el port 22 cap al honeypot.  Cal notar que cada router és diferent, per tant haureu d'esbrinar com fer-ho amb el de casa vostre.
+</p>
+
+
+<div id="org59142e3" class="figure">
+<p><img src="router.png" alt="router.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org43cedf1" class="outline-4">
+<h4 id="org43cedf1"><span class="section-number-4">2.2.5.</span> Configuració del tallafocs</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<p>
+Per maximitzar la seguretat, sobretot si teniu intenció de deixar-ho desatés, fora bó afegir regles al tallafocs del vostre router per evitar noves connexions sortints provinents del honeypot.  Amb <i>iptables</i> això seria quelcom com:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">iptabels -A FORWARD -m state --state NEW -s &lt;ip_honeypot&gt; -j DROP
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2a8f556" class="outline-4">
+<h4 id="org2a8f556"><span class="section-number-4">2.2.6.</span> Verificació</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<p>
+Per verificar que el honeypot està realment escoltant al port 22 i a Internet podem obrir el seu panell de <i>Kibana</i> alhora que utilitzem la web de <a href="https://www.whatismyip.com/port-scanner/">WhatIsMyIP</a> tot escanejant el nostre port 22.  A la web ens ha d'apareixer com obert i al panell de Kibana ens ha d'apareixer una connexió.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd696e8" class="outline-3">
+<h3 id="orgfd696e8"><span class="section-number-3">2.3.</span> Anàlisis de resultats</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Un cop tinguem el honeypot desplegat podrem accedir a la seva webmitjançant l'enllaç que ens proporciona en el banner d'inici de la VM.
+</p>
+
+
+<div id="org00d4bb3" class="figure">
+<p><img src="ip.png" alt="ip.png" />
+</p>
+</div>
+
+<p>
+Accedint amb l'usuari i password que hem creat en el procés de post-instal·lació podrem accedir a tots els panells d'informació.  Aquí ens interessa Kibana que és el graficador de les estadístiques, i dins d'aquest el <i>Dashboard</i> corresponent a <i>Cowrie</i> que és el honeypot que hem expossat a Internet, i per tant l'únic que estarà rebent atacs.
+</p>
+
+<p>
+Configurarem aquesta pantalla per a que mostri els resultats de l'últim any i que s'auto refresqui cada minut, tot aixó desde l'icona de calendari / rellotge.
+</p>
+
+
+<div id="orgbd9da66" class="figure">
+<p><img src="cowrie.gif" alt="cowrie.gif" />
+</p>
+</div>
+
+<p>
+És interessant veure varies coses a nivell de resultats.  El primer de tot és adonar-nos de l'estona que passa entre que expossem el honeypot i el moment en que començem a rebre atacs.  Això ens ha de fer adonar de el nivell d'expossició tenen TOTS els serveis que oferim externament des de la nostra xarxa.
+</p>
+
+<p>
+Per altre banda deixem unes hores actiu el honeypot i després analitzem els resultats tot fixant-nos en coses com:
+</p>
+<ul class="org-ul">
+<li>Origen dels atacs (país).</li>
+<li>IPs d'origen dels atacs (màquines compromesses, sortides de TOR, reputació, etc).</li>
+<li>Usuaris i password dels atacs.</li>
+<li>Comandes utilitzades un cop dins del sistema.</li>
+<li>Arxius pujats.</li>
+<li>&#x2026;</li>
+</ul>
+
+
+<div id="orgf0f97e3" class="figure">
+<p><img src="analisis.gif" alt="analisis.gif" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf1022ea" class="outline-3">
+<h3 id="orgf1022ea"><span class="section-number-3">2.4.</span> Verificació del HoneyPot (Alternativa a exposar el honeypot)</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<b>TAN SOLS PER AQUELLS QUE NO US DEIXIN EXPOSAR EL HONEYPOT A INTERNET</b>
+</p>
+
+<p>
+Donat que un dels factors perquè no us deixin fer la pràctica és el desconeixement d'aquesta peça de programari, l'objectiu d'aquesta alternativa de pràctica serà justament fer proves i demostrar que el honeypot és un entorn engabiat i per tant no suposa un risc per a la resta de la xarxa.
+</p>
+
+<p>
+Aquesta alternativa, però no compleix amb els objectius originals de la pràctica ni tampoc amb els de la UF, que eren:
+</p>
+<ul class="org-ul">
+<li>Prendre consciència dels riscos d'exposar un servei a Internet.</li>
+<li>Conèixer els mètodes, aplicacions i motivacions dels hackers actuals.</li>
+<li>Veure l'estat actual i real de la seguretat informàtica a Internet.</li>
+</ul>
+
+<p>
+<b>NOTA:</b> També fer-vos notar que tot això que fareu a partir d'aquí ho vàrem veure com a demo a classe, cadascun dels passos que es detallen a continuació els va fer el professor durant la classe del dia 8/2/21.  Per tant tampoc s'està demanat res que no hagueu vist fer ja a classe.
+</p>
+
+<p>
+Per fer aquesta activitat alternativa caldrà:
+</p>
+<ol class="org-ol">
+<li>Realitzar un atac de força bruta contra el server SSH del Honeypot, per simular un intent de penetració.</li>
+<li>Accedir al honeypot des del nostre PC host, tot accedint a la trampa que simula un SSH vulnerable.</li>
+<li>Realitzar tot un seguit d'accions que simulin el comportament que hagués tingut un possible Hacker un cop dins del honeypot i que busquen determinar les possibilitats reals d'interacció des de dins del honepot cap a elements externs.</li>
+<li>Durant el pas anterior, utilitzar un sniffer de xarxa (per exemple <i>tcpdump</i>) per capturar tot el tràfic del honeypot.</li>
+<li>Analitzar la captura de tràfic i determinar quin tràfic generat per l'atacant a sortit realment del honeypot i quin no.</li>
+<li>Treure conclusions sobre la seguretat d'exposar el honeypot a Internet i els riscos que hagués comportat.</li>
+</ol>
+
+<p>
+A continuació es detallen una mica més aquests passos i què cal que feu en cadascú d'ells.  <b>Tanmateix cal que per cadascun dels passos mostreu la comanda utilitzada, el resultat obtingut i mostrar i explicar com ha quedat això reflectit al <i>dashboard</i> de Cowrie.</b>
+</p>
+</div>
+<div id="outline-container-orgb38bf00" class="outline-4">
+<h4 id="orgb38bf00"><span class="section-number-4">2.4.1.</span> Atac de força bruta contra Cowrie</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+Com ja sabeu, TPotCE implementa un honeypot SSH anomenat Cowrie que és justament el que volíem exposar a Internet.  El primer pas que acostumen a fer tant hackers com malware és fer un escanig de xarxa per detectar els ports obert i versions.
+</p>
+
+<p>
+Per fer aquest escanieg podeu utilitzar nmap i cal que determineu:
+</p>
+<ol class="org-ol">
+<li>Ports oberts al honeypot.</li>
+<li>Servei que corre al port 22 (servei i versió).</li>
+</ol>
+
+<p>
+Recordeu també que hem treballat amb nmap anteriorment a classe.
+</p>
+
+<p>
+Un cop determinat si el port 22 està obert i la versió que hi està corrent, el següent pas d'un hacker seria llançar un atac de força bruta per aconseguir unes credencials per accedir al sistema.  Podeu consultar <a href="https://www.youtube.com/watch?v=FKVsz_2IWJs">aquest vídeo</a> on s'expliquen vàries alternatives per fer-ho amb hydra, nmap, msf, etc.
+</p>
+
+<p>
+Un cop determinades unes credencials l'atacant passarà a accedir al honeypot.
+</p>
+</div>
+</div>
+<div id="outline-container-orge682822" class="outline-4">
+<h4 id="orge682822"><span class="section-number-4">2.4.2.</span> Accedir al honeypot</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+Per accedir al honeypot tan sols cal que us connecteu a la IP del honeypot utilitzat el client SSH i les credencials que heu obtingut en el pas anterior.
+</p>
+</div>
+</div>
+<div id="outline-container-org7eefc0f" class="outline-4">
+<h4 id="org7eefc0f"><span class="section-number-4">2.4.3.</span> Accions malicioses</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<p>
+<b>ATENCIÓ:</b> A partir d'aquí cal que instal·leu un sniffer a <b>la màquina de TPotCE</b> (per exemple <i>tcpdump</i> i <a href="https://www.youtube.com/watch?v=6TSqCYG_Y8k">aquí</a> podeu trobar un tuto d'exemple del seu ús) i començar a capturar TOT el tràfic i emmagatzemar-ho en un arxiu per a analitzar-ho posteriorment.
+</p>
+
+<p>
+Tot i que no simularem accions específicament malicioses sí que farem algunes proves per veure fins a quin punt pot un hacker realitzar comunicacions fora del honeypot.  Per fer-ho farem des de la connexió SSH establer-ta en el pas anterior com atacant:
+</p>
+<dl class="org-dl">
+<dt>Descàrrega de software extern</dt><dd>Intenteu, utilitzant la comanda wget, descarregar-vos aquesta mateixa web.  Verifiqueu si la descàrrega és correcte i si l'arxiu descàrregat és realment aquesta web.</dd>
+<dt>Instal·lació de programari</dt><dd>Intenteu instal·lar un programa, per exemple <i>nmap</i>.</dd>
+<dt>Connexió amb altres equips de la xarxa interna</dt><dd>Feu ping a IPs d'altres equips que tingueu a casa.</dd>
+<dt>Connexió a màquines remotes</dt><dd>Intenteu connectar-vos a infla.cat mitjançant la comanda <code>ssh root@infla.cat</code> i la contrasenya <code>admin123</code>.</dd>
+</dl>
+
+<p>
+Igual que en el pas anterior, <b>caldrà mostrar l'execució de les comandes i els resultats obtinguts.</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org8ee8e9d" class="outline-4">
+<h4 id="org8ee8e9d"><span class="section-number-4">2.4.4.</span> Anàlisis captura de xarxa</h4>
+<div class="outline-text-4" id="text-2-4-4">
+<p>
+Finalment, i aquest <b>és el pas més important</b>, cal que analitzeu l'arxiu de captura de tràfic obtingut en el pas anterior (recordeu, l'obtingut amb <i>tcpdump</i>) i determineu quin tràfic REAL han generat les accions que hem fet en el pas anterior simulant l'atacant.
+</p>
+
+<p>
+<b>Per cada acció mostreu els paquets que s'han generat i en cas de no generar-se paquets, expliqueu el perquè heu obtingut els resultats mostrats en el pas anterior</b> tot i que no hagin comunicacions reals sortint de la màquina del honeypot.
+</p>
+
+<p>
+<b>IMPORTANT: Comprimiu la memòria de la pràctica i l'arxiu de captura de tràfic i entregueu-ho tot en un arxiu comprimit</b>.
+</p>
+</div>
+</div>
+<div id="outline-container-org493290c" class="outline-4">
+<h4 id="org493290c"><span class="section-number-4">2.4.5.</span> Conclusions</h4>
+<div class="outline-text-4" id="text-2-4-5">
+<p>
+Un cop feta la simulació d'atac i analitzat l'arxiu de captura de tràfic, realitzeu unes conclusions tot analitzant els riscos que per a la vostra xarxa LAN podria haver comportat penjar el honeypot a Internet i les possibilitat de que un hacker hi hagués entrat.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1d5ad9c" class="outline-2">
+<h2 id="org1d5ad9c"><span class="section-number-2">3.</span> <span class="todo ___">[ ]</span> ToDo</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Com modificar usuaris p¡/ passwords cowrie.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: \today</p>
+<p class="author">Author: Raul Gimenez Herrada</p>
+<p class="date">Created: 2023-10-03 dt. 08:27</p>
+</div>
+</body>
+</html>

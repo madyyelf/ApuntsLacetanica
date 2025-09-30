@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cat" xml:lang="cat">
+<head>
+<!-- 2023-11-15 dc. 08:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Docker 101</title>
+<meta name="author" content="Raul Gimenez Herrada" />
+<meta name="description" content="Iniciació a Docker, i fins l'infinit!" />
+<meta name="keywords" content="Apunts, Docker, #SMXMP06UF5, #ASIXMP11UF3" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Docker 101</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgde3e1b1">1. Introducció a la Virtualització</a>
+<ul>
+<li><a href="#org3056256">1.1. Virtualització complerta</a></li>
+<li><a href="#org88bfa35">1.2. Virtualització a nivell de Sistema Operatiu</a>
+<ul>
+<li><a href="#org8579c47">1.2.1. Eines a Linux</a></li>
+<li><a href="#orge1053fa">1.2.2. LXC</a></li>
+<li><a href="#org5305c52">1.2.3. Docker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgcbaadaa">2. Primers passos amb Docker</a>
+<ul>
+<li><a href="#orgbca60da">2.1. Instal·lació a Debian</a></li>
+<li><a href="#orge205b1b">2.2. Docker Hub</a>
+<ul>
+<li><a href="#orga2dd543">2.2.1. Cercar imatges a Docker Hub</a></li>
+<li><a href="#org4c49656">2.2.2. Descarregar imatges de Docker Hub</a></li>
+<li><a href="#orgc20f003">2.2.3. Pujar imatges a Docker Hub</a></li>
+</ul>
+</li>
+<li><a href="#org8e24d1a">2.3. Hello World!</a></li>
+</ul>
+</li>
+<li><a href="#org5dbd463">3. Ús de Docker</a>
+<ul>
+<li><a href="#orgb22a806">3.1. Imatges</a></li>
+<li><a href="#org45198ed">3.2. Contenidors</a>
+<ul>
+<li><a href="#orge1fc9ac">3.2.1. Volums</a></li>
+<li><a href="#orgdded65b">3.2.2. Xarxes</a></li>
+<li><a href="#org2b8988f">3.2.3. Receptes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org58b0f59">4. <span class="todo TODO">TODO</span> Creació d'imatges</a>
+<ul>
+<li><a href="#orga4f24ac">4.1. Des d'un contenidor existent</a></li>
+<li><a href="#orgabee47a">4.2. Dockerfile</a></li>
+</ul>
+</li>
+<li><a href="#org4b04fea">5. <span class="todo TODO">TODO</span> Docker Compose</a></li>
+<li><a href="#org9dc8849">6. Docker Swarm</a>
+<ul>
+<li><a href="#org4ab8b7b">6.1. Característiques i conceptes de <i>Docker Swarm</i></a></li>
+<li><a href="#org3b73532">6.2. Creació i gestió del clúster</a></li>
+<li><a href="#org5bec1df">6.3. Gestió de serveis del clúster</a></li>
+</ul>
+</li>
+<li><a href="#org33a3a3a">7. <span class="todo TODO">TODO</span> Activitats propossades</a></li>
+<li><a href="#orgd6d8901">8. Bibliografía</a></li>
+<li><a href="#org81101c5">9. Glossari</a></li>
+<li><a href="#org0a752ec">10. <code>[1/6]</code> 2Do</a></li>
+<li><a href="#org9fb491c">11. Bitàcora</a>
+<ul>
+<li><a href="#org12e3987">11.1. <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-03-05 dj.&gt;</span></span></a></li>
+<li><a href="#orgc273ac4">11.2. <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-05-01 dv.&gt;</span></span></a></li>
+<li><a href="#orgfebad26">11.3. <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-05-08 dv.&gt;</span></span></a></li>
+<li><a href="#org93f133c">11.4. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-28 dc.&gt;</span></span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgde3e1b1" class="outline-2">
+<h2 id="orgde3e1b1"><span class="section-number-2">1.</span> Introducció a la Virtualització</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Possibles objectius i avantatges de la virtualització:
+</p>
+<ul class="org-ul">
+<li>Amortització / reducció de costos del maquinari.</li>
+<li>Atomicitat / simplicitat dels sistemes.</li>
+<li>Aïllament dels sistemes.</li>
+<li>Independència total del maquinari, sempre que el <i>hypervisor</i> sigui compatible amb totes les parts.</li>
+<li>Possibilitat de fer proves sense "embrutar" el sistema.</li>
+<li>Facilitat de re-ubicació.</li>
+</ul>
+</div>
+<div id="outline-container-org3056256" class="outline-3">
+<h3 id="org3056256"><span class="section-number-3">1.1.</span> Virtualització complerta</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Mitjançant un <i>hypervisor</i> es simula un maquinari virtual on s'instal·la un sistema operatiu i els serveis que interessi.
+</p>
+
+<p>
+En la següent imatge podem veure els diferents tipus de <i>hypervisors</i> on el 2 és el tipus que utilitzem a classe (VirtualBox, VMWare, etc).
+</p>
+
+
+<div id="orgeba1879" class="figure">
+<p><img src="https://www.researchgate.net/profile/Maurice_Dawson2/publication/258745709/figure/fig2/AS:297345926352904@1447904201984/Two-Types-of-Hypervisors.png" alt="Two-Types-of-Hypervisors.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org88bfa35" class="outline-3">
+<h3 id="org88bfa35"><span class="section-number-3">1.2.</span> Virtualització a nivell de Sistema Operatiu</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+A la virtualització a nivell de Sistema Operatiu, realment no es fa una virtualització sinó que s'aillen els processos, recursos, etc de manera que els contenidors o aplicacions "virtualitzades" tan sols tenen accés a certes àrees restingides del equip i S.O. anfitrió, fins i tot creant còpies en memòria pròpies de llibreries i executables.
+</p>
+
+<p>
+Això implica que ja no cal un <i>hypervisor</i> que simuli o presenti una capa de maquinari virtual, i també que no és necessari instal·lar un S.O. i/o aplicatius genèrics en els contenidors, ja que poden utilitzar els del sistema <i>host</i>.
+</p>
+
+<p>
+En resum:
+</p>
+<ul class="org-ul">
+<li>S'aïlla en tots els aspectes els contenidors.</li>
+<li>No es simula maquinari.</li>
+<li>Es comparteix llibreries, binaris, etc del sistema <i>host</i>.</li>
+</ul>
+
+<p>
+En la següent mostra les diferències de capes entre Sistemes Virtuals Complerts utilitzant diferents <i>hypervisors</i> i els contenidor Linux.
+</p>
+
+
+<div id="orged76ef2" class="figure">
+<p><img src="https://www.opennebula.org/wp-content/uploads/2017/02/hyp2.png" alt="hyp2.png" />
+</p>
+</div>
+
+<p>
+Les avantatges inmediates que presenta aquesta forma de "virtualitzar" son:
+</p>
+<ul class="org-ul">
+<li>Reducció del pes dels contenidors (no necessari instal·lar un S.O. per cada VM).</li>
+<li>Reutilització de llibreries i binaris.</li>
+<li>Velocitat de funcionament dels contenidors (apagat, inici, etc).</li>
+<li>Manteniment de la major part de les avantatges de la virtualització.</li>
+</ul>
+
+<p>
+Les desavantatges:
+</p>
+<ul class="org-ul">
+<li>En compartir el Kernel, cal que contenidors i sistema host comparteixin arquitectura.</li>
+</ul>
+</div>
+<div id="outline-container-org8579c47" class="outline-4">
+<h4 id="org8579c47"><span class="section-number-4">1.2.1.</span> Eines a Linux</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Linux presenta certes avantatges per realitzar virtualització a nivell de S.O. ja que ha heretat de Unix dos components que realitzen totes les tasques d'aïllament de processos i ús de recursos del sistema: <i>namespaces</i> i <i>cgourps</i>.
+</p>
+
+<p>
+Cal remarcar però que aquestes eines no s'utilitzen exclusivament per a la creació de contenidors, sinó que això és una derivada.  És a dir, aquestes eines tenen fucnionalitat per elles mateixes i ens permeten per exemple crear una interfície de xarxa virtual, limitar els recursos utilitzats per un determinat procés (CPU, RAM, &#x2026;) i un llarg etcètera.
+</p>
+<dl class="org-dl">
+<dt><i>namespaces</i></dt><dd>Permet la separació dels recursos del Kernel, com punts de muntatge, processos, la xarxa, etc.</dd>
+<dt><i>cgroups</i></dt><dd>Permet limitar els recursos utilitzats per un procés (memòria), priorització de l'ús de la CPU, i algunes funcions més.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge1053fa" class="outline-4">
+<h4 id="orge1053fa"><span class="section-number-4">1.2.2.</span> LXC</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+LXC és l'implementació de <i>LinuX Containers</i>, una tecnología de virtualització a nivell de sistema operatiu per a S.O. <i>GNU Linu</i>. 
+</p>
+
+<p>
+Es basa en les eines de <i>cgroups</i> i <i>namespaces</i> vistos i permet virtualitzar utlitzant molt pocs recursos.
+</p>
+</div>
+</div>
+<div id="outline-container-org5305c52" class="outline-4">
+<h4 id="org5305c52"><span class="section-number-4">1.2.3.</span> Docker</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+És un projecte de codi obert per a l'automatització del desplegament de contenidors Linux.  Això implica que utilitza per sota <i>cgroups</i> i <i>namespaces</i> de la mateixa manera que LXC.  Tanmateix aplica varies capes d'abstracció per a millorar l'operativitat amb els contenidors.
+</p>
+
+<p>
+Per les seves pecualiritats <i>Docker</i> s'ha anat enfocant més cap a la virtualització de servies o micro-serveis més qu no pas a la virtualització de sistemes sencers.
+A continuació s'inclou una petita descripció dels seus components principals:
+</p>
+<dl class="org-dl">
+<dt>Docker</dt><dd>Eina bàsica del paquet, que permet l'ús d'imatges i contenidors.</dd>
+<dt>Imatge</dt><dd>Plantilla d'un contenidor, és estàtica i no permet canvis.</dd>
+<dt>Contenidor</dt><dd>Materialització d'una imatge.  Se'n poden crear tants com es vulguin, aturar-los, reiniciar-los, etc.  Cal notar que no comparteixen informació entre si, tot i que puguin ser creats des de la mateixa imatge.  També cal notar que si s'eliminen, la informació que contenien es perd.  Per aquests motius els contenidors estan enfocats a <b><b>no emmagatzemar dades</b></b>.</dd>
+<dt>Volum</dt><dd>Espai del sistema de fitxers del <i>host</i> accessible des de un contenidor i destinat a oferir permanència de les dades i compartició entre contenidors.</dd>
+<dt>Docker Hub</dt><dd>És un repositori d'imatges on podem cercar i descarregar imatges ja fetes que ens serveixin per a llançar els nostres contenidors o crear les nostres pròpies imatges.</dd>
+<dt>Docker File</dt><dd>Arxiu que conté la declaració o construcció d'una imatge.  És un dels dos mètodes per crear imatges noves i/o personalitzades.  L'altre mètode és crear una imatge des de un contenidor en funcionament.</dd>
+<dt>Docker Compose</dt><dd>Arxiu que permet especificar un conjunt de contenidors, volums, xarxes, etc i les relacions entre ells.  S'utilitzen per definir i desplegar estructures complexes de contenidors de forma simplificada.</dd>
+<dt>Docker Swarm</dt><dd>Eina per a la creació i gestió de clústers de Docker.  Implementa per si sol moltes coses, com per exemple <i>service discovery</i> i <i>alta disponibilitat</i>.</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcbaadaa" class="outline-2">
+<h2 id="orgcbaadaa"><span class="section-number-2">2.</span> Primers passos amb Docker</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgbca60da" class="outline-3">
+<h3 id="orgbca60da"><span class="section-number-3">2.1.</span> Instal·lació a Debian</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+L'instal·lació de Docker a Debian a anat canviant al llarg de les versions.  Per tant el més recomanable és consutlar la <a href="https://docs.docker.com/engine/install/debian/">documentació oficial referent a l'insta·lació a Debian</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-orge205b1b" class="outline-3">
+<h3 id="orge205b1b"><span class="section-number-3">2.2.</span> Docker Hub</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<i>Docker Hub</i> constitueix un repositori públic d'imatges <i>Docker</i> on tant companyies oficials com particular pengen imatges que cobreixen molts casos d'ús.  Cercant en aquest repositori podem trobar i aprofitar la feina feta per altres.
+</p>
+
+<p>
+Tot i que hem de pensar que la major part d'imatges son segures, quan utilitzem <i>Docker</i> en un entorn sensible (com per exemple la feina) cal recordar que ningú assegura ni es responsabilitza les les imatges de <i>Docker Hub</i> a menys que siguin "oficials".  Per tant hem de vigilar amb què descarreguem.  Molts cops podem veure el <i>Docker File</i> de la imatge, que ens pot ajudar a assegurar què farà el contenidor.
+</p>
+
+<p>
+Per tant es recomana que, sempre que sigui possible, ens creem les nostres pròpies imatges per assegurar que no hi han dobles intencions.  Aquestes imatges personalitzades les podem pujar a <i>Docker Hub</i> (i seran públiques a menys que paguem) o ens podem crear el nostre propi repositori estil <i>Docker Hub</i> totalment privat.
+</p>
+
+<p>
+En resum, al cercar una imatge a <i>Docker Hub</i> hem d'estar atents a:
+</p>
+<ul class="org-ul">
+<li>Si és una imatge oficial o no.</li>
+<li>Arquitectura per a la que està feta (arm, arm64, x86-64, etc).</li>
+<li>Les seves descàrregues, tot i que no és un gran indicador de confiança, serà més confiable una imatge amb 5M de descàrregues que una amb 30.</li>
+<li>El numero de l'última versió de l'imatge.  Cal tenir present que es manté històric de versions per cada imatge.</li>
+</ul>
+
+<p>
+Alguns exemples interessants / curiosos d'imatges que podem trobar son:
+</p>
+<dl class="org-dl">
+<dt><a href="https://hub.docker.com/r/pihole/pihole">pihole</a></dt><dd>Imatge de <i>Pi-hole</i> un projecte per muntar un server DNS intern que filtri publicitat, per <i>arm</i>.</dd>
+<dt><a href="https://hub.docker.com/_/mysql">mysql</a></dt><dd>Imatge oficial de <i>MySQL Server</i>.</dd>
+<dt><a href="https://hub.docker.com/r/userxy2015/ngnix">ngnix</a></dt><dd>Servidor web <i>ngnix</i>, però compte <b><b>no és oficial</b></b> sinó que l'ha fet "un particular".</dd>
+<dt><a href="https://hub.docker.com/_/debian">Debian</a></dt><dd>Imatge oficial de <i>Debian</i>, útil com a base per altres imatges.</dd>
+<dt><a href="https://hub.docker.com/r/itzg/minecraft-server">Minecraft Srv</a></dt><dd>Servidor de Minecraft, <b><b>no oficial</b></b>.</dd>
+</dl>
+</div>
+<div id="outline-container-orga2dd543" class="outline-4">
+<h4 id="orga2dd543"><span class="section-number-4">2.2.1.</span> Cercar imatges a Docker Hub</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Cercar imatges es pot realitzar fàcilment amb un navegador visitant la web de <a href="https://hub.docker.com/">Docker Hub</a> i utilitzant el seu cercador.
+</p>
+
+<p>
+Des de terminal també ho podem fer mitjançant la comanda:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker search [opcions] &lt;imatge&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c49656" class="outline-4">
+<h4 id="org4c49656"><span class="section-number-4">2.2.2.</span> Descarregar imatges de Docker Hub</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Per descarregar una imatge, haurem d'executar la comanda:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker pull &lt;usuari_creador/nom_imatge&gt;[:versió]
+</pre>
+</div>
+<p>
+Alternativament podem llançar directament un contenidor de la imatge que volem descarregar i si no la tenim descarregada <i>docker</i> la cercarà a <i>Docker Hub</i> de forma automàtica.
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker container run [opcions] &lt;usuari_creador/nom_imatge&gt;[:versió]
+</pre>
+</div>
+
+<p>
+En l'opció de la <i>versió</i> de la imatge podem especificar una versió concreta, si no diem res descarregarem la versió <i>latest</i>.  Aquesta versió és l'última que s'ha pujat però això dona problemes al mantenir contenidors al llarg del temps.
+</p>
+
+<p>
+Si hem descarregat la versió <i>latest</i> d'un <i>Apache</i> per exemple, i el mantenidor de l'imatge al cap d'un temps l'actualitza a una nova versió el que passarà serà el següent:
+</p>
+<ul class="org-ul">
+<li>Les imatges descarregades no s'actualitzen.</li>
+<li>Si intentem tornar a descarregar l'apache <i>latest</i> no farà res perquè ja tenim una versió "amb aquest nom".</li>
+<li>Caldrà forçar la descàrrega de la nova versió indicant en la comanda <code>pull</code> o <code>run</code> el número de versió a descarregar.</li>
+</ul>
+
+<p>
+Per tot això <b><b>és molt recomanable no utilitzar la versió <i>latest</i> i descarregar les imatges indicant en número de versió concret</b></b>.
+</p>
+
+<p>
+Durant la descàrrega és interessant fixar-nos que apareixen varies descàrregues en paral·lel.  Això ve determinat per com s'ha construir aquella imatge, ja que es poden definir varies "capes" d'imatge de manera que siguin independents.  Al ser capes independents això permet entre altres coses re-aprofitar-les entre imatges diferents, que els canvis en un capa no afectin a la resta, etc.  Aquest és un concepte molt interessant de <i>Docker</i> i que veurem més a fons alhora de crear imatges amb <i>Docker File</i>.
+</p>
+
+<p>
+<img src="dockerpull.gif" alt="dockerpull.gif" />
+En aquest <i>gif</i> podem observar la descàrrega per defecte de l'imatge oficial d'un servidor <i>Apache</i>.  Destacar:
+</p>
+<dl class="org-dl">
+<dt>Versió</dt><dd>Per defecte ens descarrega la imatge amb l'etiqueta de versió <i>latest</i>.  Recordeu que tan sols és una etiqueta.</dd>
+<dt>Capes</dt><dd>La imatge consta de 5 capes.  Si tinguéssim accés al <i>Docker File</i> i l'analitzéssim veuríem a què correspon cada capa.</dd>
+<dt>Pes</dt><dd>La descàrrega de l'imatge ronda les 60Mb.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgc20f003" class="outline-4">
+<h4 id="orgc20f003"><span class="section-number-4">2.2.3.</span> Pujar imatges a Docker Hub</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+Podem pujar les imatges que creem / modifiquem a <i>Docker Hub</i>.  Cal tenir present que necessitarem un compte a <i>Docker Hub</i> i que el nostre repositori, a menys que paguem, serà públic.
+</p>
+
+<p>
+Per pujar una imatge que tinguem en local ens caldrà executar:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker push &lt;el_teu_usuari_dockerhub&gt;/&lt;nom_imatge&gt;[:versió]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e24d1a" class="outline-3">
+<h3 id="org8e24d1a"><span class="section-number-3">2.3.</span> Hello World!</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+En la mateixa línia que els llenguatges de programació <i>Docker</i> proporciona una imatge anomenada "Hello World!" que simplement crea un contenidor que imprimeix per pantalla aquest famós missatge.  Tot i la simplicitat, ens pot ser útil per practicar la descàrrega, creació de contenidors i execució dels mateixos.
+</p>
+
+<p>
+Per fer-ho tot plegat cal executar:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker run hello-world
+</pre>
+</div>
+<p>
+Al executar-ho obtindrem aquest resultat:
+<img src="dockerhelloworld.gif" alt="dockerhelloworld.gif" />
+Cal notar les següents coses:
+</p>
+<ul class="org-ul">
+<li>No hem utilitzat la comanda <code>docker pull</code> sinó <code>docker run</code>, que a part de descarregar l'imatge (en cas necessari) també crea un contenidor i l'executa.</li>
+<li>Com que no teníem l'imatge de <i>hello-world</i>, docker automàticament l'ha cercat a <i>Docker Hub</i> i se l'ha descarregat.</li>
+<li>Al no especificar <i>tag</i> o <i>versió</i>, s'ha descarregat la <i>latest</i>.</li>
+<li>Tot i que hi han comandes per crear contenidors sense executar-los, la comanda <code>docker run</code> crea el contenidor i l'executa automàticament.</li>
+<li>El contenidor tan sols tenia una tasca que era imprimir per pantalla, per tant en acabar s'ha parat.</li>
+</ul>
+
+<p>
+Per acabar amb aquest primer contacte amb <i>Docker</i> podem llistar els contenidors i les imatges que tenim.
+</p>
+<dl class="org-dl">
+<dt>Per llistar els contenidors (tots)</dt><dd><code>docker container ls -a</code></dd>
+<dt>Per llistar les imatges descarregades</dt><dd><code>docker image ls</code></dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org5dbd463" class="outline-2">
+<h2 id="org5dbd463"><span class="section-number-2">3.</span> Ús de Docker</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb22a806" class="outline-3">
+<h3 id="orgb22a806"><span class="section-number-3">3.1.</span> Imatges</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Com ja hem explicat amb anterioritat, les imatges de Docker constitueixen la plantilla a partir de la qual crearem i executarem els nostres contenidors.
+</p>
+
+<p>
+La gestió d'aquestes imatges és molt senzilla.  La comanda base és <code>docker image</code> i a partir d'aquí es despleguen varies opcions, tal com indica l'ajuda:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">Usage:	docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+</pre>
+</div>
+
+<p>
+De totes aquestes comandes, les que més utilitzarem son:
+</p>
+<dl class="org-dl">
+<dt>ls</dt><dd>Per llistar les imatges locals.</dd>
+<dt>pull</dt><dd>Per descarregar noves imatges de <i>Docker Hub</i>.</dd>
+<dt>rm</dt><dd>Per eliminar imatges que ja no utilitzem.</dd>
+</dl>
+
+
+<div id="org8ad792b" class="figure">
+<p><img src="dockerImage.gif" alt="dockerImage.gif" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org45198ed" class="outline-3">
+<h3 id="org45198ed"><span class="section-number-3">3.2.</span> Contenidors</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Recordem que els contenidors son el resultat d'executar una imatge, és a dir, son la materialització de la mateixa, el que realment s'acaba executant.
+</p>
+
+<p>
+Per tant, a partir d'una imatge poden tenir varis contenidors, tots iguals, funcionant.  Tanmateix, al llarg de la vida del contenidor, aquest acumularà dades internament (logs, temporals, etc) que recordem no comparteix amb altres contenidors iguals i a més D'Eliminar-ne quan desaparegui el contenidor.
+</p>
+
+<p>
+Per a la gestió de contenidors utilitzarem la comanda base <code>docker container</code> i les opcions son:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">Usage:	docker container COMMAND
+
+Manage containers
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  inspect     Display detailed information on one or more containers
+  kill        Kill one or more running containers
+  logs        Fetch the logs of a container
+  ls          List containers
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  prune       Remove all stopped containers
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  run         Run a command in a new container
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+</pre>
+</div>
+
+<p>
+Com podem veure aquí les opcions ja son bastantes, i n'hi han moltes de interessants.  Tanmateix com a introducció utilitzarem:
+</p>
+<dl class="org-dl">
+<dt>exec</dt><dd>Per executar una comanda dins del contenidor, molt útil per obrir una <i>shell</i>.</dd>
+<dt>logs</dt><dd>per veure els logs del contenidor, sense haver d'entrar.</dd>
+<dt>ls</dt><dd>Per llistar els contenidors que tenim.</dd>
+<dt>port</dt><dd>Per exposar ports del contenidor (fer-los accessibles).</dd>
+<dt>rm</dt><dd>Per eliminar un contenidor.</dd>
+<dt>run / start / stop</dt><dd>Per canviar l'estat d'execució d'un contenidor.</dd>
+</dl>
+</div>
+<div id="outline-container-orge1fc9ac" class="outline-4">
+<h4 id="orge1fc9ac"><span class="section-number-4">3.2.1.</span> Volums</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Com ja hem comentat anteriorment, els <i>volums</i> són la forma que ens dóna Doctor per guardar les dades fora d'un contenidor de manera que quan aquest es pari o sigui eliminat puguem "salvar-les" o compartir-les.  Combinat amb sistemes com <i>GlusterFS</i> ens permetria tenir assegurada la disponibilitat i integritat de les dades dins d'un entorn de <i>Docker Swarm</i>.
+</p>
+
+<p>
+Per utilitzar-los és molt simple, tan sols alhora de crear un contenidor hem d'incloure l'opció <code>-v</code>.  Aquesta té el format següent:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">-v &lt;path_local&gt;:&lt;path_contenidor&gt;<span style="color: #51afef;">[</span>:ro<span style="color: #51afef;">]</span>
+</pre>
+</div>
+<p>
+La utilitat d'aquest element és molt amplia, des de guardar les dades d'un contenidor, tenir en local els arxius de configuració del servei (de manera que els puguem modificar i guardar, independent del contenidor), tenir el local el codi font del script de Python que constitueix el servei, tenir en local els HTMLs i PHP que constitueixen la web que ofereix el contenidor, etc.
+</p>
+
+<p>
+Així doncs fixeu-vos que si per exemple estem servint una web basada en <i>Jekyll</i> mitjançant un container (com és el cas d'<a href="http://alquimiabinaria.cat/">Alquímia Binària</a>) el contenidor tan sols serà un servidor web, pràcticament per defecte, i podrem tenim en un volum els arxius HTML que hem de servir.  D'aquesta manera si l'autor del web vol penjar un nou pot tan sols l'ha d'afegir al directori local corresponent.  Això permetrà que les dades que serveix el nostre servidor web siguin independents del servei en si mateix. El paràmetre seria quelcom com això: <code>-v /blog/:/var/www/html/</code> on vinculem el directori local <code>/blog/</code> amb el directori del contenidor <code>/var/www/html/</code>.
+Finalment fixeu-vos que de manera opcional podeu afegir al fina <code>:ro</code> per indicar que s'ha de muntar aquest directori en el contenidor en forma de <i>read only</i> de manera que ni tan sols el susuari <i>root</i> del contenidor podrà escriure res en aquest directori.  Molt interessant a nivell de seguretat.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdded65b" class="outline-4">
+<h4 id="orgdded65b"><span class="section-number-4">3.2.2.</span> Xarxes</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+Referent a les xarxes veurem dues coses molt bàsiques:
+</p>
+<ul class="org-ul">
+<li>Exposar ports.</li>
+<li>Assignar IP a un contenidor.</li>
+</ul>
+<p>
+Cal fer notar aquí que <i>Docker</i> permet una gestió molt profunda i complexa de les xarxes, aquí tan sols veurem la punta del iceberg, i el seu ús més habitual.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgd2316b6"></a>Exposició de ports<br />
+<div class="outline-text-5" id="text-3-2-2-1">
+<p>
+Primer de tot comentar que si no modifiquem l'assignació de ports, <i>Docker</i> assigna una IP "interna" al contenidor, que no és accessible fora de <i>Docker</i>.  Tanmateix si que permet de forma molt simple exposar ports, que quedaran oberts en la màquina <i>Host</i> com si fossin ports propis.
+</p>
+
+<p>
+Per tant, els ports que exposem quedaran disponibles (si no toquem res més) tant des-de <i>localhost</i> com des de la IP del nostre <i>Host</i>.
+</p>
+
+<p>
+De nou, utilitzarem un paràmetre alhora de crear un contenidor per esposar-ne un port, un conjunt de ports, o un rang.  La forma de fer-ho és <code>-p [IP_local:]&lt;port_local&gt;:&lt;port_contenidor&gt;[/protocol]</code>.
+</p>
+
+<p>
+Així doncs, i tornant a l'exemple d'un servei web, si volem exposar el port 80 del nostre contenidor com a port 80 del nostre <i>host</i> tan sols hem d'afegir alhora de crear el contenidor el següent paràmetre: <code>-p 80:80</code>.
+</p>
+
+<p>
+Si tinguéssim el port 80 local ja ocupat (per un altre servei) podríem triar un altre port sense problemes: <code>-p 8080:80</code> d'aquesta manera tindríem el port local 8080 connectat al port 80 del contenidor.
+</p>
+
+<p>
+Un altre variació és establir l'adreça local on estarà aquest port disponible, això permetria per exemple obrir el servei tan sols per nosaltres <code>-p localhost:80:80</code> o tan sols per una interfície específica <code>-p 192.168.30.3:80:80</code>.
+</p>
+
+<p>
+Un exemple de tot plegat:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker run --name srvTOR -d -p localhost:9050:9050 --restart=unless-stopped tor
+</pre>
+</div>
+<p>
+Es tracta d'un contenidor per al servei de <i>TOR</i>, aquí l'objectiu és tenir un port local on si hi redirigim el tràfic de qualsevol aplicació, aquest anirà per <i>TOR</i> i per tant serà anònim.  Destacar el detall que aquest port 9050 tan sols estarà obert per <i>localhost</i>, es a dir la màquina pròpia, i no serà accessible per cap altre equip de la nostra xarxa.
+</p>
+</div>
+</li>
+<li><a id="org9f0a258"></a>Assignació de IPs a contenidors<br />
+<div class="outline-text-5" id="text-3-2-2-2">
+<p>
+Per poder assignar una IP concreta a un contenidor, hem de treballar primer amb una nova comanda de Docker que és l'encarregada de la gestió de xarxes: <code>docker network</code>. Les seves opcions son:
+</p>
+<p>
+Aquí bàsicament utilitzarem:
+</p>
+<dl class="org-dl">
+<dt>create</dt><dd>Per crear una nova xarxa de Docker.</dd>
+<dt>ls</dt><dd>Per llistar les xarxes disponibles.</dd>
+<dt>rm</dt><dd>per eliminar una xarxa.</dd>
+</dl>
+
+<p>
+Per poder assignar una IP al nostre contenidor, primer haurem de crear una xarxa pròpia, per exemple la 192.168.1.0/24:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker network create --drive=bridge --subnet=192.168.1.0/24 --gateway=192.168.1.1 xarxa
+</pre>
+</div>
+<p>
+Un cop creada podrem crear un nou contenidor, en el exemple un servidor web <i>Apache</i>, amb la IP que vulguem assignar:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker container run -d -p 80:80 --name webIPfixa --network xarxa --ip 192.168.1.3 httpd
+</pre>
+</div>
+<p>
+Fixem-nos que els paràmetres que estem utilitzant per assignar la IP són dos:
+</p>
+<dl class="org-dl">
+<dt>network</dt><dd>Per connectar el contenidor a la xarxa abans creada.</dd>
+<dt>ip</dt><dd>Per assignar una IP estàtica al contenidor.</dd>
+</dl>
+</div>
+</li>
+<li><a id="org76e5de6"></a>Assignar IPs "reals" a un contenidor<br />
+<div class="outline-text-5" id="text-3-2-2-3">
+<p>
+Si volem assignar una IP del rang de la nostre xarxa real a un contenidor i que es comporti com un hostmés d'aquesta caldrà utilitzar el <i>driver</i> de xarxa anomenat <code>macvlan</code>.
+</p>
+<dl class="org-dl">
+<dt>macvlan</dt><dd>Aquest <i>driver</i> de xarxa assignarà una MAC a la interfície de xarxa fent que aparegui com un dispositiu físic dins la nostra xarxa.</dd>
+</dl>
+<p>
+Tenint això, podem crear una xarxa que comparteixi un espai d'adreçament igual que la nostra xarxa real (on caldria tenir aquest espai reservat per Docke per evitar duplicats de IPs). I a partir d'aquí crear el contenidor amb aquesta nova xarxa i una IP fixa assignad a mà.
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker network create --drive=macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 xarxaREAL
+
+docker container run -d -p 80:80 --name srvWebIPFixa --network xarxaReal --ip 192.168.1.10 httpd
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org2b8988f" class="outline-4">
+<h4 id="org2b8988f"><span class="section-number-4">3.2.3.</span> Receptes</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+Hem fet una visió ràpida de les eines que tenim per a utilitzar i combinar els nostres contenidors.  Tanmateix alhora de crear-los i gestionar-los hi ha una quantitat de paràmetres ingent a poder utilitzar.
+</p>
+
+<p>
+Per evitar que així és converteixi en un manual tècnic, veurem els cassos d'ús més típics i analitzarem els paràmetres emprats.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgd0979e3"></a>Creació de contenidors<br />
+<div class="outline-text-5" id="text-3-2-3-1">
+<p>
+Utilitzarem com a exemple a analitzar la creació i execució d'un contenidor per a donar server web, en aquest cas un <i>Apache</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-Shell">docker run --name srvWEB -d -p 80:80 --network=xarxa --ip=192.168.1.3 -v /var/web/:/var/www/html/ --restart=unless-stopped httpd
+</pre>
+</div>
+
+<p>
+La major part dels paràmetres ja els hem vist a l'apartat de <i>xarxes</i> o <i>volums</i>, però apareixen alguns nous:
+</p>
+<dl class="org-dl">
+<dt>&#x2013;name</dt><dd>Determinem un nom de contenidor, de manera que ens sigui més fàcil identificar-lo i referenciar-lo.  Si no ho fem <i>Docker</i> n'assigna un aleatòriament.</dd>
+<dt>-d</dt><dd><i>Detached</i> el que fa és evitar que el contenidor passi a <i>stopped</i> en acabar la comanda que té assignada.  Fixem-nos que en aquest cas llançar un apache serà quelcom com <code>systemctl start apache2</code>, si no afegim aquest paràmetre, en acabar d'executar la comanda anterior el contenidor es pararà.</dd>
+<dt>&#x2013;restart=unsless-stopped</dt><dd>Forcem que aquest contenidor sempre estigui funcionant, a menys que el parem de forma manual.  Així si es reiniciar la màquina, peta el contenidor o qualsevol altre situació, <i>Docker</i> de forma automàtica tornarà a iniciar el contenidor.</dd>
+</dl>
+</div>
+</li>
+<li><a id="org7d3f275"></a>Entrar en contenidors<br />
+<div class="outline-text-5" id="text-3-2-3-2">
+<p>
+Son poques les situacions en les que volem tenir accés a un contenidor ja que per a moltes (com mirar els logs) el propi <i>Docker</i> ja ens dona eines.  Tanmateix les més típiques poden ser:
+</p>
+<ul class="org-ul">
+<li>Volem "provar" un S.O. que hem muntat en docker, i per tant entrar-hi.</li>
+<li>Volem accedir per fer alguna prova o inspeccionar quelcom molt concret.</li>
+<li>Volem modificar el contenidor per a després crear una nova imatge a partir d'ell (poc recomanable).</li>
+</ul>
+
+<p>
+Per accedir a un contenidor tenim dues vies:
+</p>
+<dl class="org-dl">
+<dt>Crear el contenidor i accedir-hi directament</dt><dd>Podem fer-ho afegint a la comanda <code>docker container run</code> els paràmetres <code>-it</code> on <code>-i</code> és interactiu i <code>-t</code> terminal.  Com podeu veure s'especifiquen junts amb <code>-it</code>, però poden anar per separats.</dd>
+<dt>Accedir a un contenidor ja que està funcionant</dt><dd>Cal fer-ho amb la comanda  <code>docker container exec -it &lt;contenidor&gt; &lt;comanda&gt;</code> normalment la comanda serà <code>bash</code> per obtenir una <i>shell</i>.</dd>
+</dl>
+
+<div id="org7b6d3e6" class="figure">
+<p><img src="dockerExecIT.gif" alt="dockerExecIT.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="orge5cc581"></a>Ús de variables<br />
+<div class="outline-text-5" id="text-3-2-3-3">
+<p>
+Ens trobarem en molts contenidors que, donades les característiques del servei, en la seva instal·lació calgui definir alguns paràmetres, o simplement vulguem parametritzar quelcom.
+Casos típics poden ser un contenidor amb <i>MySQL</i> on, durant la instal·lació, cal especificar una contrasenya per accedir al servei com a <i>root</i>.
+</p>
+
+<p>
+Tenim dues opcions, que dependran molt de què vulguem parametritzar.
+</p>
+<dl class="org-dl">
+<dt>Volem tocar arxius de configuració</dt><dd>En casos com un contenidor amb DHCP o DNS voldrem modificar, i tenir ben guardats, els arxius de configuració.  En aquest tipus de casos el més adient és utilitzar <i>volums</i> per "externalitzar" l'arxiu de configuració del contenidor i poder-lo gestionar des de la màquina <i>host</i>.</dd>
+<dt>Volem definir algun paràmetre concret del servei o de la instal·lació del mateix</dt><dd>Podem utilitzar variables per parametritzar l'arrancada i construcció final de contenidor.  Aquesta opció és molt còmode i recomanada, ja que tan sols permet "trastejar" paràmetres concrets que ens hagi deixat preparats el creador de l'imatge&#x2026; però aquest ho ha hagut de tenir present i preparar-ho prèviament.  Normalment trobarem informació sobre les variables que podem definir a la web de la pròpia imatge a <i>Docker Hub</i> o al <i>Github</i> del creador. Tot això és pot fer mitjançant el paràmetre <code>-e &lt;NOM_VARIALBE&gt;=&lt;VALOR&gt;</code> al fer un <code>docker container run</code>.</dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-Shell">docker container run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+</pre>
+</div>
+
+<p>
+Aquest és un exemple de creació i execució d'un contenidor <i>MySQL</i> on podem veure que utilitzant <code>-e MYSQL_ROOT_PASSWORD=my-secret</code> se'ns permet establir la contrasenya de <i>root</i> per al servei <i>MySQL</i> en els últims passos de creació del contenidor.
+</p>
+</div>
+</li>
+<li><a id="orged9c2ce"></a>Execució de Apps GUI dins de Docker en host local<br />
+<div class="outline-text-5" id="text-3-2-3-4">
+<p>
+Una forma d'executar aplicacions amb entorn gràfic des de dins de Docker és compartir les X11 del host amb el contenidor.  Per això haurem de fer:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">xhost + <span style="color: #5B6268;">#</span><span style="color: #5B6268;">Permet que s'hi connectin altres equips a les nostres X11</span>
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">Llan&#231;em el container compartint les X11 locals del host</span>
+docker run -it --rm -e <span style="color: #dcaeea;">DISPLAY</span>=$<span style="color: #dcaeea;">DISPLAY</span> -v /tmp/.X11-unix:/tmp/.X11-unix:ro debian firefox
+</pre>
+</div>
+
+<p>
+La variable d'entorn DISPLAY també pot tenir la forma &lt;IP&gt;:display com per exemple <code>192.168.100.25:0.0</code>.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org58b0f59" class="outline-2">
+<h2 id="org58b0f59"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Creació d'imatges</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orga4f24ac" class="outline-3">
+<h3 id="orga4f24ac"><span class="section-number-3">4.1.</span> Des d'un contenidor existent</h3>
+</div>
+<div id="outline-container-orgabee47a" class="outline-3">
+<h3 id="orgabee47a"><span class="section-number-3">4.2.</span> Dockerfile</h3>
+</div>
+</div>
+<div id="outline-container-org4b04fea" class="outline-2">
+<h2 id="org4b04fea"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Docker Compose</h2>
+</div>
+<div id="outline-container-org9dc8849" class="outline-2">
+<h2 id="org9dc8849"><span class="section-number-2">6.</span> Docker Swarm</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<i>Docker Swarm</i> és el component dins del grup d'eines de <i>Docker</i> per implementar un clúster d'equips físics que es coordinin entre ells per a servir un determinat nombre de contenidors.
+</p>
+
+<p>
+Tot i ser una eina molt potent, s'ha vist superada per altres eines D'orquestració (que és com s'anomena la gestió de clústers de contenidors) com <i>Kubernetes</i>, que és una eina de Google Inc., ja que per un costat ofereixen major abstracció (interfície gràfica, etc) i la possibilitat de gestionar diferents tipus de contenidors i VMs (Docker, LXC, VirtualBox, VMWare, etc).
+</p>
+</div>
+<div id="outline-container-org4ab8b7b" class="outline-3">
+<h3 id="org4ab8b7b"><span class="section-number-3">6.1.</span> Característiques i conceptes de <i>Docker Swarm</i></h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+A part de la creació del clúster i la seva gestió integral, cal destacar que <i>Docker Swarm</i> també implementa de forma automàtica algunes característiques molt interessants.
+</p>
+<dl class="org-dl">
+<dt>Rol <i>Manager</i></dt><dd>El node en crear el clúster obtindrà automàticament aquest rol, a posteriori en podem afegir més.  Aquests seran els nodes que gestionaran el clúster i repartiran la feina.  Cal notar que si cauen, el clúster deixa de funcionar.</dd>
+<dt>Rol <i>Worker</i></dt><dd>Són els nodes que aixequen els contenidors, sota les ordres dels <i>Managers</i>.  És el rol per defecte dels nous nodes, i cal remarcar que un <i>Manager</i> també és per defecte <i>Worker</i>.</dd>
+<dt>Balanceig de càrrega</dt><dd>Sempre que creem dos o més contenidors d'una mateixa imatge, <i>Docker Swarm</i> farà automàticament un balanceig de càrrega mitjançant <i>Round Robin</i> (enviarà cada petició nova al següent contenidor de la llista).</dd>
+<dt><i>Service Discovery</i></dt><dd>Quan creem un contenidor dins del clúster, no tindrem en conte en quin node s'aixeca.  Quan arribi una petició per aquest contenidor a qualsevol node del clúster, <i>Docker Swarm</i> aplicarà aquesta tècnica per esbrinar en quin node hi ha contenidors que responen a aquesta sol·licitud i la redirigirà automàticament cal a ells (aplicant el balanceig de càrrega).</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org3b73532" class="outline-3">
+<h3 id="org3b73532"><span class="section-number-3">6.2.</span> Creació i gestió del clúster</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Per crear un clúster de <i>Docker Swarm</i> necessitarem fer dos passos:
+</p>
+<ol class="org-ol">
+<li>Crear el clúster definint un node <i>Manager</i>.</li>
+<li>Afegir nous nodes <i>Worker</i> i/o <i>Manager</i> al clúster.</li>
+</ol>
+
+<p>
+A part d'aquestes dues comandes o operacions, la resta d'operacions que aquí s'expliquen es poden realitzar des de qualsevol node del clúster, ja que ja és "un tot".
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgc5171ba"></a>Crear el primer node <i>Manager</i><br />
+<div class="outline-text-5" id="text-6-2-0-1">
+<p>
+Per crear el clúster lògicament necessitarem un equip amb <i>GNU Linux</i> i <i>Docker</i> instal·lat.  Seguidament executem la comanda següent:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-Shell">docker swarm [--advertise-addr &lt;ip&gt;] init
+</pre>
+</div>
+
+<p>
+Paràmetres:
+</p>
+<dl class="org-dl">
+<dt>&#x2013;advertise-addr &lt;ip&gt;</dt><dd>Opcional-ment podem afegir aquest paràmetre per especificar sobre quina interfície de xarxa treballarà el clúster.  Tal com hem vist anteriorment pot ser interessant tenir interfícies de xarxa destinades a la gestió del clúster i altres a oferir els serveis.</dd>
+</dl>
+
+
+<div id="orgf85209a" class="figure">
+<p><img src="dockerswarminit.gif" alt="dockerswarminit.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="orgb98775e"></a>Afegir nous nodes <i>Worker</i> al clúster<br />
+<div class="outline-text-5" id="text-6-2-0-2">
+<p>
+Un cop tenim el clúster creat, el propi resultat de la comanda <code>docker swarm init</code> ens ofereix la comanda per afegir nous nodes de tipus <i>worker</i> al clúster.  Remarcar que la part important de la comanda és el <i>TOKEN</i>, que serà únic per aquest clúster (podríem tenir varis clústers, cadascú amb un token diferent).  Per tant aquesta és la comanda a executar en el nou node.
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker swarm join --token &lt;TOKEN&gt; &lt;IP:PORT&gt;
+</pre>
+</div>
+
+<p>
+Segons hem vist com a resultat de la comanda <i>init</i> anterior, la comanda per afegir un nou node al clúster sería:
+</p>
+<pre class="example" id="orgf37ff90">
+docker swarm join --token SWMTKN-1-53r2ov9r1knng7hyficwd8gwdqd266kh3m8s4e43b4usoppmn7-4cl3048dkxj7x55j8hfbtzakf 192.168.1.41:2377
+</pre>
+</div>
+</li>
+<li><a id="org9f8a58f"></a>Sortir del clúster (des-promocionar un node)<br />
+<div class="outline-text-5" id="text-6-2-0-3">
+<p>
+Ens pot interessar treure un node del clúster, per fer-ho caldrà executar:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker swarm leave [--force]
+</pre>
+</div>
+<dl class="org-dl">
+<dt>&#x2013;force</dt><dd>Remarcar aquí que l'últim node viu d'un clúster, que forçosament serà un <i>Manager</i>, no es pot des-promocionar així, sinó que caldrà afegir el paràmetre <code>--force</code> per forçar-ho i eliminar definitivament el clúster.</dd>
+</dl>
+
+
+<div id="org1d3e1e4" class="figure">
+<p><img src="dockerswarmleave.gif" alt="dockerswarmleave.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="org78409a7"></a>Llistar nodes d'un clúster<br />
+<div class="outline-text-5" id="text-6-2-0-4">
+<p>
+Per veure tots els nodes d'un clúster cal utilitzar la comanda:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker node ls
+</pre>
+</div>
+
+
+<div id="org5965a4b" class="figure">
+<p><img src="dockernodels.gif" alt="dockernodels.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="orgf059928"></a>Promocionar a <i>Manager</i> o degradar a <i>Worker</i><br />
+<div class="outline-text-5" id="text-6-2-0-5">
+<p>
+Les comandes son molt simples:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker node promote &lt;id_node&gt;
+docker node demote &lt;id_node&gt;
+</pre>
+</div>
+<p>
+On:
+</p>
+<dl class="org-dl">
+<dt>promote</dt><dd>Promocionem un <i>Worker</i> a <i>Manager</i>.</dd>
+<dt>modete</dt><dd>Degradem o desproporcionem un <i>Manager</i> a <i>Worker</i>.  Lògicament no ho podrem fer amb l'últim <i>Manager</i>.</dd>
+</dl>
+
+<p>
+Aquí cal fer notar que molts cops, en clústers relativament petits i amb prou potència de hardware, el que es fa és promocionar tots els nodes a <i>Manager</i>, o una gran part.  Això té l'inconvenient que tots els nodes tenen una feina extra, i es complica la coordinació, però es guanya en resiliència (ja no depenen d'un o dos <i>Managers</i> que si cauen el clúster deixa de funcionar).  Per tant s'ha de "jugar" i trobar un equilibri que ens sigui profitòs.
+</p>
+</div>
+</li>
+<li><a id="org3266b5d"></a>Activar, pausar i para nodes<br />
+<div class="outline-text-5" id="text-6-2-0-6">
+<p>
+En el dia a dia de l'empresa podem necessitar canviar algun paràmetre d'un node.  Per fer-ho tenim la comanda <code>update</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker node update [--availability &lt;active / pause / drain&gt;] [opcions] &lt;id_node&gt;
+</pre>
+</div>
+
+<p>
+Aquí ja us indico l'opció més interessant <i>&#x2013;acailability</i> que com el seu nom indica és l'estat del node.  Ens pot interessar canviar-lo per fer proves, manteniment o operacions de maquinari sobre un node.  Els estats que accepta són:
+</p>
+<dl class="org-dl">
+<dt>active</dt><dd>Funcionament normal.</dd>
+<dt>pause</dt><dd>No accepta noves assignacions, però manté les actuals (els contenidors en funcionament).</dd>
+<dt>dain</dt><dd>No accepta noves assignacions i  cancel·la les actuals, és a dir, para tots els contenidors que tenia.</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org5bec1df" class="outline-3">
+<h3 id="org5bec1df"><span class="section-number-3">6.3.</span> Gestió de serveis del clúster</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Ens aquest apunts, per ara, ens centrarem en la creació i gestió de contenidors individuals dins del clúster.  Tanmateix comentar que existeix <i>Docker Stack</i> que ve a ser un <i>Docker Compose</i> per a <i>Docker Swarm</i>.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgfb58ffa"></a>Creació de serveis dins <i>Docker Swarm</i><br />
+<div class="outline-text-5" id="text-6-3-0-1">
+<p>
+Per crear un nou servei o contenidor (fixeu-vos en el canvi de nomelatura) utilitzarem una comanda com la següent:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker service create [opcions] &lt;imatge&gt;[:tag]
+</pre>
+</div>
+
+<p>
+Per tant remarcar que totes les opcions que teníem amb la comanda <code>docker container run</code> les tenim també disponibles per <code>docker service create</code>.  Tanmateix, i com és lògic i han algunes diferències, analitzem un exemple pràctic:
+</p>
+<pre class="example" id="orgaad5b9a">
+docker service create --replicas 2 --name srvWEB -p 80:80 httpd:latest
+</pre>
+
+<p>
+Podem veure els paràmetres nous:
+</p>
+<dl class="org-dl">
+<dt>&#x2013;replicas &lt;#&gt;</dt><dd>Amb aquesta opció estem indicant que volem dos contenidors d'aquest tipus funcionant dins del clúster.  <i>Docker Swarm</i> gestionarà de forma transparent i vetllarà per a que es compleixi sempre.  Així si cau un node que contenia un d'aquests contenidors, automàticament n'aixecarà un de nou en un altre node del clúster.</dd>
+</dl>
+
+
+<div id="orga848ecb" class="figure">
+<p><img src="dockerservicecreate.gif" alt="dockerservicecreate.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="orgf7a674c"></a>Llistat de serveis<br />
+<div class="outline-text-5" id="text-6-3-0-2">
+<p>
+Per llistar els serveis que s'estan executant al clúster utilitzarem la comanda:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker service ls
+</pre>
+</div>
+
+
+<div id="org8599ccd" class="figure">
+<p><img src="dockerservicels.gif" alt="dockerservicels.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="org0e07181"></a>Escalar serveis<br />
+<div class="outline-text-5" id="text-6-3-0-3">
+<p>
+Es pot donar el cas que detectem més demanda o menys d'un servei i necessitem adaptar el nombre de rèpliques d'un contenidor concret.  Per fer-ho ho farem amb:
+</p>
+<div class="org-src-container">
+<pre class="src src-Shell">docker service &lt;nom_servei&gt;=&lt;#&gt;
+</pre>
+</div>
+
+<p>
+Seguint l'exemple anterior podríem augmentar el nombre de servidors web així:
+</p>
+<pre class="example" id="orgb934299">
+docker service srvWEB=5
+</pre>
+</div>
+</li>
+<li><a id="org90ccae8"></a>Eliminar serveis<br />
+<div class="outline-text-5" id="text-6-3-0-4">
+<p>
+Si volem eliminar un servei del clúster caldrà utilitzar aquesta comanda:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">docker service <span style="color: #ECBE7B;">rm</span> &lt;nom_servei&gt;
+</pre>
+</div>
+
+<p>
+Notar aquí que eliminarà tots els contenidors que associats al servei.
+</p>
+
+<p>
+Continuant amb l'exemple:
+</p>
+<pre class="example" id="org9224424">
+docker service rm srvWEB
+</pre>
+
+
+<div id="org5a44b9c" class="figure">
+<p><img src="dockerservicerm.gif" alt="dockerservicerm.gif" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="orgd9e3829"></a><span class="todo TODO">TODO</span> <i>Docker Stack</i><br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org33a3a3a" class="outline-2">
+<h2 id="org33a3a3a"><span class="section-number-2">7.</span> <span class="todo TODO">TODO</span> Activitats propossades</h2>
+</div>
+<div id="outline-container-orgd6d8901" class="outline-2">
+<h2 id="orgd6d8901"><span class="section-number-2">8.</span> Bibliografía</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li><a href="https://docs.docker.com/">Docker</a>: Documentació oficial de Docker.</li>
+<li><a href="https://0xword.com/libros/103-docker-secdevops.html">Docker: SecDevOps</a>:  Llibre de seguretat en Docker de l'editorial 0xWord.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81101c5" class="outline-2">
+<h2 id="org81101c5"><span class="section-number-2">9.</span> Glossari</h2>
+</div>
+<div id="outline-container-org0a752ec" class="outline-2">
+<h2 id="org0a752ec"><span class="section-number-2">10.</span> <code>[1/6]</code> 2Do</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Recalcar en negreta els conceptes importants.</li>
+<li class="on"><code>[X]</code> Corrector.</li>
+<li class="off"><code>[&#xa0;]</code> Remarcar conceptes importants amb negreta.</li>
+<li class="off"><code>[&#xa0;]</code> Afegir entrades al glossari.</li>
+<li class="off"><code>[&#xa0;]</code> Afegir activitats.</li>
+<li class="off"><code>[&#xa0;]</code> Crear escenaris didàctics amb <i>Katacoda</i>.</li>
+<li class="off"><code>[&#xa0;]</code> Documentar nous drivers dexarxa <code>macvlan</code> i <code>ipvaln</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9fb491c" class="outline-2">
+<h2 id="org9fb491c"><span class="section-number-2">11.</span> Bitàcora</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org12e3987" class="outline-3">
+<h3 id="org12e3987"><span class="section-number-3">11.1.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-03-05 dj.&gt;</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+Inicio el document de cara estructurar els continguts i que sigui més sencill explicar i aprendre Docker.
+</p>
+
+<p>
+La part més complexa serà l'execució de contenidors donat el nombre d'opcions i possibles escenaris.
+</p>
+
+<p>
+També caldrà veure si incidir en la redundància de dades, especialment en sistemes de cluster.
+</p>
+
+<p>
+Finalment l'objectiu és fer-ne una introducció a Docker, i com a tal molts dels apartats son sobrers.  S'hi afegeixen amb l'intenció de complementar la guia i donar material per aquells que tinguin ganes d'ampliar.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc273ac4" class="outline-3">
+<h3 id="orgc273ac4"><span class="section-number-3">11.2.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-05-01 dv.&gt;</span></span></h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+Completació dels apunts "Introducció a la Virtualització" i "Primers passos amb Docker".
+</p>
+</div>
+</div>
+<div id="outline-container-orgfebad26" class="outline-3">
+<h3 id="orgfebad26"><span class="section-number-3">11.3.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-05-08 dv.&gt;</span></span></h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+El·laboració de l'apartat "Ús de Docker".
+Afegit l'apartat d'"Activitats propossades" on incloure enunciats i <i>Katacoda</i> per practicar.  Enllaçar aquest apartats internament per saltar d'una secció a l'altre.
+</p>
+</div>
+</div>
+<div id="outline-container-org93f133c" class="outline-3">
+<h3 id="org93f133c"><span class="section-number-3">11.4.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-28 dc.&gt;</span></span></h3>
+<div class="outline-text-3" id="text-11-4">
+<p>
+Afegides tasques d'ampliació per canvis en drivers de xarxa.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-03-05 dj. 00:00</p>
+<p class="author">Author: Raul Gimenez Herrada</p>
+<p class="date">Created: 2023-11-15 dc. 08:59</p>
+</div>
+</body>
+</html>

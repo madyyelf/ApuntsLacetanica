@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">
+<head>
+<!-- 2024-02-12 dl. 10:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mòdul Professional 2: Sistemes d'Aprenentatge Automàtic</title>
+<meta name="author" content="Raul Gimenez Herrada" />
+<meta name="description" content="Llicència de Creative Commons." />
+<meta name="keywords" content="Apunts" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mòdul Professional 2: Sistemes d'Aprenentatge Automàtic</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndex</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb2c83ed">1. Caracterització de la Intel·ligència Artificial forta i feble.</a>
+<ul>
+<li><a href="#org1c20121">1.1. Intel·ligència Artificial Dèbil.</a>
+<ul>
+<li><a href="#orgddeef8c">1.1.1. Característiques i aplicacions.</a></li>
+<li><a href="#org586d53e">1.1.2. Avantatges i inconvenients.</a></li>
+<li><a href="#orga043322">1.1.3. Usos i possibilitats.</a></li>
+</ul>
+</li>
+<li><a href="#org1eb3af1">1.2. Intel·ligència Artificial Forta.</a>
+<ul>
+<li><a href="#org5e01689">1.2.1. Característiques i aplicacions.</a></li>
+<li><a href="#org4a06642">1.2.2. Avantatges i inconvenients.</a></li>
+<li><a href="#orgc7a51d0">1.2.3. Usos i possibilitats.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org636da5a">2. Caracterització de sistemes d'aprenentatge automàtic (Machine Learning).</a>
+<ul>
+<li><a href="#orgdd6f77e">2.1. Classificació de sistemes d'aprenentatge automàtic. Supervisat i no supervisat.</a></li>
+<li><a href="#org4fe347f">2.2. Principals tècniques per desenvolupar aprenentatge automàtic: xarxes neuronals, aprenentatge inductiu, raonament basat en casos, entre altres.</a></li>
+<li><a href="#org26cced6">2.3. Algorismes o models aplicats a l'aprenentatge automàtic.</a>
+<ul>
+<li><a href="#orgd1fbe7a">2.3.1. Algorismes de classificació.</a></li>
+<li><a href="#org6b52e9d">2.3.2. Algorismes de detecció d'anomalies.</a></li>
+<li><a href="#org455c2a7">2.3.3. Algorismes de regressió.</a></li>
+<li><a href="#org844998a">2.3.4. Algorismes de clustering.</a></li>
+<li><a href="#org895ae0d">2.3.5. Algorismes de reforç de l'aprenentatge.</a></li>
+<li><a href="#orgc40b202">2.3.6. Arbres i regles de decisió.</a></li>
+<li><a href="#org99db184">2.3.7. Altres algorismes relacionats amb l'aprenentatge automàtic.</a></li>
+</ul>
+</li>
+<li><a href="#orgdcc4a36">2.4. Procediments del Machine Learning: dades, identifica patrons i pren decisions.</a></li>
+<li><a href="#org0b3e2e5">2.5. Eines d'aprenentatge automàtic.</a></li>
+<li><a href="#orgf003325">2.6. Aplicacions del Machine Learning.</a></li>
+</ul>
+</li>
+<li><a href="#org6a27b88">3. Selecció d'algoritmes aplicats a l'aprenentatge supervisat i optimització del model.</a>
+<ul>
+<li><a href="#org20ad2d7">3.1. Determinació d'elements i ferramentes d'aprenentatge supervisat.</a></li>
+<li><a href="#orgcb21c50">3.2. Dades etiquetades.</a></li>
+<li><a href="#orgbc2817a">3.3. Variables d'entrada (input data). Etiquetes de sortida.</a></li>
+<li><a href="#orgbfe068e">3.4. Plataformes d'aprenentatge automàtic supervisat.</a></li>
+<li><a href="#org4e72e2d">3.5. Fases de l'aprenentatge automàtic.</a>
+<ul>
+<li><a href="#orgb6a2c30">3.5.1. Selecció de l'algorisme d'aprenentatge supervisat.</a></li>
+<li><a href="#org652297c">3.5.2. Selecció de dades.</a></li>
+<li><a href="#org6a0a1d7">3.5.3. Construcció del model.</a></li>
+<li><a href="#org6cd5ebf">3.5.4. Validació del model.</a></li>
+<li><a href="#orgcbd2b26">3.5.5. Ajust de característiques o paràmetres.</a></li>
+<li><a href="#org50596ca">3.5.6. Implementació del model proposat.</a></li>
+<li><a href="#org9ca86b2">3.5.7. Verificació del model de prova.</a></li>
+<li><a href="#orgd4eb9c9">3.5.8. Optimització del model.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgac3e2df">4. Caracterització de tècniques d'aprenentatge no supervisat.</a>
+<ul>
+<li><a href="#org8120242">4.1. Tècniques d'aprenentatge no supervisat.</a></li>
+<li><a href="#org506ce0d">4.2. Algorismes d'aprenentatge no supervisat. Agrupació de clúster, reducció de dimensió, entre d'altres.</a></li>
+<li><a href="#orgefc771b">4.3. Determinació d'elements i eines d'aprenentatge no supervisat.</a></li>
+<li><a href="#org77d5fbb">4.4. Plataformes d'aprenentatge automàtic no supervisat.</a></li>
+<li><a href="#org028c7d2">4.5. Fases de l'aprenentatge automàtic no supervisat.</a></li>
+</ul>
+</li>
+<li><a href="#org31e61aa">5. Caracterització de models computacionals de xarxes neuronals i comparació amb altres models.</a>
+<ul>
+<li><a href="#org5b4dc0a">5.1. Aprenentatge automàtic davant d'aprenentatge profund.</a></li>
+<li><a href="#org7ff69cc">5.2. Com aprèn una xarxa neuronal.</a></li>
+<li><a href="#org5262455">5.3. Models de xarxes neuronals artificials: Xarxes neuronals convolucionals (CNN).</a></li>
+</ul>
+</li>
+<li><a href="#org5e3f442">6. Valoració de la qualitat dels resultats obtinguts a la pràctica amb sistemes d'aprenentatge automàtic.</a>
+<ul>
+<li><a href="#orgcc572ff">6.1. Capacitat de generalització.</a></li>
+<li><a href="#org56d183f">6.2. Test.</a></li>
+<li><a href="#orgd798843">6.3. Validació.</a></li>
+<li><a href="#org88bb4bf">6.4. Matriu de confusió</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2c83ed" class="outline-2">
+<h2 id="orgb2c83ed"><span class="section-number-2">1.</span> Caracterització de la Intel·ligència Artificial forta i feble.</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org1c20121" class="outline-3">
+<h3 id="org1c20121"><span class="section-number-3">1.1.</span> Intel·ligència Artificial Dèbil.</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+També coneguda com intel·ligència artificial estreta o específica.
+</p>
+</div>
+<div id="outline-container-orgddeef8c" class="outline-4">
+<h4 id="orgddeef8c"><span class="section-number-4">1.1.1.</span> Característiques i aplicacions.</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Tenen una funcionalitat molt concreta i específica.
+</p>
+</div>
+</div>
+<div id="outline-container-org586d53e" class="outline-4">
+<h4 id="org586d53e"><span class="section-number-4">1.1.2.</span> Avantatges i inconvenients.</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+La tasca que fan la fan molt bé però no tenen capacitat de generalitzar o aplicar el seu coneixement a altres àrees.
+</p>
+</div>
+</div>
+<div id="outline-container-orga043322" class="outline-4">
+<h4 id="orga043322"><span class="section-number-4">1.1.3.</span> Usos i possibilitats.</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Sistemes de recomanació de pelis, un sistema de reconeixement de veu.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1eb3af1" class="outline-3">
+<h3 id="org1eb3af1"><span class="section-number-3">1.2.</span> Intel·ligència Artificial Forta.</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+També coneguda com intel·ligència artificial general.
+</p>
+</div>
+<div id="outline-container-org5e01689" class="outline-4">
+<h4 id="org5e01689"><span class="section-number-4">1.2.1.</span> Característiques i aplicacions.</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Una IA amb capacitats similars o superiors a les humanes capaç d'adaptar-se a noves situacions i reptes.  Amb capacitat de raonar, aprendre, comprendre el llenguatge natural i adaptar-se per resoldre problemes de qualsevol tipus.
+</p>
+</div>
+</div>
+<div id="outline-container-org4a06642" class="outline-4">
+<h4 id="org4a06642"><span class="section-number-4">1.2.2.</span> Avantatges i inconvenients.</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Capaç de resoldre qualsevol tasca intel·lectual.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc7a51d0" class="outline-4">
+<h4 id="orgc7a51d0"><span class="section-number-4">1.2.3.</span> Usos i possibilitats.</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+És el principal objectiu del camp, però no s'ha aconseguit completament.  També va molt lligada amb el concepte de singularitat que consisteix en una IA amb consciència i autoconsciència.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org636da5a" class="outline-2">
+<h2 id="org636da5a"><span class="section-number-2">2.</span> Caracterització de sistemes d'aprenentatge automàtic (Machine Learning).</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgdd6f77e" class="outline-3">
+<h3 id="orgdd6f77e"><span class="section-number-3">2.1.</span> Classificació de sistemes d'aprenentatge automàtic. Supervisat i no supervisat.</h3>
+<div class="outline-text-3" id="text-2-1">
+<dl class="org-dl">
+<dt>Supervisat</dt><dd>Les dades contenen les dades d'entrada i les dades de sortida (etiquetades).  És a dir, es tenen dades d'entrenament de les entrades i les sortides òptimes per cada conjunt d'entrada.</dd>
+<dt>No supervisat</dt><dd>Tan sols es tenen les dades d'entrada i s'analitzen per buscar-hi patrons i característiques (agrupació de dades, reducció de dimensions,detecció d'anomalies)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org4fe347f" class="outline-3">
+<h3 id="org4fe347f"><span class="section-number-3">2.2.</span> Principals tècniques per desenvolupar aprenentatge automàtic: xarxes neuronals, aprenentatge inductiu, raonament basat en casos, entre altres.</h3>
+</div>
+<div id="outline-container-org26cced6" class="outline-3">
+<h3 id="org26cced6"><span class="section-number-3">2.3.</span> Algorismes o models aplicats a l'aprenentatge automàtic.</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orgd1fbe7a" class="outline-4">
+<h4 id="orgd1fbe7a"><span class="section-number-4">2.3.1.</span> Algorismes de classificació.</h4>
+</div>
+<div id="outline-container-org6b52e9d" class="outline-4">
+<h4 id="org6b52e9d"><span class="section-number-4">2.3.2.</span> Algorismes de detecció d'anomalies.</h4>
+</div>
+<div id="outline-container-org455c2a7" class="outline-4">
+<h4 id="org455c2a7"><span class="section-number-4">2.3.3.</span> Algorismes de regressió.</h4>
+</div>
+<div id="outline-container-org844998a" class="outline-4">
+<h4 id="org844998a"><span class="section-number-4">2.3.4.</span> Algorismes de clustering.</h4>
+</div>
+<div id="outline-container-org895ae0d" class="outline-4">
+<h4 id="org895ae0d"><span class="section-number-4">2.3.5.</span> Algorismes de reforç de l'aprenentatge.</h4>
+</div>
+<div id="outline-container-orgc40b202" class="outline-4">
+<h4 id="orgc40b202"><span class="section-number-4">2.3.6.</span> Arbres i regles de decisió.</h4>
+</div>
+<div id="outline-container-org99db184" class="outline-4">
+<h4 id="org99db184"><span class="section-number-4">2.3.7.</span> Altres algorismes relacionats amb l'aprenentatge automàtic.</h4>
+</div>
+</div>
+<div id="outline-container-orgdcc4a36" class="outline-3">
+<h3 id="orgdcc4a36"><span class="section-number-3">2.4.</span> Procediments del Machine Learning: dades, identifica patrons i pren decisions.</h3>
+</div>
+<div id="outline-container-org0b3e2e5" class="outline-3">
+<h3 id="org0b3e2e5"><span class="section-number-3">2.5.</span> Eines d'aprenentatge automàtic.</h3>
+</div>
+<div id="outline-container-orgf003325" class="outline-3">
+<h3 id="orgf003325"><span class="section-number-3">2.6.</span> Aplicacions del Machine Learning.</h3>
+</div>
+</div>
+<div id="outline-container-org6a27b88" class="outline-2">
+<h2 id="org6a27b88"><span class="section-number-2">3.</span> Selecció d'algoritmes aplicats a l'aprenentatge supervisat i optimització del model.</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org20ad2d7" class="outline-3">
+<h3 id="org20ad2d7"><span class="section-number-3">3.1.</span> Determinació d'elements i ferramentes d'aprenentatge supervisat.</h3>
+</div>
+<div id="outline-container-orgcb21c50" class="outline-3">
+<h3 id="orgcb21c50"><span class="section-number-3">3.2.</span> Dades etiquetades.</h3>
+</div>
+<div id="outline-container-orgbc2817a" class="outline-3">
+<h3 id="orgbc2817a"><span class="section-number-3">3.3.</span> Variables d'entrada (input data). Etiquetes de sortida.</h3>
+</div>
+<div id="outline-container-orgbfe068e" class="outline-3">
+<h3 id="orgbfe068e"><span class="section-number-3">3.4.</span> Plataformes d'aprenentatge automàtic supervisat.</h3>
+</div>
+<div id="outline-container-org4e72e2d" class="outline-3">
+<h3 id="org4e72e2d"><span class="section-number-3">3.5.</span> Fases de l'aprenentatge automàtic.</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-orgb6a2c30" class="outline-4">
+<h4 id="orgb6a2c30"><span class="section-number-4">3.5.1.</span> Selecció de l'algorisme d'aprenentatge supervisat.</h4>
+</div>
+<div id="outline-container-org652297c" class="outline-4">
+<h4 id="org652297c"><span class="section-number-4">3.5.2.</span> Selecció de dades.</h4>
+</div>
+<div id="outline-container-org6a0a1d7" class="outline-4">
+<h4 id="org6a0a1d7"><span class="section-number-4">3.5.3.</span> Construcció del model.</h4>
+</div>
+<div id="outline-container-org6cd5ebf" class="outline-4">
+<h4 id="org6cd5ebf"><span class="section-number-4">3.5.4.</span> Validació del model.</h4>
+</div>
+<div id="outline-container-orgcbd2b26" class="outline-4">
+<h4 id="orgcbd2b26"><span class="section-number-4">3.5.5.</span> Ajust de característiques o paràmetres.</h4>
+</div>
+<div id="outline-container-org50596ca" class="outline-4">
+<h4 id="org50596ca"><span class="section-number-4">3.5.6.</span> Implementació del model proposat.</h4>
+</div>
+<div id="outline-container-org9ca86b2" class="outline-4">
+<h4 id="org9ca86b2"><span class="section-number-4">3.5.7.</span> Verificació del model de prova.</h4>
+</div>
+<div id="outline-container-orgd4eb9c9" class="outline-4">
+<h4 id="orgd4eb9c9"><span class="section-number-4">3.5.8.</span> Optimització del model.</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orgac3e2df" class="outline-2">
+<h2 id="orgac3e2df"><span class="section-number-2">4.</span> Caracterització de tècniques d'aprenentatge no supervisat.</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org8120242" class="outline-3">
+<h3 id="org8120242"><span class="section-number-3">4.1.</span> Tècniques d'aprenentatge no supervisat.</h3>
+</div>
+<div id="outline-container-org506ce0d" class="outline-3">
+<h3 id="org506ce0d"><span class="section-number-3">4.2.</span> Algorismes d'aprenentatge no supervisat. Agrupació de clúster, reducció de dimensió, entre d'altres.</h3>
+</div>
+<div id="outline-container-orgefc771b" class="outline-3">
+<h3 id="orgefc771b"><span class="section-number-3">4.3.</span> Determinació d'elements i eines d'aprenentatge no supervisat.</h3>
+</div>
+<div id="outline-container-org77d5fbb" class="outline-3">
+<h3 id="org77d5fbb"><span class="section-number-3">4.4.</span> Plataformes d'aprenentatge automàtic no supervisat.</h3>
+</div>
+<div id="outline-container-org028c7d2" class="outline-3">
+<h3 id="org028c7d2"><span class="section-number-3">4.5.</span> Fases de l'aprenentatge automàtic no supervisat.</h3>
+</div>
+</div>
+<div id="outline-container-org31e61aa" class="outline-2">
+<h2 id="org31e61aa"><span class="section-number-2">5.</span> Caracterització de models computacionals de xarxes neuronals i comparació amb altres models.</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org5b4dc0a" class="outline-3">
+<h3 id="org5b4dc0a"><span class="section-number-3">5.1.</span> Aprenentatge automàtic davant d'aprenentatge profund.</h3>
+</div>
+<div id="outline-container-org7ff69cc" class="outline-3">
+<h3 id="org7ff69cc"><span class="section-number-3">5.2.</span> Com aprèn una xarxa neuronal.</h3>
+</div>
+<div id="outline-container-org5262455" class="outline-3">
+<h3 id="org5262455"><span class="section-number-3">5.3.</span> Models de xarxes neuronals artificials: Xarxes neuronals convolucionals (CNN).</h3>
+</div>
+</div>
+<div id="outline-container-org5e3f442" class="outline-2">
+<h2 id="org5e3f442"><span class="section-number-2">6.</span> Valoració de la qualitat dels resultats obtinguts a la pràctica amb sistemes d'aprenentatge automàtic.</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgcc572ff" class="outline-3">
+<h3 id="orgcc572ff"><span class="section-number-3">6.1.</span> Capacitat de generalització.</h3>
+</div>
+<div id="outline-container-org56d183f" class="outline-3">
+<h3 id="org56d183f"><span class="section-number-3">6.2.</span> Test.</h3>
+</div>
+<div id="outline-container-orgd798843" class="outline-3">
+<h3 id="orgd798843"><span class="section-number-3">6.3.</span> Validació.</h3>
+</div>
+<div id="outline-container-org88bb4bf" class="outline-3">
+<h3 id="org88bb4bf"><span class="section-number-3">6.4.</span> Matriu de confusió</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Data: 2024-02-08 dj. 00:00</p>
+<p class="author">Autor: Raul Gimenez Herrada</p>
+<p class="date">Created: 2024-02-12 dl. 10:34</p>
+</div>
+</body>
+</html>
