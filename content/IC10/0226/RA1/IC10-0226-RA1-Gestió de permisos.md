@@ -29,7 +29,7 @@ Permisos típics de lectura, escriptura i execució.
 ---
 ## Gestió de permisos a Windows
 
-![permisosWindows.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF1/permisosWindows.png)
+![[IC10/0226/RA1/permisosWindows.png]]
 
 ---
 ### Pestanya Seguretat
@@ -57,7 +57,7 @@ Coses a recordar:
 ---
 ## Gestió de permisos a Linux
 
-![permisosLinux.jpg](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF1/permisosLinux.jpg)
+![[IC10/0226/RA1/permisosLinux.jpg]]
 
 ---
 ### Comandes per gestionar Grups
