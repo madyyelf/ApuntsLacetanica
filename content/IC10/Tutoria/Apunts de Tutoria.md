@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"\"{{title}}\"","tags":["apunts","ic10/tutoria"],"cssclasses":""}
+{"publish":true,"title":"Tutoria","tags":["apunts","ic10/tutoria"],"cssclasses":""}
 ---
 
 # Càpsules
