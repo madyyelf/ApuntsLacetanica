@@ -3,6 +3,7 @@
 ---
 
 # RA1
+- [[IC10-0226-RA1-Gestió de permisos \| Gestió de permisos]]
 - [[IC10/0226/RA1/IC10-0226-RA1-SAIs\| SAI]]
 
 # RA2
