@@ -17,4 +17,4 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 [![Ko-fi Raul Gimenez Herrada](https://alquimiabinaria.cat/kofi.png)](https:/ko-fi.com/raulgimenezherrada)
 # Materials per a dies de vaga
-- [[Anàlisis d'un hacking real]].
+- [[Analisis dun hacking real]].
