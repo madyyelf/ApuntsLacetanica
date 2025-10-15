@@ -6,5 +6,5 @@
 # (IC10) Sistemes Microinformàtics i Xarxes
 
 - [[IC10/0226/(0226) Seguretat Informàtica\| (0226) Seguretat Informàtica]]
-- [[Apunts-IC10-1713-Projecte Learnwise \| (1713) Projecte Intermodular]]
+- [[IC10/1713/LearnWise/IC10-1713-Projecte Learnwise\| (1713) Projecte Intermodular]]
 - [[IC10/Tutoria/Apunts de Tutoria]]
