@@ -29,7 +29,7 @@ Permisos típics de lectura, escriptura i execució.
 ---
 ## Gestió de permisos a Windows
 
-![[IC10/0226/RA1/permisosWindows.png]]
+[Permisos a Windows](https://learn-attachment.microsoft.com/api/attachments/db11754d-e928-4808-accf-f8a9759a172c?platform=QnA)
 
 ---
 ### Pestanya Seguretat
@@ -57,7 +57,7 @@ Coses a recordar:
 ---
 ## Gestió de permisos a Linux
 
-![[IC10/0226/RA1/permisosLinux.jpg]]
+[Permisos a Linux](https://blog.desdelinux.net/wp-content/uploads/2019/03/permisos-linux-devops-dba-imagen-conclusion-blog-desdelinux-1-830x462.jpg)
 
 ---
 ### Comandes per gestionar Grups
