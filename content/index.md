@@ -2,7 +2,7 @@
 {"publish":true,"title":"Apunts Lacetànica","cssclasses":""}
 ---
 
- Web amb apunts per als mòduls que imparteixo al institut.
+ Web amb apunts per als mòduls que imparteixo a l'institut.
 # (IC10) Sistemes Microinformàtics i Xarxes
 
 - [[IC10/0226/(0226) Seguretat Informàtica\| (0226) Seguretat Informàtica]]
