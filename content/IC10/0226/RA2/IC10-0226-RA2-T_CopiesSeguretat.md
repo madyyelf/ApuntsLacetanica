@@ -100,10 +100,11 @@ En el servidor del Moodle crearem i progrararem uns scripts per fer les còpies 
 
 Recordeu que per fer còpia de la base de dades no podem copiar els arxius sinó que cal fer una còpia amb la comanda `mysqldump`. La sintàxis és:
 
+```
 mysqldump [opcions] <bbdd> > <arxiu_sortida>
+```
 
 Per exemple:
-
 ```
 mysqldump -u root -pL4c3t4n14! moodle > backup_bbdd-$(date +%Y-%m-%d).sql
 ```
@@ -167,47 +168,34 @@ Serà l'encarregat de connectar-se al servidor de Moodle, recollir els arxius de
 ### SCP
 
 La comanda `scp` serveix per fer còpies entre ordinadors remots sempre que l'ordinador remot tingui un servidor ssh com `openssh-server`. La comanda és tal com:
-
+```
 scp <origen> <destí>
-
+```
 On:
 
-origen
-
-Si és el servidor remot SSH (enm aquest cas el servidor de Moodle) indicarem l'origen de la còpia de la següent forma: <usuari>@<srvremot>:<pathdestí> (p.e.: root@10.34.12.22:/tmp/backup*).
-
-destí
-
-Path cap a la carpeta destí con copiarem les dades (p.e.: _backup_).
+- **origen**: Si és el servidor remot SSH (enm aquest cas el servidor de Moodle) indicarem l'origen de la còpia de la següent forma: ```<usuari>@<srvremot>:<pathdestí> (p.e.: root@10.34.12.22:/tmp/backup*)```.
+- **destí**:  Path cap a la carpeta destí con copiarem les dades (p.e.: _backup_).
 
 1. SSHPASS  
     
     La comanda `scp` demanarà password cada cop que s'executi, per automatitzar-ho del tot l'haurem de combinar amb `sshpass` que té el format: `sshpass -p <password> <comanda SSH/SCP>` i per tant la comanda final serà quelcom semblant a:
     
-    sshpass -p moltdificil scp /tmp/complerta-*.tar rgimenezh@10.34.22.33:/backup/
-    
+ ```
+ sshpass -p moltdificil scp /tmp/complerta-*.tar rgimenezh@10.34.22.33:/backup/
+```    
 
 ### Eliminar arxius anteriors als 18 messos
 
 A partir d'aquí creeu uns _scripts_ en aquest servidor que, mitjançant la comanda `scp`, s'endugui les còpies fetes, les elimini un cop copiades del servidor de Moodle i finalment elimini de si mateix els arxius més antics de 18 messos.
 
 Per fer-ho caldrà utilitzar la comanda `find` amb els paràmetres `-mtime` i `-delete` tal que així:
-
+```
 find /backup/* -mtime +5 -delete
-
+```
 On:
-
-/backup/*
-
-És el directori i els arxius a eliminar.
-
--mtime
-
-Són els dies d'antiguitat dels arxius, en el exemple +5 significa 5 dies d'antiguitat.
-
--delete
-
-Eliminar els arxius.
+- **/backup/***:  És el directori i els arxius a eliminar.
+- **-mtime**: Són els dies d'antiguitat dels arxius, en el exemple +5 significa 5 dies d'antiguitat.
+- **-delete**:  Eliminar els arxius.
 
 ### Scripts i CRON
 
