@@ -1,10 +1,7 @@
 ---
-title: '"{{title}}"'
-publish: true
-tags:
-  - apunts
-  - ic10/tutoria
+{"publish":true,"title":"\"{{title}}\"","tags":["apunts","ic10/tutoria"],"cssclasses":""}
 ---
+
 # Llicència
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 ![by-nc-sa-eu_.png](http://alquimiabinaria.cat/by-nc-sa-eu_.png)
@@ -17,4 +14,4 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 [![Ko-fi Raul Gimenez Herrada](https://alquimiabinaria.cat/kofi.png)](https:/ko-fi.com/raulgimenezherrada)
 # Materials per a dies de vaga
-- [[Analisis dun hacking real]].
+- [[IC10/Tutoria/Analisis dun hacking real]].

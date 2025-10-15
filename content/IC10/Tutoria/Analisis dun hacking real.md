@@ -1,10 +1,7 @@
 ---
-title: Anàlisis d'un hacking real
-publish: true
-tags:
-  - apunts
-  - ic10/tutoria
+{"publish":true,"title":"Anàlisis d'un hacking real","tags":["apunts","ic10/tutoria"],"cssclasses":""}
 ---
+
 # Llicència
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 ![by-nc-sa-eu_.png](http://alquimiabinaria.cat/by-nc-sa-eu_.png)

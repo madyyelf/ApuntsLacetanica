@@ -1,10 +1,7 @@
 ---
-tags:
-  - apunts
-  - ic10/0226
-title: Treball de còpies de seguretat
-publish: true
+{"publish":true,"title":"Treball de còpies de seguretat","tags":["apunts","ic10/0226"],"cssclasses":""}
 ---
+
 # Imatges
 
 Aquestes són les imatges del Servidor Moodle necessàries per fer les còpies i per desprès, un cop fetes, verificar que són suficients per recuperar el sistema en cas d'error crític.

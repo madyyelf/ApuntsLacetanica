@@ -1,13 +1,7 @@
 ---
-tags:
-  - "#next"
-  - smx
-  - mentor
-  - smx/1713
-  - ic10/1713
-  - apunts
-publish: true
+{"publish":true,"tags":["#next","smx","mentor","smx/1713","ic10/1713","apunts"],"cssclasses":""}
 ---
+
 # Visió del projecte Learnwise
 ## Objectius del projecte
 - **Prioritzar la metodologia** per davant de la tècnica, per tant treballarem amb eines simples i accessibles.

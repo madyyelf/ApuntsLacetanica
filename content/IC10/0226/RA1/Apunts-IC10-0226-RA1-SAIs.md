@@ -1,10 +1,7 @@
 ---
-tags:
-  - apunts
-  - ic10/0226
-title: SAIs
-publish: true
+{"publish":true,"title":"SAIs","tags":["apunts","ic10/0226"],"cssclasses":""}
 ---
+
 
 # Tipus de SAIs
 ---
