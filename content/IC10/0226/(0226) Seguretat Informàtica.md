@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Seguretat Informàtica (0226)","tags":["apunts","ic10/0226"],"cssclasses":""}
+{"publish":true,"title":"(0226) Seguretat Informàtica","tags":["apunts","ic10/0226"],"cssclasses":""}
 ---
 
 # RA1
