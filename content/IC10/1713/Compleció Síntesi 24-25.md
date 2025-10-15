@@ -26,14 +26,14 @@ L'entrega del treball constarà de la defensa del mateix davant d'un tribunal.  
 Donada la natura de la compleció i el guiatge del projecte, aquest donarà peu a una **nota màxima de 7**.  Si es vol optar a **més nota cal afegir-hi apartats** com per exemple l'inclusiu d'un servei de correu electrònic, Alfresco, plans de contingència, afegir noves tecnologies no vistes a classe, o altres serveis no esmentats en aquesta guia.
 
 A més, cal remarcar que la guia esmenta els punts clau que cal implementar, però més enllà d'aquests **es valorarà la qualitat del treball així com la funcionalitat plena** de tots els components.
-# 30 de Juny
+# Setmana 1
 ## Situar-nos
 - Repassar tota la documentació del Moodle del projecte de síntesi, especialment els documents d'exemple i ajudes.
 ## Compartir documentació
 La idea és anar generant la documentació a mesura que s'avanci el projecte, de forma que en arribar a les dates d'entrega es pugui fer una correcció de la part nova generada.
 
 Pe tant cal crear una carpeta al *Drive* del compte @lacetania.cat, compartir-l'ho amb permisos d'edició per a tothom que tingui l'enllaç i penjar l'enllaç a la tasca anomenada *"Treball de compleció"* que trobareu al Moodle de *MP12 Síntesi 24-25 (Matins)*.
-# 7 Juliol
+# Setmana 2
 ## Introducció a l'empresa
 Cal fer una introducció al treball explicant quin tipus d'empresa es vol construir, en el nostre cas caldrà explicar:
 - Idea de negoci: Botiga d'informàtica de reparació i venda física i online.  També es vol captar empreses per a fer projectes puntuals i contractes de manteniment.
@@ -98,7 +98,7 @@ També cal marcar on estarà el rack i per on entra la fibra òptica des del car
 
 Accediu al següent plànol i **feu-ne una còpia** a partir de la que treballar. Sobre la vostra còpia, heu de generar el plànol físic amb tots els elements esmentats
 https://lucid.app/lucidchart/1198a799-ff11-489b-862b-6a27cf88feea/edit?invitationId=inv_35414304-1b8e-4f76-afdd-2a4313b40ffd
-# 14 Juliol
+# Setmana 3
 ## Pressupostos
 Cal que feu pressupostos de tots els elements informàtics necessaris per implementar el projecte, i que justifiqueu la tria.  Per tant cal escriure dues seccions a la memòria:
 ### Tria de components
@@ -115,7 +115,7 @@ Heu de fer els càlculs per a determinar quin SAI cal comprar per a mantenir un 
 Recordeu que el càlcul ha de ser amb VA i cal afegir un factor de correcció.
 
 Un cop calculat, busqueu un SAI que compleixi els requisits i afegiu-ho als pressupostos.
-# 21 Juliol (CORRECCIÓ)
+# Setmana 4 (CORRECCIÓ)
 Aquesta setmana es corregirà el bloc de tasques assignades des de l'inici del projecte fins el 21 de juliol.
 ## GNS3
 Per ara farem l'enrutador amb una última versió de *Mikrotik CHR*, el switch amb un *Ethernet Switch* i el núvol amb un element *Cloud*.  La resta d'equips seran tots *VPCS* per ara i els anirem substituint per màquines virtuals a mesura que avancem en el projecte.
@@ -134,7 +134,7 @@ Caldrà configurar:
 Per ara assignarem IPs seguint el que hem planificat al diagrama de xarxa lògic.
 ### Proves de connectivitat
 Un cop arribat  aquest punt hauriem de poder fer ping des de qualsevol lloc a qualsevol lloc, inclòs Internet.  Feu proves des de cada subxarxa i cap a totes les subxarxes.
-# 28 Juliol
+# Setmana 5
 ## AD
 ### Instal·lació AD
 Substituïu el *VPCS* de *SRV-AD* per una màquina virtual de *VirtualBox*. Dimensioneu a nivell de recursos la *VM* de manera que pugueu fer anar el *AD *sense que el vostre *Host* quedi escanyat. Busqueu i instal·leu una de les últimes versions de *Active Directory*.  Assigneu a aquesta màquina **dues particions de disc** dimensionades de forma coherent, una la farem servir per instal·lar el sistema operatiu i l'altre per guardar les dades d'usuari.
@@ -148,7 +148,7 @@ Creeu els grups seguint les pautes del plantejament l'empresa (cada perfil ha de
 Crea usuaris amb noms aleatoris i assigna'ls a cadascun dels rols que hem definit inicialment al plantejament de l'empresa.   Addicionalment assigna el rol de COPIES a un tècnic, el de XARXES a un altre tècnics i PUBLICADOR al que s'encarrega de la botiga online i també al comercial.  Finalment el CAP ha d'estar a tots els grups.
 ## Clients
 Cal substituir *PC-CAP*, * PC-TECNIC-1* i *PC-REPARAR* per clients Windows Pro (últimes versions) i fer que els dos primers pengin del *Domini*.
-# 4 Agost
+# Setmana 6
 ## Carpetes compartides
 A disc dur secundari del *SRV-AD* crearem una estructura de carpetes compartides.
 - Direcció: Tan sols accés el Cap.
@@ -159,7 +159,7 @@ A disc dur secundari del *SRV-AD* crearem una estructura de carpetes compartides
 El *Cap* ha de tenir accés total a totes les carpetes.
 
 Cal crear un accés directe al directori compartit general a l'escriptori de *PC-CAP* i *PC-TECNIC-1*.
-# 11 Agost
+# Setmana 7
 ## Perfils
 Cal afegir la funcionalitat de perfils mòbils per a tots els usuaris.  Les carpetes de perfils han d'estar desades al disc dur secundari del *SRV-AD*.
 ## Política de contrasenyes
@@ -178,7 +178,7 @@ Per tant redacteu la part de procediment de la política de contrasenyes seguint
 Implementeu una GPOs que faci que el fons de pantalla de tots els equips del domini sigui un fons de color blau amb el logo de l'empresa gran i centrat.
 ## Impressora compartida
 Finalment creeu una impressora compartida amb tot el personal de l'empresa al *SRV-AD* que permeti imprimir en PDFs i deixi les impressions a la carpeta compartida de *IMPRESSIONS*.
-# 18 Agost (CORRECCIÓ)
+# Setmana 8 (CORRECCIÓ)
 Cal tenir entregat tots els apartats des de l'última correcció fins a avui (GNS3->Impressora compartida).
 ## DNS
 Al DNS cal fer una entrada per a cada equip i servidor de la xarxa. Important que el *SRV-WEB* es digui *www*.
@@ -195,7 +195,7 @@ Cal configurar el *Router Mikrotik* per a que doni DHCP per les interfícies *VL
 Caldrà fer una reserva de IPs en e#l DHCP corresponent a *VLAN-INTERNA* per a respectar les IPs dels PCs que apareixen en el digrama de xarxa, així del *AP*.  Passeu tots els equips d'aquesta VLAN a DHCP i verifiqueu que reben les IPs que els hi pertoquen.
 
 En la *VLAN-TALLER* no cal fer reserva i també tots els equips d'aquest VLAN han d'anar per DHCP.
-# 25 Agost
+# Setmana 9
 ## Servidor web
 Substituïm el VPCS *SRV-WEB* per una màquina virtual amb Debian (última versió).  Aquí cal instal·lar un LAMP.  També instal·leu certificat digital per a funcionar per *HTTPS*.
 
@@ -210,7 +210,7 @@ Un cop creada aquesta estructura cal que configureu tres *virtualhosts*, un per 
 És **molt important** que feu també que tota connexió *HTTP* es redirigeixi de forma automàtica a *HTTPS*.
 ## Accés remot
 Instal·leu també al *SRV-WEB* el servidor *OPENSSH-SERVER* per accedir-hi de forma remota.  Feu que l'accés es pugui fer utilitzant certificats digitals per identificar l'usuari client (que no calgui password per accedir-hi, sinó que vagi amb certificats digitals).
-# 1 Setembre
+# Setmana 10
 ## HTML+CSS
 Crea una *landing page* amb HTML i CSS que contingui els apartats següents:
 - Introducció a l'empresa (que fem, etc).
@@ -226,7 +226,7 @@ A més, cal que:
 - Hi ha d'haver una serie de caixes (per exemple en presentar l'equip de persones) que ha d'estar feta en un *Flex Box* de forma que les caixes es redistribueixin depenent de la mida de la pantalla.
 - Cal seguir les indicacions donades a M8 respecte a un codi ben fet.
 Remarcar que en aquest apartat cal demostrar que s'hi han dedicat hores, tot aprofundint en aspectes tècnics i personalitzacions.
-# 8 Setembre
+# Setmana 11
 ## Wordpress
 Cal instal·lar el *wordpress* a la carpeta corresponent del *SRV-WEB* de manera que hi accedim per https://botiga.domini.cat/.
 
@@ -237,7 +237,7 @@ S'han de crear varis usuaris, un pel tècnic i un altre pel cap que tindràn per
 S'ha d'afegir un *plugin* per a *e-commerce* que converteixi el *wordpress* en una botiga virtual.  Allà hi configurarem varis productes, amb totes les seves característiques i la vestirem correctament.  Cal cuidar que la botiga virtual es vegi complerta, i s'hi pugui fer tot el procés (en la mesura del possible) de compra.
 
 De nou remarcar que en aquest apartat cal demostrar que s'hi han dedicat hores, tot aprofundint en configuracions i personalitzacions.
-# 15 Setembre (CORRECCIÓ)
+# Setmana 12 (CORRECCIÓ)
 Cal tenir entregat i documentat des de DNS fins Wordpress.
 ##  Moodle
 Cal instal·lar el *moodle* a la carpeta corresponent del *SRV-WEB* de manera que hi accedim per https://moodle.domini.cat/.
@@ -252,7 +252,7 @@ Cal crear 4 cursos de temàtiques relacionades amb l'empresa (p.e.: Curs bàsic 
 - Ha de contenir activitats de com a mínim 4 tipus diferents, totes elles ben configurades i treballades.
 - Ha de tenir usuaris assignats i s'ha de permetre l'accés a visitants.
 De nou remarcar que en aquest apartat cal demostrar que s'hi han dedicat hores, tot aprofundint en configuracions i personalitzacions.
-# 29 Setembre 
+# Setmana 13
 ## Còpies de seguretat
 Substituirem el *SRV-BACKUP* per una màquina virtual amb Debian (última versió).
 
@@ -271,7 +271,7 @@ En definitiva s'ha de fer un sistema de còpies igual al fet al treball de MP06-
 
 Teniu material de referència aquí:
 - https://lacetanica.cat/apunts//SMX/MP06/UF2/SMX-MP06-UF2-T_CopiesSeguretat.html
-# 6 Octubre
+# Setmana 14
 ## Tallafocs
 
 Teniu material de referència aquí:
@@ -286,7 +286,7 @@ Cal configurar un tallafocs de llistes blanques al *router Mikrotik*.  Les conne
 - Cal redirigir les connexions web entrants des de Internet cap al servidor web DMZ.
 - Cal permetre al *SRV-BACKUP* accedir per *ssh* al *SRV-WEB*.
 Qualsevol altre connexió no ha d'estar permesa.  Cal remarcar que si afegiu serveis més enllà d'aquesta guia caldrà modificar el tallafocs en conseqüència.
-# 13 Octubre
+# Setmana 15
 ## Programació
 Cal crear un programa amb *Python* que guardi informació sobre l'estoc de material a magatzem.  Les funcionalitats que ha de tenir són:
 - Guardar l'estoc actual en un arxiu de text que faci les funcions de base de dades.
@@ -298,7 +298,7 @@ Cal crear un programa amb *Python* que guardi informació sobre l'estoc de mater
 - Permetre llistat els articles amb estoc 0.
 - Permetre llistat els articles amb menys de estoc X, on X es demanarà de forma interactiva a l'usuari.
 Aquest programa es valorarà la funcionalitat com sobretot el bon ús del codi i funcions.  Seguiu les pautes vistes a programació.
-# 27 Octubre (CORRECCIÓ)
+# Setmana 16 (CORRECCIÓ)
 Cal tenir entregat des de Moodle fins al final de treball, junt amb tots els apartats extres que volgueu afegir.  Aquesta serà l'última correcció.
 ## Documentació
 Cal rematar la documentació, verificant sobretot estructura, estil i faltes.  Quan estigui finalitzada, i abans de la data màxima d'entrega, cal exportar-la a PDF i deixar-l'ho a la carpeta compartida del projecte.
@@ -306,3 +306,6 @@ Cal rematar la documentació, verificant sobretot estructura, estil i faltes.  Q
 Crear una presentació amb l'eina que trieu per a fer la defensa del projecte.  En aquesta defensa caldrà fer una breu introducció a l'empresa des del punt de vista de donar-se a conèixer i a partir d'aquí explicar els aspectes tècnics de la seva implementació preferiblement fent demostracions de com s'han configurat el elements i demostrant el seu bon funcionament.
 
 Aquesta presentació ha de durar aproximadament 30 minuts, després farem 15 minuts de preguntes i finalment el tribunal debatrà la nota durant 15 minuts més.
+
+# Setmana 17
+Entrega final fent la defensa del projecte davant un petit tribunal.
