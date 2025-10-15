@@ -19,4 +19,9 @@
 - [Vídeo Política de Còpies de Seguretat](https://www.youtube.com/watch?v=uDvMSi9DuNY)
 - [[IC10/0226/RA2/IC10-0226-RA2-T_CopiesSeguretat\| Treball de Còpies de Seguretat]]
 - [Vídeo Treball de Còpies de Seguretat](https://www.youtube.com/watch?v=MlTkwqA-Faw)
- 
+
+# RA5
+- [[IC10-0226-RA5-Disseny Segur i Seguretat Perimetral \| Disseny segur i seguretat perimetral]]
+- [Vídeo Disseny segur i seguretat perimetral](https://www.youtube.com/watch?v=vzWH2HwZwZo&feature=youtu.be)
+- [[IC10-0226-RA5-Tallafocs \| Tallafocs]]
+- [[IC10-0226-RA5-Mikrotik - Securització 101 \| Mikrotik - Securització 101]]
