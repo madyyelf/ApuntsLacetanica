@@ -4,6 +4,7 @@
 
 # RA1
 - [[IC10-0226-RA1-Gestió de permisos \| Gestió de permisos]]
+- [[IC10-RA1-TREBALL Implementar política de contrasenyes a Linux \| TREBALL Implementació política de contrasenyes a Linux]]
 - [[IC10/0226/RA1/IC10-0226-RA1-SAIs\| SAI]]
 
 # RA2
