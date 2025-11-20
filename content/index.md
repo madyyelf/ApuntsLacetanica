@@ -2,7 +2,13 @@
 {"publish":true,"title":"Apunts Lacetànica","cssclasses":""}
 ---
 
- Web amb apunts per als mòduls que imparteixo.
+Aquest document i tots els seus subdocuments es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)**
+
+**2025 Raul Gimenez Herrada**
+(raul.gimenez@lacetania.cat)
+
+Si creus que t'és útil i sents la necessitat d'agrair-ho [convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
+
 # (IC10) Sistemes Microinformàtics i Xarxes
 
 - [[IC10/0226/(0226) Seguretat Informàtica\| (0226) Seguretat Informàtica]]
