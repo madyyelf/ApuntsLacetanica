@@ -256,3 +256,5 @@ Recursos per repassar els conceptes de M2 i cerca ajuda de forma autònoma:
 - [LinuxTotal](https://www.linuxtotal.com.mx/index.php?cont=info_admon_021): Tutorial de com utilitzar `mysqldump`.
 - [ubunlog](https://ubunlog.com/date-comando-conceptos-opciones-basicos/): Exemples d'ús de la comanda `date`, però no hi ha com aniuar-la amb els accents oberts.
 - [StackExchange](https://unix.stackexchange.com/questions/194863/delete-files-older-than-x-days): Com eliminar arxius més antics que X dies amb la comanda `find`.
+# Flipped Class
+![Treball de còpies de seguretat](https://www.youtube.com/watch?v=MlTkwqA-Faw)
