@@ -115,3 +115,5 @@ Amb tot el que hem vist, cal temporitzar les còpies.  Una típica per històri
 Tant les diferencials com incrementals no es poden sobreescriure.
 
 ---
+# Flipped Class
+![Flipped Class Política de còpies de seguretat](https://www.youtube.com/watch?v=uDvMSi9DuNY&feature=youtu.be)

@@ -128,3 +128,7 @@ Permet recuperar la informació d'un disc en cas de fallida, verificar integrita
 #### Característiques RAID 0+1
 
 Iguals al RAID 1+0
+
+---
+# Flipped Class
+![Flipped Class - RAIDs](https://www.youtube.com/watch?v=NJ-k4j8osPg&feature=youtu.be)

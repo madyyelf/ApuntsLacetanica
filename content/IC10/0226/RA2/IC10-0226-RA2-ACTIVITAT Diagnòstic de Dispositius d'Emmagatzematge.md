@@ -64,3 +64,7 @@ L’activitat es valorarà mitjançant un test, tant a nivell de continguts teò
     - [https://www.youtube.com/watch?v=bL_X3OZh0zw](https://www.youtube.com/watch?v=bL_X3OZh0zw)
     - [https://androidpc.es/blog/2014/01/06/comprueba-el-estado-y-rendimiento-de-tu-disco-duro/](https://androidpc.es/blog/2014/01/06/comprueba-el-estado-y-rendimiento-de-tu-disco-duro/)
     - [https://es.wikipedia.org/wiki/S.M.A.R.T](https://es.wikipedia.org/wiki/S.M.A.R.T).
+
+---
+# Flipped Class
+![Flipped Class Diagnòstic de dispositius d'emmagatzematge](https://www.youtube.com/watch?v=uUC0eKNpeJM&feature=youtu.be)
