@@ -110,3 +110,7 @@ Tot element o zona que estigui en contacte amb elements aliens a l'empresa.
 - Avanç en la disciplina
 - Insiders
 - Evació del perímetre
+
+---
+# Flipped Class
+![Flipped Class Disseny segur i Seguretat perimetral](https://www.youtube.com/watch?v=vzWH2HwZwZo)
