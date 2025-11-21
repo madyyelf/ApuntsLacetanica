@@ -25,7 +25,8 @@
 - [[IC10-0226-RA3-Detecció i monitoratge \| Detecció i monitoratge]]
 - [[IC10/0226/RA3/IC10-0226-RA3-Activitat-OSSEC\| Activitat: OSSEC]]
 - [[IC10/0226/RA3/IC10-0226-RA3-SOC\| Security Operation Center]]
-- [[IC10-0226-RA3-Com reaccionar davant una intrussió \| Com reaccionar davant una intrussió]]
+- [[IC10-0226-RA3-Com reaccionar davant una intrussió \| Com reaccionar davant una intrusió]]
+- [[IC10-0226-RA3-Activitat-Analitzar les cyberatacs en temps real \| Activitat: Analitzar els cyberatacs en temps real]].
 
 ## RA5
 - [[IC10-0226-RA5-Disseny Segur i Seguretat Perimetral \| Disseny segur i seguretat perimetral]]
