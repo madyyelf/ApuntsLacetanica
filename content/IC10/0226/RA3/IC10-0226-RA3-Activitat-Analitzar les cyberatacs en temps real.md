@@ -8,7 +8,7 @@ Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA
 **2025 Raul Gimenez Herrada**
 (raul.gimenez@lacetania.cat)
 
-[Ko-Fi Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
+[![[Meta/Plantilles/buymeacoffee.png]]](https://ko-fi.com/raulgimenezherrada)
 
 ---
 # ACTIVITAT: Analitzar els cyberatacs en temps real
@@ -76,6 +76,10 @@ can't resolve hostname (  ))
 1	27.71.229.14	(VN, Vietnam)
 ```
 
+Coses que poden ser interessants d'analitzar:
+- Paisos i geopolítica.
+- Màquines compromeses o atacs directes?
+- Reputació de IPs.
 #### Usuaris i passwords utilitzats
 Usuaris:
 ```
@@ -835,7 +839,11 @@ Contrasenyes:
       1 1q2w3e
       1 128tRoutes
 ```
-      
+
+Coses interessants a analitzar:
+- Llistats utilitzats reals (i per tant amb números de funcionar).
+- Tecnologies que s'estan apuntant, trending.
+
 #### Clients
 ```
    1354 SSH-2.0-Go
@@ -847,6 +855,9 @@ Contrasenyes:
       1 SSH-2.0-libssh_0.9.3
 ```
 
+Coses interessants a analitzar:
+- Llibreries i llenguatges més utilitzats.
+- Son bots o és un atac manual?
 #### Comandes executades
 
 ```
@@ -880,3 +891,9 @@ uname -r | awk '{printf $1}'
 uname -s -v -n -r -m
 uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
 ```
+
+Coses interessants a analitzar:
+- Comandes i eines utilitzades.
+- Motivació dels atacants.
+- Primers passos després d'entrar.
+- Aplicacions descarregades.
