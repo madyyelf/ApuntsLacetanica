@@ -16,7 +16,7 @@ Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA
 ## Mapes en temps real
 Actualment hi han varies empreses, principalment proveïdors d'antivirus i solucions de seguretat, que publiquen en temps real els atacs que detecten.
 
-Analitza els que mostra [Kaspersky](https://cybermap.kaspersky.com/), també en el apartat d'[estadístiques](https://cybermap.kaspersky.com/es/stats), i reflexiona sobre varis punts:
+Analitza els que mostra [Kaspersky](https://cybermap.kaspersky.com/), també en el apartat d'[estadístiques](https://cybermap.kaspersky.com/stats), i reflexiona sobre varis punts:
 
 -  Com saben els atacs que s'estan donant en temps real?    
 -  Pq hi han països amb més cyberatacs? Quins son?    
