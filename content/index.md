@@ -7,7 +7,7 @@ Aquest document i tots els seus subdocuments es publica sota llicència **[Creat
 **2025 Raul Gimenez Herrada**
 (raul.gimenez@lacetania.cat)
 
-Si creus que t'és útil i sents la necessitat d'agrair-ho [convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
+[![[Meta/Plantilles/buymeacoffee.png]]](https://ko-fi.com/raulgimenezherrada)
 
 # (IC10) Sistemes Microinformàtics i Xarxes
 
