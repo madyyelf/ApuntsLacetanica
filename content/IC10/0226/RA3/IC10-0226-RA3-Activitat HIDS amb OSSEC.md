@@ -13,23 +13,16 @@ Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA
 ---
 # IC10-0226-RA3 Activitat HIDS amb OSSEC
 
-## Índex
-
-- [1. Instal·lació de OSSEC](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF4/SMX-MP06-UF4-OSSEC.html#org7d32595)
-- [2. Inicialitzar OSSEC](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF4/SMX-MP06-UF4-OSSEC.html#org3694ac7)
-- [3. Verificació del funcionament](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF4/SMX-MP06-UF4-OSSEC.html#org417fe2e)
-- [4. Webgrafia](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF4/SMX-MP06-UF4-OSSEC.html#org91d3fe5)
-
 Algunes de les característiques de OSSEC:
 
-> - Active response- responds to attacks in real time using various mechanisms.
-> - Rootkit and malware detection
-> - Log based intrusion detection- it monitors and analyses data in real time.
-> - System inventory-collects the system’s information such as the software, hardware network services e.t.c
-> - File integrity monitoring(FIM)- maintains forensic copy of the data as it changes.
-> - Compliance auditing- it audits the system and application for compliance with common standards such as PCI-DSS and CIS benchmarks.
+- Active response- responds to attacks in real time using various mechanisms.
+- Rootkit and malware detection
+- Log based intrusion detection- it monitors and analyses data in real time.
+- System inventory-collects the system’s information such as the software, hardware network services e.t.c
+- File integrity monitoring(FIM)- maintains forensic copy of the data as it changes.
+- Compliance auditing- it audits the system and application for compliance with common standards such as PCI-DSS and CIS benchmarks.
 
-## 1. Instal·lació de OSSEC
+## Instal·lació de OSSEC
 
 Actaulització del sistema
 
@@ -89,7 +82,7 @@ Un cop tot instal·lat, ens dona missatge de finalització junt amb instruccions
 
 ![[IC10/0226/RA3/OSSEC_Finalitzacio.png]]
 
-## 2. Inicialitzar OSSEC
+## Inicialitzar OSSEC
 
 /var/ossec/bin/ossec-control start
 
@@ -97,7 +90,7 @@ Podem veure les alertes de forma manual al directori
 
 cat /var/ossec/logs/alerts/alerts.log
 
-## 3. Verificació del funcionament
+## Verificació del funcionament
 
 Per verificar el bon funcionament de OSSEC farem, des d'un altre màquina un SSH tot equivocant-nos d'usuari i/o contrasenya. Un cop fet veurem que la reacció de OSSEC ha bloquejar la IP mitjançant `iptables` (recordeu que ho podem veure amb la comanda `iptables -S`) i generar una alerta que trobarem a `/var/ossec/logs/alerts/alerts.log`.
 
@@ -105,7 +98,9 @@ Per verificar el bon funcionament de OSSEC farem, des d'un altre màquina un SSH
 
 ![[IC10/0226/RA3/OSSEC_AlertaSSH.png]]
 
-## 4. Webgrafia
+# Webgrafia
 
 - [https://techviewleo.com/install-and-configure-ossec-hids-agent-on-debian/](https://techviewleo.com/install-and-configure-ossec-hids-agent-on-debian/)
 - [https://github.com/ossec/ossec-hids/issues/2039](https://github.com/ossec/ossec-hids/issues/2039)
+# Flipped class
+![Flipped Class](https://www.youtube.com/watch?v=8qksSowfS1k)
