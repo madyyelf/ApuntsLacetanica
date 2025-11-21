@@ -18,6 +18,9 @@
 - [[IC10-0226-RA2-ACTIVITAT Diagnòstic de Dispositius d'Emmagatzematge \| ACTIVITAT Diagnòstic de dispositius d'emmagatzematge]]
 - [[IC10-0226-RA2-Política de còpies de seguretat \| Política de Còpies de Seguretat]]
 - [[IC10/0226/RA2/IC10-0226-RA2-T_CopiesSeguretat\| Treball de Còpies de Seguretat]]
+# RA3
+- [[IC10/0226/RA3/IC10-0226-RA3-Detecció i monitoratge]]
+- [[IC10/0226/RA3/IC10-0226-RA3-Activitat-OSSEC]]
 
 
 # RA5
