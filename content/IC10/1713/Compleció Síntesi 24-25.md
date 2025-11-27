@@ -89,7 +89,7 @@ Aquí especificarem les IPs dels equips amb IP fixa.
 ### GNS3
 Heu de reproduir la següent xarxa  a GNS3 i plasmar tota la informació tècnica de les taules anterior de forma que tan sols amb el plànol lògic ja es pugui saber tot.
 
-![[Projectes/Mentor/Curs 25-26/gns3-complecio.png]]
+![[IC10/1713/gns3-complecio.png]]
 
 ## Plànol físic
 Utilitzant el següent plànol de base, distribuïu els espais per usos i determineu on va cada element de xarxa del plànol lògic.  Un fet això, marqueu per on passaran les canaletes de cablejat de xarxa, marqueu les tomes de xarxa i assigneu-hi un codi que identifiqui el *patch pannel* i rosseta on van a parar en el rack.  Al *TALLER* afegiu vàries rossetes de xarxa, per a connectar-hi els PCs a reparar, encara que no hi hagin PCs.
