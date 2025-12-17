@@ -20,11 +20,8 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 - Grau d'anonimat.
 ---
 # Tipus de Xarxes
-- SurfaceWeb (4%): Accessible desde navegadors.
-- DeepWeb (90%): Accessible amb credencials.
-- DarkWeb (6%): Accessible amb programari especial i/o configuracions.
 
-[IMATGE WEB](https://www.computerweekly.com/rms/onlineimages/whatis-dark_web_mobile.png)
+![IMATGE WEB](https://www.computerweekly.com/rms/onlineimages/whatis-dark_web_mobile.png)
 
 ---
 # DarkWeb
@@ -50,7 +47,7 @@ Les més conegudes:
 ### Tor: Vulnerable
 - Tor no és tant anònim com sembla.
 - DNS
-[Esquema de funcionament](https://upload.wikimedia.org/wikipedia/commons/1/14/Wat_is_Tor_%28The_onion_routing%29%3F.png)
+![Esquema de funcionament](https://upload.wikimedia.org/wikipedia/commons/1/14/Wat_is_Tor_%28The_onion_routing%29%3F.png)
 [Enpaquetat de la info](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXbt_SICFBYcb2aFg-SuaBA099EpZAI7S7Q&s)
 
 ---

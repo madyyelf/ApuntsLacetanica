@@ -1,5 +1,5 @@
 ---
-{"publish":true,"tags":["#next","smx","mentor","smx/1713","ic10/1713","apunts"],"cssclasses":""}
+{"publish":true,"tags":["smx","mentor","smx/1713","ic10/1713","apunts","done"],"cssclasses":""}
 ---
 
 # Visió del projecte Learnwise
