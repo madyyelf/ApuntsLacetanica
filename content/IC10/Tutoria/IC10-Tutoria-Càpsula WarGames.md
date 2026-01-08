@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Càpsula Google","tags":["apunts","ic10/tutoria"],"cssclasses":""}
+{"publish":true,"title":"Càpsula WarGames","tags":["apunts","ic10/tutoria"],"cssclasses":""}
 ---
 
 # Llicència

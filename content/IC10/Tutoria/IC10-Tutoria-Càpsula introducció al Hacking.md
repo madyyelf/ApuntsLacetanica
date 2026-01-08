@@ -1,5 +1,5 @@
 ---
-{"publish":true,"tags":["apunts"],"cssclasses":""}
+{"publish":true,"title":"Introducció al Hacking","tags":["apunts"],"cssclasses":""}
 ---
 
 # Llicència
