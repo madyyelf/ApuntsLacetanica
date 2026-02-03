@@ -14,6 +14,8 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 ---
 # Mikrotik - Securització 101
+1. Descarregar la [OVA de Mikrotik](https://download.mikrotik.com/routeros/7.20.8/chr-7.20.8.ova) i importar-la a *VirtuaBox*.
+2. Afegir interfícies de xarxa 2, 3 i 4, per ara sense configurar.
 ## Motivació
 
 Quan instal·lem un nou equipament, com un enrutador, cal assegurar-nos des del primer moment que l'hi **apliquem unes mínimes mesures de seguretat**. És especialment **important** en equipaments que formin part de la **xarxa perimetral** i la recomanació és **assegurar-los abans de connectar-los a Internet** per evitar que puguin ser atacats abans de que els tinguem configurats.
