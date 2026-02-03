@@ -34,12 +34,15 @@ Per tant, **abans de connectar el router a Internet** cal configurar alguns aspe
 
 El primer pas és gestionar correctament els usuaris que poden accedir al _Mikrotik_.
 
+Recordeu que a *Mikrotik* l'usuari per defecte és `admin` sense password.
+
 #### Crear nou usuari administrador
 
 Al crear un nou usuari, dificultem la tasca dels atacants, ja que han d'esbrinar tant l'usuari del sistema com la contrasenya.
 ```
 /user add name=rgimenezh password=L4c3t4n14! group=full
 ```
+A més del usuari indicat, creeu un nou usuari per vosaltres!
 #### Eliminar usuari `admin`
 
 En eliminar l'usuari `admin` (l'usuari per defecte) estem impedint que puguin utilitzar l'únic usuari que a priori un atacant pot conèixer d'avant-mà.
