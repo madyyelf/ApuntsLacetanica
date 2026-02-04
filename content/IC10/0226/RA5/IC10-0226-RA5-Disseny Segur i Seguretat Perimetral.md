@@ -95,12 +95,12 @@ Tot element o zona que estigui en contacte amb elements aliens a l'empresa.
 ---
 ### Estructura 1
 
-[Estructura DMZ 1](https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Screenshots/dmz-network-diagram-1.png)
+![Estructura DMZ 1](https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Screenshots/dmz-network-diagram-1.png)
 
 ---
 ### Estructura 2
 
-[Estructura DMZ 2](https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Screenshots/dmz-network-diagram-2.png)
+![Estructura DMZ 2](https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Screenshots/dmz-network-diagram-2.png)
 
 ---
 ## Tot i assegurar el perímetre
