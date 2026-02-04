@@ -29,6 +29,6 @@
 - [[IC10-0226-RA3-Activitat-Analitzar les cyberatacs en temps real \| Activitat: Analitzar els cyberatacs en temps real]].
 
 ## RA5
-- [[IC10-0226-RA5-Disseny Segur i Seguretat Perimetral \| Disseny segur i seguretat perimetral]]
-- [[IC10-0226-RA5-Tallafocs \| Tallafocs]]
-- [[IC10-0226-RA5-Mikrotik - Securització 101 \| Mikrotik - Securització 101]]
+- [[IC10/0226/RA4/IC10-0226-RA4-Disseny Segur i Seguretat Perimetral\| Disseny segur i seguretat perimetral]]
+- [[IC10/0226/RA4/IC10-0226-RA4-Tallafocs\| Tallafocs]]
+- [[IC10/0226/RA4/IC10-0226-RA4-Mikrotik - Securització 101\| Mikrotik - Securització 101]]
