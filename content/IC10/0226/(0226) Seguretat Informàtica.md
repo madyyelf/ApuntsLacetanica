@@ -28,7 +28,8 @@
 - [[IC10-0226-RA3-Com reaccionar davant una intrussió \| Com reaccionar davant una intrusió]]
 - [[IC10-0226-RA3-Activitat-Analitzar les cyberatacs en temps real \| Activitat: Analitzar els cyberatacs en temps real]].
 
-## RA5
+## RA4
 - [[IC10/0226/RA4/IC10-0226-RA4-Disseny Segur i Seguretat Perimetral\| Disseny segur i seguretat perimetral]]
 - [[IC10/0226/RA4/IC10-0226-RA4-Tallafocs\| Tallafocs]]
 - [[IC10/0226/RA4/IC10-0226-RA4-Mikrotik - Securització 101\| Mikrotik - Securització 101]]
+- [[IC10-0226-RA4-Mikrotik DMZ \| Mikrotik DMZ]]
