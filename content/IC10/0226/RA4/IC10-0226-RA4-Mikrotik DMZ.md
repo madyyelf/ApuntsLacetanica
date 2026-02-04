@@ -16,50 +16,52 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 # Muntatge
 Igual que faríem en una xarxa real, primer de tot assegurarem el router Mikrotik seguint el [[IC10-0226-RA4-Mikrotik - Securització 101 \| document anterior]] i després començarem a muntar l'estructura de la xarxa.
 
-La idea final del treball amb tallafocs és que acabeu amb l'estructura típicament utilitzada a les empreses de una DMZ per a serveis externs i com a mínim una subxarxa per als equips de producció.
+La idea final del treball és que acabeu amb l'estructura típicament utilitzada a les empreses de una DMZ per a serveis externs i com a mínim una subxarxa per als equips de producció.
 
 ![[IC10/0226/RA4/winbox.png]]
 
-Fixeu-vos que en acabar, i de cara el projecte final de síntesi, tan sols caldría afegir les noves VMs que munteu dins de la subxarxa corresponent, i com molt, afegir alguna nova subxarxa depenent del projecte (xarxes wifi, de convidats, de reparació, etc).
+Aquest és un esquema molt bàsic a partir del qual podem créixer a com a xarxa, creant una subxarxa de servidors interns, afegint *Access Points*, subxarxes per finalitats concretes com per exemple taller informàtic, etc.
 
-## OVAs
+## Equips Host
+Podeu crear dos *màquines virtuals* noves, una que contingui un servidor web (afegiu una web personalitzada, tan sols HTML) i un client que pot ser un Debian amb entorn gràfic per a que ocupi menys espai.  Si no voleu crear les màquines, aquí us facilito un parell de OVAs ja fetes (tot i que desactualitzades). 
 - [Servidor Web (Xarxa DMZ)](https://drive.google.com/file/d/19Y5heiovU5Eujz1VugDzA7HlwwfAzttv/view?usp=drive_link).
 - [Debian Client GUI (Xarxa Interna)](https://drive.google.com/file/d/1QW6Z2HJgWe9SM1r9DzDbEMlDJW6jnnB-/view?usp=drive_link).
 
-## Treballant de forma real
+## Switchos i xarxa física
+Un cop fet això haurem de simular els dos *switchos*, si ho feu amb GNS3 ja sabeu com fer-ho.  A *VirtualBox*, a la màquina del router *Miktorik* anirem al mení `Xarxa->Adaptador 2-> Attached To` i triarem `Xarxa Interna`, a la opció `Name` hi configurarem `DMZ`.  Això el que crea és un "*switch*" virtual on totes les màquines que configurem d'aquesta forma l'adaptador de xarxa estaràn virtualment conectades entre si.
 
-Per treballar de forma real, hem de ser conscient que no podríem "obrir un terminal" al router _Mikrotik_, per tant simularem amb la _appliance_ de _Winbox_ (la trobareu als repositoris oficials) que ens connectem al router mitjançant un portàtil amb _Winbox_ i des d'aquí treballarem les configuracions del mateix.
+Repetirem l'operació per al `Adaptador 3` i en aquest cas el nom de la xarxa serà `INTERNA`.
 
-Un cop afegida la _appliance_ de _Winbox_, amb botó dret aneu a `Edit Config` i configureu una IP dins del rang de la vostra aula.
+Ara farem el mateix amb les màquines virtuals del `SRV-WEB` , connectant-lo al *switch* de la `DMZ`i la màquina `DEBIAN-CLIENT` connectant-la al *switch* de `INTERNA`.
 
-Connecteu el _Winbox_ a la interfície `eth8` del _Mikrotik_ que serà la que reservarem per connexions administratives, i intenteu connectar-vos per MAC.
+Un cop fet això ja tindrem la part física de l'esquema de xarxa que hem planificat a l'imatge inicial de l'activitat.  Ens queda configurar les xarxes de tots els equips per a que es vegin entre ells.
+# Treballant de forma real
+
+Per treballar de forma real, hem de ser conscient que no podríem "obrir un terminal" al router _Mikrotik_, per tant simularem una última màquina virtual (podeu utilitzar qualsevol) on simularem el portàtil del administrador que gestiona el router mitjançant un port d'administració `ether8`.   Si el vostre ordinador no suporta bé quatre màquines virtuals funcionant, utilitzeu la interfície gràfica del propi router, tot i que cal deixar clar que en la realitat això no es pot fer.
+
+Un cop tingueu aquest PC amb `winbox`, busqueu el router per `MAC` i connecteu-vos.  Fixeu-vos que treballant per `MAC`no ens cal configurar cap mena de `IP`ni al router ni al PC que conté `winbox`.
 ## Xarxa externa
 
 Aquesta és la subxarxa que simularà Internet i la connexió amb el nostre ISP.
 
-- Al `eth1` del _Mikrotik_.
+- Primer interfície de `Virtual Box` configurada com `Adaptador Pont`.
+- Al `ether5` (el del numeral més baix) del _Mikrotik_.
 - IP estàtica dins del vostre rang (en el meu cas `10.50.13.31/16`) i la _gateway_ corresponent (en el meu cas `10.50.0.1`).
-- Connectat al _núvol_.
-
 ## Xarxa DMZ
-
 Aquí hi connectarem els servidors que donin serveis externs, com el _email_ o _pàgina web_.
 
-- Al `eth2` del _Mikrotik_.
+- A `Virtual Box`  del `Mikrotik` ha de ser la segona interfície, configurada com a `Xarxa Interna` i nom de xarxa `DMZ`.
+- Al `ether6` (el segon més baix) del `Mikrotik`.
 - IP estàtica: `192.168.1.1/24`.
-- Connectat a un _switch_.
-- Al _switch_ també connectar VM _Servidor WEB_ (OVA).
-- Configurar xarxa _Servidor WEB_ amb `192.168.1.10/24` i _gateway_ `192.168.1.1`.
+- Configurar xarxa de la màquina `SRV-WEB` amb `192.168.1.10/24` i _gateway_ `192.168.1.1`.  Al seu `Virtual Box` ha de tenir la primera interfície configurada com a `Xarxa Interna` i nom de xarxa `DMZ`.
 
 ## Xarxa Interna
-
 Aquí hi connectarem tots els equips de treball de l'empresa, com per exemple _estacions de treball_, _impressores_, _Servidor de Active Directory_, _Servidors d'arxius_, etc.
 
-- Al `eth3` del _Mikrotik_.
+ A `Virtual Box`  del `Mikrotik` ha de ser la tercera interfície, configurada com a `Xarxa Interna` i nom de xarxa `INTERNA`.
+- Al `ether7` (el segon més baix) del `Mikrotik`.
 - IP estàtica: `192.168.2.1/24`.
-- Connectat a un _switch_.
-- Al _switch_ també connectar VM _Client Debina GUI_ (OVA).
-- Configurar xarxa del _Client Debian GUI_ amb IP `192.168.2.10/24` i _gateway_ `192.168.2.1`.
+- Configurar xarxa de la màquina `SRV-WEB` amb `192.168.2.10/24` i _gateway_ `192.168.1.1`.  Al seu `Virtual Box` ha de tenir la primera interfície configurada com a `Xarxa Interna` i nom de xarxa `INTERNA`.
 
 # Verificacions
 
