@@ -79,7 +79,7 @@ Listing 1: Comanda per llistar els serveis que ofereix el router Mikrotik.
 ```
 ### Accés per MAC
 ```
-/interface list add name=admin
+/interface list add name=ADMIN
 /interface list member add list=ADMIN interface=ether8
 /tool mac-server set allowed-interface-list=ADMIN
 /tool mac-server mac-winbox set allowed-interface-list=ADMIN
