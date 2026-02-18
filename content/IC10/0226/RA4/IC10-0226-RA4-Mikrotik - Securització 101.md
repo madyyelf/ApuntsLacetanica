@@ -53,7 +53,7 @@ En eliminar l'usuari `admin` (l'usuari per defecte) estem impedint que puguin ut
 
 Si restringim des de quines IPs pot fer login un usuari al _Mikrotik_, ens assegurem que tan sols es pugui entrar des de màquines concretes (administrador) o xarxes concretes (xarxa d'administradors). Impedirem doncs connexions des de l'exterior i fins i tot, en el cas d'un atac amb origen intern, des de xarxes pròpies no tan confiables.
 ```
-/user set rgimenezh address = 192.168.0.2
+/user set rgimenezh address = 10.50.13.0/24
 ```
 ### Serveis
 
