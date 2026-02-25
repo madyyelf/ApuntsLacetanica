@@ -34,3 +34,4 @@
 - [[IC10/0226/RA4/IC10-0226-RA4-Mikrotik - Securització 101\| Mikrotik - Securització 101]]
 - [[IC10-0226-RA4-Mikrotik DMZ \| Mikrotik DMZ]]
 - [[IC10-0226-RA4-Tallafocs a Mikrotik \| Tallafocs a Mikrotik]]
+- [[IC10-0226-RA4-Mikrotik Llistes Negres \| Mikrotik - Llistes negres]]
