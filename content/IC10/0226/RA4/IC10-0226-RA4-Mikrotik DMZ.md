@@ -57,6 +57,7 @@ Aquí hi connectarem els servidors que donin serveis externs, com el _email_ o _
 - IP estàtica: `192.168.1.1/24`.
 - Configurar xarxa de la màquina `SRV-WEB` amb `192.168.1.10/24` i _gateway_ `192.168.1.1`.  Al seu `Virtual Box` ha de tenir la primera interfície configurada com a `Xarxa Interna` i nom de xarxa `DMZ`.
 
+Recordeu que per assignar un IP a una interfície cal utilitzar una comanda semblant a : `ip address add address=192.168.1.1/24 interface=ether6 comment="DMZ"`
 ## Xarxa Interna
 Aquí hi connectarem tots els equips de treball de l'empresa, com per exemple _estacions de treball_, _impressores_, _Servidor de Active Directory_, _Servidors d'arxius_, etc.
 
@@ -64,6 +65,7 @@ Aquí hi connectarem tots els equips de treball de l'empresa, com per exemple _e
 - Al `ether7` (el segon més baix) del `Mikrotik`.
 - IP estàtica: `192.168.2.1/24`.
 - Configurar xarxa de la màquina `SRV-WEB` amb `192.168.2.10/24` i _gateway_ `192.168.1.1`.  Al seu `Virtual Box` ha de tenir la primera interfície configurada com a `Xarxa Interna` i nom de xarxa `INTERNA`.
+Recordeu que per assignar un IP a una interfície cal utilitzar una comanda semblant a : `ip address add address=192.168.2.1/24 interface=ether7 comment="Interna"`
 # Dotar d'Internet a tota la xarxa
 Per donar connectivitat a Internet a tota la xarxa haurem de fer dues passes.
 ## Gateway al router
