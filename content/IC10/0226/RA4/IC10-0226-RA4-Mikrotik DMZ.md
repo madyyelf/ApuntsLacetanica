@@ -62,7 +62,14 @@ Aquí hi connectarem tots els equips de treball de l'empresa, com per exemple _e
 - Al `ether7` (el segon més baix) del `Mikrotik`.
 - IP estàtica: `192.168.2.1/24`.
 - Configurar xarxa de la màquina `SRV-WEB` amb `192.168.2.10/24` i _gateway_ `192.168.1.1`.  Al seu `Virtual Box` ha de tenir la primera interfície configurada com a `Xarxa Interna` i nom de xarxa `INTERNA`.
-
+# Dotar d'Internet a tota la xarxa
+Per donar connectivitat a Internet a tota la xarxa haurem de fer dues passes.
+## Gateway al router
+Primer de tot cal establir la ruta per defecte del router, cap al router de l'institut amb la comanda `ip route add dst-address=0.0.0.0.0/0 gateway=10.50.0.1`. Heu de substituir `10.50.0.1`per la gateway corresponent a la vostra aula.
+## SRC-NAT
+Cal també fer que el router modifiqui la IP d'origen dels paquets provinents de les xarxes internes i que surten cap a Internet.  Això ho aconseguim així:
+`ip firewall nat add chain=srcnat out-interface=ether5 action=masquerade`
+Com en els passos anteirors caldrà que modifiqueu la `out-interface`per la corresponent en el vostre router que connecta amb la xarxa de l'aula.
 # Verificacions
 
 Cal verificar la connectivitat entre elements de la mateixa xarxa. Per tant des del Mikrotik haurem de fer ping
@@ -70,3 +77,4 @@ Cal verificar la connectivitat entre elements de la mateixa xarxa. Per tant des 
 - `ping 8.8.8.8` per verificar connexió amb Internet i xarxa local del centre. Si falla repassar configuració `eth1`.
 - `ping 192.168.1.10` per verificar connexió xarxa DMZ. Si falla repassar configuració `eth2`.
 - `ping 192.168.2.10` per verificar connexió xarxa DMZ. Si falla repassar configuració `eth3`.
+- `ping 8.8.8.8` desde qualsevol màquina de la xarxa (servidor web o client).
