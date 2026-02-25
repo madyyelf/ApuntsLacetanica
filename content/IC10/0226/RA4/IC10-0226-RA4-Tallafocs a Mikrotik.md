@@ -34,15 +34,15 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 Les cadenes són els punts on podem intervenir, i tocarem:
 - **INPUT**: Paquets que van dirigits (IP destí) al tallafocs (router).
 - **OUTPUT**: Paquets que es generen (IP origen) al tallafocs (router).
-- **FORWARD**: Paquets que passen (Ni la IP d'origen ni destí són el tallacos) per el tallafocs (router).
+- **FORWARD**: Paquets que passen (Ni la IP d'origen ni destí són el tallafocs) per el tallafocs (router).
 - **PREROUTING** : Paquets que entren, just abans de processar-los.
 - **POSTROUTING**: Paquets just abans d'alliberar-los a la xarxa.
 
 ---
 ## Taules
 Les taules són agrupacions de regles per "temàtica d'accions".
-- **FILTER**: Per filtrar paquets (decidir què pasa i què no).
-- **NAT**: Modificar capçaleres dels paquets (noslament IP/Port origen/destí).
+- **FILTER**: Per filtrar paquets (decidir què passa i què no).
+- **NAT**: Modificar capçaleres dels paquets (normalment IP/Port origen/destí).
 ---
 ## Accions
 
@@ -55,7 +55,7 @@ Les accions són, un cop seleccionat un paquet, què farem amb ell:
 ---
 # Estructura de les regles
 Les regles les definirem seguint sempre un patró semblant a:
-`ip firewall <taula> chain=<caden> <opcions de filtratge de paquet> action=<acció> comment=<comentaris>
+`ip firewall <taula> add chain=<cadena> <opcions de filtratge de paquet> action=<acció> comment=<comentaris>
 
 ---
 # Bones pràctiques
