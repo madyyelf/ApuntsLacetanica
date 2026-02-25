@@ -47,6 +47,8 @@ Aquesta és la subxarxa que simularà Internet i la connexió amb el nostre ISP.
 - Primer interfície de `Virtual Box` configurada com `Adaptador Pont`.
 - Al `ether5` (el del numeral més baix) del _Mikrotik_.
 - IP estàtica dins del vostre rang (en el meu cas `10.50.13.31/16`) i la _gateway_ corresponent (en el meu cas `10.50.0.1`).
+
+Recordeu que per assignar un IP a una interfície cal utilitzar una comanda semblant a : `ip address add address=10.50.13.31/16 interface=ether5 comment="Internet"`
 ## Xarxa DMZ
 Aquí hi connectarem els servidors que donin serveis externs, com el _email_ o _pàgina web_.
 
