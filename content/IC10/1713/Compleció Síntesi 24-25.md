@@ -9,15 +9,13 @@ Aquest projecte és per aquells que no vareu entregar el projecte de síntesi du
 ## Projecte
 En essencial treballarem els mateixos punts que es treballen en el 90% dels treballs de síntesi presentats fins la data, per tant no és *un treball més fàcil*.  Tanmateix us pautem més cada apartat, traient llibertat i creativitat a canvi de poder-vos guiar una mica més i que sorgeixin menys dubtes.
 
-Tot i seguir aquesta guia, **cal que llegiu també l'enunciat original del treball de síntesi i la resta de materials** relacionats, ja que en ells es donen molts consells i indicacions que també haureu de seguir.
+Tot i seguir aquesta guia, **cal que llegiu també l'enunciat original del treball de síntesi i la resta de materials** relacionats, ja que en ells es donen molts consells i indicacions que us poden servir de complement i per resoldre dubtes.
 ## Seguiment i compromís
-Com ja s'ha informat, en el **procés de compleció no hi ha seguiment ni assistència a classes**.  Per tant **cal que sigueu molt autònoms** tant en el treball com en la resolució de dubtes.  Tanmateix alguns professors s'han presentat **voluntaris** per, fora d'hores de feina, fer-vos una mica de seguiment i correcció del treball.
-
-Per aprofitar-ho cal que **entregueu dins dels terminis establerts** les parts pautades i seguiu el ritmen.  **En cas contrari el professorat deixarà de fer-ne seguiment, correccions i resolució de dubtes**.  Seguir i corregir un treball de síntesi suposa molta feina, i si no la podem espaiar no la podrem assumir.  A més, si es deixa per a última hora, es inviable solucionar tots els dubtes que es generin a temps per arribar a l'entrega.
+Com ja s'ha informat, en el **procés de compleció no hi ha seguiment ni assistència a classes**.  Per tant **cal que sigueu molt autònoms** tant en el treball com en la resolució de dubtes. 
 ## Resolució de dubtes
 Cal recordar que el procediment de compleció no dona dret a l'assistència a classes així com tampoc compta com matrícula al centre.  Això implica no tenir seguiment ni suport per part del professorat més enllà del voluntari i totalment fora de la nostra jornada laboral.
 
-Si teniu dubtes envieu un email al professorat voluntari, que us respondran tan aviat com puguin, però tingueu present que poden trigar varis dies en respondre i que depenent dels dubtes a vegades es fa molt difícil solucionar-ho via email.
+Si teniu dubtes envieu un email al professorat voluntari, que us respondran tan aviat com puguin, però tingueu present que poden trigar varis dies en respondre i que depenent dels dubtes a vegades es fa molt difícil o fins i tot inviable solucionar-ho via email.
 
 És per aquest motiu que cal que sigueu el màxim d'autònoms possibles alhora de resoldre dubtes i fer les tasques amb temps i previsió.  Repasseu bé tots els materials i activitats prèvies fetes en les diferents assignatures i on encara teniu accés als Moodles corresponents.
 ## Entrega
