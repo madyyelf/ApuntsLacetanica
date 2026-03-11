@@ -26,24 +26,24 @@ Per muntar aquest tallafocs simularem l'estructura bàsica d'una xarxa empresari
 ### 3.1. Afegir usuari del professor
 
 Aquesta tasca la corregirem de forma automatitzada i remota per fer-ho caldrà fer unes configuracions prèvies al nostre _Mikirotik_:
-
-`/user add name=rgimenezh password=L4c3t4n14! address=10.50.13.0/24 group=full comment="Usuari del professor."`
-
+```
+/user add name=rgimenezh password=L4c3t4n14! address=10.50.13.0/24 group=full comment="Usuari del professor."
+```
 ### 3.2. Afegir IP cap a Internet
 
 Cal modificar l'adreça per una del vostre rang i enviar-la al professor.
 
-`/ip address add address=10.50.13.2/16 interface=ether1 comment="INTERNET"`
+```/ip address add address=10.50.13.2/16 interface=ether1 comment="INTERNET"```
 
 ### 3.3. Afegir ruta per defecte cap al router del centre
 
 La _gateway_ ha de ser la de la vostra aula (p.e.: `10.43.0.1`).
 
-`/ip route add dst-address=0.0.0.0/0 gateway=10.50.0.1 comment="Ruta per defecte cal al router del centre"`
+```/ip route add dst-address=0.0.0.0/0 gateway=10.50.0.1 comment="Ruta per defecte cal al router del centre"```
 
 ### 3.4. Source NAT per donar connectivitat a les xarxes de l'empresa
 
-`/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade comment="Source NAT per donar xarxa a les subxarxes de l'empresa."`
+```/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade comment="Source NAT per donar xarxa a les subxarxes de l'empresa."```
 
 ### 3.5. Configurar les interfícies de les xarxes internes
 
@@ -71,7 +71,7 @@ Com que utilitzarem llistes blanques (i denegarem tot el tràfic) el primer que 
 ```
 Mourem aquestes regles al inici de tot, ja que són les que més s'aplicaràn (la primera sempre ha de ser la de _forward_).
 
-`/ip firewall filter move numbers=2,3,4 destination=0`
+```/ip firewall filter move numbers=2,3,4 destination=0```
 
 ### 4.2. Regles per defecte: Llistes Blanques
 
@@ -121,7 +121,7 @@ També ens caldrà actualitzar el paquets dels clients (fer un `apt update` i un
 
 L'administrador (que simularem amb el Debian Estació de Treball) necessitarà accés per `SSH` als equips de la DMZ. Però no volem que els altres usuaris de la xarxa ho puguin fer… per tant farem un filtratge per `interface` d'entrada i sortisa, rang de `IP` d'administradors, `protocol` i `dst-port`.
 
-`/ip firewall filter add chain=forward in-interface=ether8 out-interface=ether2 src-address=192.168.100.0/24 protocol=tcp dst-port=22 action=accept`
+```/ip firewall filter add chain=forward in-interface=ether8 out-interface=ether2 src-address=192.168.100.0/24 protocol=tcp dst-port=22 action=accept```
 
 #### 5.2.2. Accés als serveis de la DMZ
 
