@@ -35,3 +35,4 @@
 - [[IC10-0226-RA4-Mikrotik DMZ \| Mikrotik DMZ]]
 - [[IC10-0226-RA4-Tallafocs a Mikrotik \| Tallafocs a Mikrotik]]
 - [[IC10-0226-RA4-Mikrotik Llistes Negres \| Mikrotik - Llistes negres]]
+- [[IC10-0226-RA4-Mikrotik Llistes Blanques \| Mikrotik - Llistes blanques]]
