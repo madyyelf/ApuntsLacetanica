@@ -17,6 +17,39 @@ Per això, aquest projecte busca:
 - **Preparar els estudiants** perquè adquireixin competències sòlides en l’ús d’IA, que els ajudaran a destacar en qualsevol àmbit professional.
  
 La nostra aposta és clara: **innovar i facilitar la transformació educativa integrant l’ús de la IA al centres docents de manera natural, pràctica i creativa**.
+## Projecte propi: Un altre visió
+**No et motiva** això de fer materials per a profes i alumnes!!!
+
+Doncs si no us interessa entrar a la Startup de LearnWise us **haureu de muntar la vostra pròpia** oi? I si ho feu... perquè no **guanyar diners reals**?
+
+Recordeu que estem parlant sempre de muntar una startup innovadora, per tant una petita empresa amb molt pocs recursos que intenta engegar un negoci basat en una idea original. I això ho podeu fer vosaltres! Podeu intentar crear alguna cosa al vostre abast i vendre-ho i esbrinar si funciona. Aquesta és la idea principal d'aquest projecte.
+
+==Us imagineu sortint del cicle amb un petit negoci propi que us generi ingressos durant tot l'estiu? Aquesta és la idea!!!==
+
+### Requisits
+
+Així doncs, si no us motiva la idea proposada, penseu-ne alguna vosaltres, però recordeu que ha de complir:
+
+- Ha de ser **real**, un producte que **pugui funcionar**.
+- S'haurà de publicar i **exposar als potencials clients**.
+- Caldrà esbrinar si funciona i **si dona beneficis**.
+- No ha de ser complex tècnicament.
+- S'ha de poder implementar en unes 30 hores de feina.
+
+### Idees
+
+Possibles idees:
+
+- Automatitzacions amb N8N i IA per a empreses.
+- Monetització de canals de ninxo a Youtube, Instagram, etc.
+- Venda de addons per videojocs.
+- Venda de materials per jocs de rol.
+- Creació d'aplicacions o esdeveniments per a la promoció del comerç local.
+- Programació de microserveis.
+- Venda de bases musicals per a DJs.
+- MOOC sobre noves tecnologies, habilitats estranyes, etc...
+- Videojocs simples però virals.
+- Serveis per a alumnes de 1r d'informàtica.
 ## Objectiu final: El nostre producte
 En finalitzar el projecte haurem completat una fase del mètode _Lean Startup_, que inclou:
 - Definir unes **hipòtesis clau**.
