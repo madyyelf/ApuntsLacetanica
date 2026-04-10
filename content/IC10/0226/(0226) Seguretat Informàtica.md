@@ -36,4 +36,4 @@
 - [[IC10-0226-RA4-Tallafocs a Mikrotik \| Tallafocs a Mikrotik]]
 - [[IC10-0226-RA4-Mikrotik Llistes Negres \| Mikrotik - Llistes negres]]
 - [[IC10-0226-RA4-Mikrotik Llistes Blanques \| Mikrotik - Llistes blanques]]
-- [[IC10-0226-RA4-Activitat atacs wifi \| Wifi Atacs avançats]]
+- [[IC10-0226-RA4-Taller de seguretat inal·làmbrica \| Taller de seguretat inal·làmbrica]]
