@@ -7,14 +7,14 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
 
-**2025 Raul Gimenez Herrada**
+**2026 Raul Gimenez Herrada**
 (raul.gimenez@lacetania.cat)
 
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
 # Prematrícula GS / canvi de GM
-Aquesta **prematrícula** pertoca tant per aquells que vulgueu** continuar els vostres estudis en un GS** com a aquells que vulgueu **canviar de GM**.
+Aquesta **prematrícula** pertoca tant per aquells que vulgueu **continuar els vostres estudis en un GS** com a aquells que vulgueu **canviar de GM**.
 
 Aquells que vulgueu repetir el GM actual teniu un procés apart anomenat **matrícula de continuïtat** que s'us donarà junt amb les notes de recuperacions al **juny**.
 
