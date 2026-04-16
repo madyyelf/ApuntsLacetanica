@@ -9,5 +9,6 @@
 - [[IC10-Tutoria-Càpsula WarGames \| Càpsula WarGames]]
 - [[IC10-Tutoria-Càpsula introducció al Hacking \| Càpsula Introducció al Hacking]]
 - [[IC10-Tutoria-Càpsula Prematrícula GS \| Càpsula prematrícula GS]]
+- [[IC10-Tutoria-Càpsula Metasploit Framework \| Càpsula Metasploit Framework]]
 # Materials per a dies de vaga
 - [[IC10/Tutoria/Anàlisis d'un hacking real]].

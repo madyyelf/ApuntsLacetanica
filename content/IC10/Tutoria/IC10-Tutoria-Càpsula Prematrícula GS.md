@@ -26,24 +26,18 @@ Tot el procés i informació ho trobareu a la web de la Generalitat:
 - [Preinscripció a GS](https://preinscripcio.gencat.cat/ca/estudis/fp-grau-superior/inici/)
 - [Preinscripció a GM](https://preinscripcio.gencat.cat/ca/estudis/fp-grau-mitja/inici/)
 ---
-## Dates GS
-Les dates importants per la preinscripció a **GS del curs 26-27** són:
-- **Sol·licituds**: del 26 de maig al 1 de juny.
-- **Seguiment**: del 29 de juny al 9 de juliol.
-- **Assignacions**: Hi han 2 tandes:
-	- **1a tanda**: 10 de juliol.
-	- **2a tanda**: 24 de juliol.
-- **Formalització de matrícula**: De nou 2 tandes:
-	- **1a tanda**: del 10 al 14 de juliol.
-	- **2a tanda**: del 24 al 28 de juliol.
-
----
 ## Recordatoris importants
 - Tan sols una prematrícula (crec que ja no es poden fer més d'una).
 - **Respectar dates**
-- **Prematricular, encara que no conteu aprovar.**
+- **Prematricular, encara que no conteu aprovar o dubteu si continuar.**  Sempre sou a temps de renunciar.
 - **Matrícular de tot** el que vulgueu, ordenat per prioritat. (tant estudis diferents com centres diferents).
 - Si quedeu fora, durant el setembre, truqueu al centre per interessar-vos si han quedat places lliures.
+---
+## Consulta d'estudis
+Si voleu saber els estudis que hi han i què s'hi fa podeu:
+- Consultar la [Tria educativa](https://triaeducativa.gencat.cat/ca/fp/index.html) i apartat corresponent (GM / GS / CE).
+- Buscar els [currículums oficials al Xtec](https://xtec.gencat.cat/ca/curriculum/professionals/fp/titolsloe/infcomunicacions/) i consultar els **Mòduls professionals a partir de 2024/2025**.  Així sabreu els mòduls, hores lectives i continguts que s'impartiran.
+- Consultar pàgines oficials dels instituts.
 ---
 ## Notes de tall curs anterior
 Podeu consultar [notes de tall del curs anterior](https://preinscripcio.gencat.cat/ca/estudis/fp-grau-superior/informat/consulta-notes-tall/index.html), però cal tenir present a l'hora de consultar-ho:
