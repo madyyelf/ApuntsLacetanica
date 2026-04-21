@@ -37,3 +37,5 @@
 - [[IC10-0226-RA4-Mikrotik Llistes Negres \| Mikrotik - Llistes negres]]
 - [[IC10-0226-RA4-Mikrotik Llistes Blanques \| Mikrotik - Llistes blanques]]
 - [[IC10-0226-RA4-Taller de seguretat inal·làmbrica \| Taller de seguretat inal·làmbrica]]
+- [[IC10-0226-RA4-Anàlisi de Phishing \| Anàlisi de Phising]]
+- [[IC10-0226-RA4-TREBALL - Enginyeria Social i Phishing \| Treball: Enginyeria social i phishing]]
