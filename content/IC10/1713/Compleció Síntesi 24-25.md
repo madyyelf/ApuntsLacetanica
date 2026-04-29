@@ -9,7 +9,7 @@ Aquest projecte és per aquells que no vareu entregar el projecte de síntesi du
 ## Projecte
 En essencial treballarem els mateixos punts que es treballen en el 90% dels treballs de síntesi presentats fins la data, per tant no és *un treball més fàcil*.  Tanmateix us pautem més cada apartat, traient llibertat i creativitat a canvi de poder-vos guiar una mica més i que sorgeixin menys dubtes.
 
-Tot i seguir aquesta guia, **cal que llegiu també l'enunciat original del treball de síntesi i la resta de materials** relacionats, ja que en ells es donen molts consells i indicacions que us poden servir de complement i per resoldre dubtes.
+Tot i seguir aquesta guia, **cal que consulteu els vostres apunts sobre la resta de materials** relacionats, ja que en ells es donen molts consells i indicacions que us poden servir de complement i per resoldre dubtes.
 ## Seguiment i compromís
 Com ja s'ha informat, en el **procés de compleció no hi ha seguiment ni assistència a classes**.  Per tant **cal que sigueu molt autònoms** tant en el treball com en la resolució de dubtes. 
 ## Resolució de dubtes
@@ -17,9 +17,9 @@ Cal recordar que el procediment de compleció no dona dret a l'assistència a cl
 
 Si teniu dubtes envieu un email al professorat voluntari, que us respondran tan aviat com puguin, però tingueu present que poden trigar varis dies en respondre i que depenent dels dubtes a vegades es fa molt difícil o fins i tot inviable solucionar-ho via email.
 
-És per aquest motiu que cal que sigueu el màxim d'autònoms possibles alhora de resoldre dubtes i fer les tasques amb temps i previsió.  Repasseu bé tots els materials i activitats prèvies fetes en les diferents assignatures i on encara teniu accés als Moodles corresponents.
+És per aquest motiu que cal que sigueu el màxim d'autònoms possibles alhora de resoldre dubtes i fer les tasques amb temps i previsió.  Repasseu bé tots els materials i activitats prèvies fetes en les diferents assignatures i sempre **feu comprovacions adients**.
 ## Entrega
-L'entrega del treball constarà de la defensa del mateix davant d'un tribunal.  Caldrà fer-ne una presentació explicant com s'han fet tots els apartats tècnics i demostrant el seu funcionament.  Les dates es concretaran més endavant.
+L'entrega del treball constarà tant de la presentació de la memòria escrita (PDF) dins del termini establer com de la defensa del mateix davant d'un tribunal.  Caldrà fer-ne una presentació explicant com s'han fet tots els apartats tècnics i demostrant el seu funcionament.  Les dates es concretaran més endavant a la web del centre i/o email.
 ## Avaluació
 Donada la natura de la compleció i el guiatge del projecte, aquest donarà peu a una **nota màxima de 7**.  Si es vol optar a **més nota cal afegir-hi apartats** com per exemple l'inclusiu d'un servei de correu electrònic, Alfresco, plans de contingència, afegir noves tecnologies no vistes a classe, o altres serveis no esmentats en aquesta guia.
 
@@ -113,7 +113,7 @@ Heu de fer els càlculs per a determinar quin SAI cal comprar per a mantenir un 
 Recordeu que el càlcul ha de ser amb VA i cal afegir un factor de correcció.
 
 Un cop calculat, busqueu un SAI que compleixi els requisits i afegiu-ho als pressupostos.
-# Bloc 4 (CORRECCIÓ)
+# Bloc 4
 Aquesta setmana es corregirà el bloc de tasques assignades des de l'inici del projecte fins el 21 de juliol.
 ## GNS3
 Per ara farem l'enrutador amb una última versió de *Mikrotik CHR*, el switch amb un *Ethernet Switch* i el núvol amb un element *Cloud*.  La resta d'equips seran tots *VPCS* per ara i els anirem substituint per màquines virtuals a mesura que avancem en el projecte.
@@ -127,7 +127,7 @@ La resta de ports els configurarem de tipus *access* i amb el tag de *vlan* que 
 Caldrà configurar:
 - VLANs, amb els mateixos tags que al switch i amb els noms que hem asignat al diagrama lògic.
 - IPs de cada interfície i VLAN, seguint el que s'ha planificat al diagrama lògic.
-- Source Nat pals paquets que surtin cap a la interfície d'Internet. Consulter punt 4.1 del [document d'ajuda de tallafocs](https://lacetanica.cat/apunts/SMX/MP12/Sintesi/SMX-MP12-Sintesi-Firewall_Mikrotik.html).
+- Source Nat pals paquets que surtin cap a la interfície d'Internet. 
 ### VPCS
 Per ara assignarem IPs seguint el que hem planificat al diagrama de xarxa lògic.
 ### Proves de connectivitat
@@ -176,7 +176,7 @@ Per tant redacteu la part de procediment de la política de contrasenyes seguint
 Implementeu una GPOs que faci que el fons de pantalla de tots els equips del domini sigui un fons de color blau amb el logo de l'empresa gran i centrat.
 ## Impressora compartida
 Finalment creeu una impressora compartida amb tot el personal de l'empresa al *SRV-AD* que permeti imprimir en PDFs i deixi les impressions a la carpeta compartida de *IMPRESSIONS*.
-# Bloc 8 (CORRECCIÓ)
+# Bloc 8
 Cal tenir entregat tots els apartats des de l'última correcció fins a avui (GNS3->Impressora compartida).
 ## DNS
 Al DNS cal fer una entrada per a cada equip i servidor de la xarxa. Important que el *SRV-WEB* es digui *www*.
@@ -235,7 +235,7 @@ S'han de crear varis usuaris, un pel tècnic i un altre pel cap que tindràn per
 S'ha d'afegir un *plugin* per a *e-commerce* que converteixi el *wordpress* en una botiga virtual.  Allà hi configurarem varis productes, amb totes les seves característiques i la vestirem correctament.  Cal cuidar que la botiga virtual es vegi complerta, i s'hi pugui fer tot el procés (en la mesura del possible) de compra.
 
 De nou remarcar que en aquest apartat cal demostrar que s'hi han dedicat hores, tot aprofundint en configuracions i personalitzacions.
-# Bloc 12 (CORRECCIÓ)
+# Bloc 12
 Cal tenir entregat i documentat des de DNS fins Wordpress.
 ##  Moodle
 Cal instal·lar el *moodle* a la carpeta corresponent del *SRV-WEB* de manera que hi accedim per https://moodle.domini.cat/.
@@ -267,14 +267,9 @@ Aquestes còpies s'han de fer amb *TAR* i el *SRV-BACKUP* les ha de recuperar a 
 
 En definitiva s'ha de fer un sistema de còpies igual al fet al treball de MP06-UF2.  Consulteu l'enunciat dins del seu Moodle per més informació.
 
-Teniu material de referència aquí:
-- https://lacetanica.cat/apunts//SMX/MP06/UF2/SMX-MP06-UF2-T_CopiesSeguretat.html
 # Bloc 14
 ## Tallafocs
 
-Teniu material de referència aquí:
-- https://lacetanica.cat/apunts/SMX/MP12/Sintesi/SMX-MP12-Sintesi-Firewall_Mikrotik.html
-- https://lacetanica.cat/apunts/SMX/MP06/UF5/SMX-MP06-UF5-mikrotikLlistesBlanques.html
 Cal configurar un tallafocs de llistes blanques al *router Mikrotik*.  Les connexions permeses han de ser:
 - Tots els equips han de poder fer ping a tot arreu.
 - De la *VLAN-INTERNA* s'ha de poder fer login al domini, accedir a les carpetes compartides i imprimir.
@@ -284,6 +279,13 @@ Cal configurar un tallafocs de llistes blanques al *router Mikrotik*.  Les conne
 - Cal redirigir les connexions web entrants des de Internet cap al servidor web DMZ.
 - Cal permetre al *SRV-BACKUP* accedir per *ssh* al *SRV-WEB*.
 Qualsevol altre connexió no ha d'estar permesa.  Cal remarcar que si afegiu serveis més enllà d'aquesta guia caldrà modificar el tallafocs en conseqüència.
+
+Recordeu que la major part de les regles cal incloure:
+- Origen del paquet
+- Destí del paquet
+- Protocol
+- Ports de destí
+És important restringir al màxim les regles.
 # Bloc 15
 ## Programació
 Cal crear un programa amb *Python* que guardi informació sobre l'estoc de material a magatzem.  Les funcionalitats que ha de tenir són:
@@ -296,12 +298,14 @@ Cal crear un programa amb *Python* que guardi informació sobre l'estoc de mater
 - Permetre llistat els articles amb estoc 0.
 - Permetre llistat els articles amb menys de estoc X, on X es demanarà de forma interactiva a l'usuari.
 Aquest programa es valorarà la funcionalitat com sobretot el bon ús del codi i funcions.  Seguiu les pautes vistes a programació.
-# Bloc 16 (CORRECCIÓ)
+# Bloc 16
 Cal tenir entregat des de Moodle fins al final de treball, junt amb tots els apartats extres que volgueu afegir.  Aquesta serà l'última correcció.
 ## Documentació
 Cal rematar la documentació, verificant sobretot estructura, estil i faltes.  Quan estigui finalitzada, i abans de la data màxima d'entrega, cal exportar-la a PDF i deixar-l'ho a la carpeta compartida del projecte.
+
+Aquest **PDF caldrà enviar-lo als professors responsables del mòdul (al seu email)** com a màxim abans de la **data estipulada** al calendari de compleció de la convocatòria en curs (consultar **web del institut**).
 ## Presentació
-Crear una presentació amb l'eina que trieu per a fer la defensa del projecte.  En aquesta defensa caldrà fer una breu introducció a l'empresa des del punt de vista de donar-se a conèixer i a partir d'aquí explicar els aspectes tècnics de la seva implementació preferiblement fent demostracions de com s'han configurat el elements i demostrant el seu bon funcionament.
+Crear una presentació amb l'eina que trieu per a fer la defensa del projecte.  En aquesta defensa caldrà fer una breu introducció a l'empresa des del punt de vista de donar-se a conèixer i a partir d'aquí explicar els aspectes tècnics de la seva implementació preferiblement fent **demostracions de com s'han configurat el elements i demostrant el seu bon funcionament**.
 
 Aquesta presentació ha de durar aproximadament 30 minuts, després farem 15 minuts de preguntes i finalment el tribunal debatrà la nota durant 15 minuts més.
 

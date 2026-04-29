@@ -68,7 +68,7 @@ Figure 2: Aquest IP en concret pertany a un ISP d'àsia. Per tant sembla el PC d
 
 També podem utilitzar un escàner de ports com `nmap` o simplement Shodan (previ registre) per analitzar aquesta IP i **fer-nos una idea de si pot ser l'atacant real o un ordinador infectat**.
 
-![[IC10/0226/RA4/phishing_shodan.gif]]
+![[phishing_shodan.gif]]
 
 Figure 3: El equip realment està ple de vulnerabilitats, per tant és molt probable que estigui sent utilitzat per un atacant remot.
 
