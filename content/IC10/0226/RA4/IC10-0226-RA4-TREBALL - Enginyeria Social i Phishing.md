@@ -44,13 +44,7 @@ Obrir el correu brossa del vostre GMail (o si no teniu emails d'aquest tipus, qu
 
 Tots els punts han d'anar acompanyats amb captures on apareguin les dades trobades i **SOBRETOT LA INTERPRETACIÓ** que en feu vosaltes.
 
-**NOTA**: Si no teniu emails de phishing aquí en teniu 4:
-
-- [phishing1.eml](https://alquimiabinaria.cat/apunts/SMX/MP06/UF5/phishing1.eml)
-- [phishing2.eml](https://alquimiabinaria.cat/apunts/SMX/MP06/UF5/phishing2.eml)
-- [phishing3.eml](https://alquimiabinaria.cat/apunts/SMX/MP06/UF5/phishing3.eml)
-- [phishing4.eml](https://alquimiabinaria.cat/apunts/SMX/MP06/UF5/phishing4.eml)
-
+**NOTA**: Els correus de phishing són fàcils de trobar, tanmateix si no en teniu prou a la vostra safata d'entrada, demaneu-ne a companys i amics i feu intercanvis!
 ## 3. Entrega i Qualificació
 
 ### 3.1. Entrega

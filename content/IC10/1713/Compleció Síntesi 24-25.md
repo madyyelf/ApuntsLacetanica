@@ -2,7 +2,7 @@
 {"publish":true,"tags":["#mentor","apunts","ic10/tutoria"],"cssclasses":""}
 ---
 
-# Introducció
+	# Introducció
 Aquest projecte és per aquells que no vareu entregar el projecte de síntesi durant el curs 24-25 i voleu fer-ne la compleció. La idea és donar-vos certes parts més pautades, per a que el projecte sigui més clar i no tingueu tants dubtes, a més de donar-vos pautes per a treballar cada apartat alhora que una temporització per a que portar un treball del nivell de qualitat necessari per aprovar sigui factible en el temps que teniu.
 
 **Cal notar que aquest és un document viu i per tant s'anirà treballant i actualitzant de forma regular.  Per tant consulteu l'enllaç per noves versions de forma regular. En qualsevol cas, les activitats i pautes estaran disponibles dins del termini.**
