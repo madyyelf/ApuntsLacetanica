@@ -20,15 +20,16 @@ Evolució del concepte:
 - Seguretat Informàtica
 - Seguretat de la informació
 - Ciberseguretat
-
+---
 # Subcultura Hacker
 
+---
 ## Filosofia
 
 - [Manifiesto hacker](https://blog.loopneo.com/wp-content/uploads/2004/05/Manifiesto-Hacker-Completo.pdf) (The Mentor - 08/01/86)
 - Es valora el coneixements i habilitats.
 - Aprenentatge profund mitjnaçant la pràctica personal.
-
+---
 ## Ecosistema Hacker
 
 - Hacker (white/grey/black hat)
@@ -38,25 +39,28 @@ Evolució del concepte:
 - Red Team
 - Purpel Team
 - Policia
-
+---
 # Què protegim?
 
+---
 ## Elements del sistema informàtic
 
 - Maquinari
 - Programari
 - Dades
 - Usuaris
-
+---
 ## Pilars de la ciberseguretat
-Els clàssics "CIA":
+Els clàssics (CIA):
 - Confidencialitat
 - Integritat
 - Disponibilitat
+
 I les extensions habituals (AAA):
 - Autenticació
 - Autorització
 - Auditoria
+---
 ## Classificació de la seguretat
 
 Les mesures de seguretat es classifiquen en:
