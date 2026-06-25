@@ -50,13 +50,13 @@ Evolució del concepte:
 
 ## Pilars de la ciberseguretat
 Els clàssics "CIA":
-- Confidencialitat: El recurs tan sols ha de ser accessible per a les persones autoritzades.
-- Integritat: El recurs tan sols ha de ser modificat de forma controlada.
-- Disponibilitat: El recurs ha d'estar disponible quan sigui necessari.
+- Confidencialitat
+- Integritat
+- Disponibilitat
 I les extensions habituals (AAA):
-- Autenticació: Cal verificar l'identificat d'una persona o recurs.
-- Autorització: Què es pot fer un cop identificat.
-- Auditoria: Traçabilitat de qui fa què.
+- Autenticació
+- Autorització
+- Auditoria
 ## Classificació de la seguretat
 
 Les mesures de seguretat es classifiquen en:
