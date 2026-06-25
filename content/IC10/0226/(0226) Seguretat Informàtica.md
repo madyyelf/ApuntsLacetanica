@@ -2,8 +2,8 @@
 {"publish":true,"title":"(0226) Seguretat Informàtica","tags":["apunts","ic10/0226"],"cssclasses":""}
 ---
 
-# Objectius
-# Avaluació
+# General
+- [[IC10/0226/IC10-0226-RA0-Presentació del mòdul, metodologia i avaluació\| Presentació del mòdul, metodologia i avaluació]]
 # Continguts
 ## RA1
 - [[IC10-0226-RA1-Gestió de permisos \| Gestió de permisos]]
