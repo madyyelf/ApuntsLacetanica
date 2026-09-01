@@ -46,3 +46,7 @@ Ara tan sols ens quedarà construïr el model i executar-lo:
 - `ollama create model-finetuning -f finetuning.txt`
 - `ollama run model-finetuning`
 ## RAG amb Ollama
+## Skills?
+
+
+https://chatgpt.com/c/6a4370a8-9cf0-83ed-9a3a-529991384bdd

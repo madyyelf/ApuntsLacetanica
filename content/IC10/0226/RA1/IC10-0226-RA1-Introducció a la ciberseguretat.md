@@ -67,3 +67,6 @@ Les mesures de seguretat es classifiquen en:
 
 - Física / lògica
 - Activa / passiva
+---
+
+![[IC10/0226/RA1/Pasted image 20260901101227.png]]
