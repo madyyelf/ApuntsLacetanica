@@ -87,3 +87,5 @@ Amb les comandes:
 - `chmod`:  Canvi de permisos.
 - `chown`:  Canvi propietari.
 - `chgrp`:  Canvi grup.
+---
+![[IC10/0226/RA1/Pasted image 20260901101447.png]]
