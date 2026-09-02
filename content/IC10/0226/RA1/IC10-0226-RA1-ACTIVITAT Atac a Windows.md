@@ -1,8 +1,12 @@
 ---
-{"publish":true,"title":"ACTIVITAT Atac a windows","tags":["apunts"],"cssclasses":""}
+publish: true
+title: ACTIVITAT Atac a windows
+tags:
+  - apunts
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -11,6 +15,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 (raul.gimenez@lacetania.cat)
 
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
+
 # Introducció
 
 En un sistema Windows hi ha una sèrie de programes que s'inicien abans de que l'usuari entri en el sistema. Si un atacant aconseguir canviar el programa que s'executa per defecte per un altre que permeti executar comandes podria entrar en el sistema sense conèixer cap compte d'usuari.
@@ -31,11 +36,11 @@ Imaginem que ens han contractat en una petita empresa que funciona amb [aquest s
 
 1. Descarregueu la OVA del Windows Server.
 
-![sticky_downloadOVA.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_downloadOVA.png)
+![sticky\_downloadOVA.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_downloadOVA.png)
 
 1. Importeu-la a _VirtualBox_.
 
-![sticky_importaOVA.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_importaOVA.png)
+![sticky\_importaOVA.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_importaOVA.png)
 
 1. Descarregueu l'última ISO de Ubuntu.
 
@@ -45,22 +50,34 @@ Imaginem que ens han contractat en una petita empresa que funciona amb [aquest s
 
 Arranqueu una màquina virtual de Windows amb un _LiveCD_, situeu-vos al sistema de fitxers de Windows i dins de `C:\Windows\System32` i substituïu el programa `SETHC.exe` per `CMD.exe`. Per fer-ho:
 
-1. Simularem un USB amb l'Ubuntu tot afegint la seva ISO al CD de la màquina virtual. ![sticky_livecd.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_livecd.png)
+1. Simularem un USB amb l'Ubuntu tot afegint la seva ISO al CD de la màquina virtual. ![sticky\_livecd.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_livecd.png)
+
 2. Triarem idioma, teclat etc al assistent de Ubuntu, i sobretot triarem l'opció **Try Ubuntu**!
-3. Anirem al explorador de fitxers i buscarem el disc de Windows, el reconeixerem per la mida i per les carpetes que conté. ![sticky_filesystem.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_filesystem.png)
+
+3. Anirem al explorador de fitxers i buscarem el disc de Windows, el reconeixerem per la mida i per les carpetes que conté. ![sticky\_filesystem.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_filesystem.png)
+
 4. Navegarem fins a `c:/Windows/System32`.
+
 5. Renombrarem `sethc.exe` a `sethc_OLD.exe` per no perdre l'arxiu. (per entorn gràfic o per terminal)
+
 6. Farem una còpia de `cmd.exe` i la renombrarem a `sethc.exe`.
+
 7. Apaguem la _VM_ i treiem la ISO de Ubuntu del CD.
+
 8. Inicieu el Windows Server i comprovareu que el sistema arranca normalment
-9. Premeu cinc vegades la tecla SHIFT i veureu que se us obre un terminal amb privilegis de l'**usuari SYSTEM**! ![sticky_hack.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_hack.png)
+
+9. Premeu cinc vegades la tecla SHIFT i veureu que se us obre un terminal amb privilegis de l'**usuari SYSTEM**! ![sticky\_hack.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_hack.png)
+
 10. Crearem un usuari nou, per no tocar l'`Administrador`, i l'assignarem permissos de `Admin` amb l'eina de gestió d'usuaris.
-    
-        netplwiz
-    
-    ![sticky_netplwiz.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_netplwiz.png)
-    
+
+    ```
+    netplwiz
+    ```
+
+    ![sticky\_netplwiz.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_netplwiz.png)
+
 11. Inicieu el sistema normalment i comproveu que l'usuari que heu creat pot entrar en el sistema. Sou capaços de crear un usuari amb privilegis d'administració?
+
 12. Penseu en el temps que trigarieu amb una mica de pràctica per a hackerjar el sistema.
 
 ## Defensa
@@ -74,4 +91,4 @@ Un cop acabat investigueu:
 
 # Webgrafía
 
-- [https://hardmicro.net/es/art%25C3%25ADculos/199-truco-de-las-stickykeys](https://hardmicro.net/es/art%25C3%25ADculos/199-truco-de-las-stickykeys)
+- <https://hardmicro.net/es/art%25C3%25ADculos/199-truco-de-las-stickykeys>
