@@ -1,5 +1,9 @@
 ---
-{"publish":true,"title":"Treball de còpies de seguretat","tags":["apunts","ic10/0226"],"cssclasses":""}
+publish: true
+title: Treball de còpies de seguretat
+tags:
+  - apunts
+  - ic10/0226
 ---
 
 # Imatges
@@ -24,8 +28,8 @@ Pel que fa a la xarxa, perquè la VM funcioni correctament i pugueu veure el Moo
 
 - Modificar `/etc/network/interfaces` i col·locar-hi una IP estàtica del vostre rang personal.
 - Modificar l'arxiu de `hosts` del vostre equip perquè l’adreça `moodlebackup.cat` apunti a la IP estàtica que heu assignat a Moodle.
-    - A Linux: `/etc/hosts`
-    - A Windows: `C:\Windows\System32\drivers\etc\hosts`
+  - A Linux: `/etc/hosts`
+  - A Windows: `C:\Windows\System32\drivers\etc\hosts`
 
 # Què cal fer?
 
@@ -38,7 +42,6 @@ El document és molt gran, per a donar-vos una idea ràpida de què cal que feu 
 
 ## Estudi del sistema
 
-  
 |DADES|MIDA|FREQÜÈNCIA CANVIS|
 |---|---|---|
 |/var/www/html|277 Mb|Anual / bianual|
@@ -105,11 +108,12 @@ mysqldump [opcions] <bbdd> > <arxiu_sortida>
 ```
 
 Per exemple:
+
 ```
 mysqldump -u root -pL4c3t4n14! moodle > backup_bbdd-$(date +%Y-%m-%d).sql
 ```
 
-**NOTA**: Fixeu-vos en el detall que no hi ha espai entre l'opció *-p* i el password.
+**NOTA**: Fixeu-vos en el detall que no hi ha espai entre l'opció _-p_ i el password.
 **NOTA**: Remireu l'apartat de _Dates automàtiques_ de l'apartat dedicat a _TAR_.
 
 ### TAR
@@ -126,24 +130,23 @@ Totes les dates han de ser automatitzades (agafades el sistema).
 
 > **NOTA**: Recordeu que `tar` funciona diferent a altres comandes, el primer paràmetre és el destí i el segon (i següents) els origens de dades per fer el TAR.
 
-1. TAR Complert  
-    
-    Simplement fent un tar.
-    
-2. TAR Diferencial  
-    
-    Amb el paràmetre `-N` seguit de la data de l'última complerta. Aquesta data ha de ser automàtica (no pot ser fixa).
-    
-3. TAR Incremental  
-    
-    La incremental utilitza el paràmetre `-g` seguit d'un arxiu on es guardarà ua _snapshot_ de l'estat del fitxers. Quan tornem a llançar un tar amb el mateix paràmetre i mateix arxiu, compararà els arxius a comprimir amb la _snapshot_ i tan sols copiarà els que s'hagin modificat.
-    
-4. Dates automàtiques  
-    
-    Per posar noms i dates que s'actualitzin de forma automàtica amb la data i hora del sistema heu d'utilitzar la comanda `date` amb els paràmetres adients per a que us mostri (mireu el tutorial per tenir exemples).
-    
-    Si volem incloure el valor retornat dins d'un text (per exemple el nom d'un arxiu) haurem de posar la comanda entre accents oberts `$(date)`.
-    
+1. TAR Complert
+
+   Simplement fent un tar.
+
+2. TAR Diferencial
+
+   Amb el paràmetre `-N` seguit de la data de l'última complerta. Aquesta data ha de ser automàtica (no pot ser fixa).
+
+3. TAR Incremental
+
+   La incremental utilitza el paràmetre `-g` seguit d'un arxiu on es guardarà ua _snapshot_ de l'estat del fitxers. Quan tornem a llançar un tar amb el mateix paràmetre i mateix arxiu, compararà els arxius a comprimir amb la _snapshot_ i tan sols copiarà els que s'hagin modificat.
+
+4. Dates automàtiques
+
+   Per posar noms i dates que s'actualitzin de forma automàtica amb la data i hora del sistema heu d'utilitzar la comanda `date` amb els paràmetres adients per a que us mostri (mireu el tutorial per tenir exemples).
+
+   Si volem incloure el valor retornat dins d'un text (per exemple el nom d'un arxiu) haurem de posar la comanda entre accents oberts `$(date)`.
 
 ### Script final
 
@@ -168,32 +171,37 @@ Serà l'encarregat de connectar-se al servidor de Moodle, recollir els arxius de
 ### SCP
 
 La comanda `scp` serveix per fer còpies entre ordinadors remots sempre que l'ordinador remot tingui un servidor ssh com `openssh-server`. La comanda és tal com:
+
 ```
 scp <origen> <destí>
 ```
+
 On:
 
-- **origen**: Si és el servidor remot SSH (enm aquest cas el servidor de Moodle) indicarem l'origen de la còpia de la següent forma: ```<usuari>@<srvremot>:<pathdestí> (p.e.: root@10.34.12.22:/tmp/backup*)```.
+- **origen**: Si és el servidor remot SSH (enm aquest cas el servidor de Moodle) indicarem l'origen de la còpia de la següent forma: `<usuari>@<srvremot>:<pathdestí> (p.e.: root@10.34.12.22:/tmp/backup*)`.
 - **destí**:  Path cap a la carpeta destí con copiarem les dades (p.e.: _backup_).
 
-1. SSHPASS  
-    
-    La comanda `scp` demanarà password cada cop que s'executi, per automatitzar-ho del tot l'haurem de combinar amb `sshpass` que té el format: `sshpass -p <password> <comanda SSH/SCP>` i per tant la comanda final serà quelcom semblant a:
-    
- ```
- sshpass -p moltdificil scp /tmp/complerta-*.tar rgimenezh@10.34.22.33:/backup/
-```    
+1. SSHPASS
+
+   La comanda `scp` demanarà password cada cop que s'executi, per automatitzar-ho del tot l'haurem de combinar amb `sshpass` que té el format: `sshpass -p <password> <comanda SSH/SCP>` i per tant la comanda final serà quelcom semblant a:
+
+```
+sshpass -p moltdificil scp /tmp/complerta-*.tar rgimenezh@10.34.22.33:/backup/
+```
 
 ### Eliminar arxius anteriors als 18 messos
 
 A partir d'aquí creeu uns _scripts_ en aquest servidor que, mitjançant la comanda `scp`, s'endugui les còpies fetes, les elimini un cop copiades del servidor de Moodle i finalment elimini de si mateix els arxius més antics de 18 messos.
 
 Per fer-ho caldrà utilitzar la comanda `find` amb els paràmetres `-mtime` i `-delete` tal que així:
+
 ```
 find /backup/* -mtime +5 -delete
 ```
+
 On:
-- **/backup/***:  És el directori i els arxius a eliminar.
+
+- **/backup/**\*:  És el directori i els arxius a eliminar.
 - **-mtime**: Són els dies d'antiguitat dels arxius, en el exemple +5 significa 5 dies d'antiguitat.
 - **-delete**:  Eliminar els arxius.
 
@@ -231,11 +239,11 @@ Aquest simulacre el realitzarà el Administrador, junt amb el personal de la Coo
 Aquí el que cal és utilitzar la OVA de RECUPERACIÓ (la podeu trobar al principi del document) i fer els passos següents:
 
 - Configurar la màquina amb `Adaptador Pont` des de _VirtualBox_ si encara no ho està.
-- Configurar la mateixa `IP` que heu assignat al Moodle original. D'aquesta forma aconseguim que des del nostre _Host_, i utilitzant el navegador web, puguem accedir a [http://moodlebackup.cat](http://moodlebackup.cat) i veure si el _Moodle_ funciona. **IMPORTANT**: Cal que el Moodle original estigui apagat, tan sols la VM de _MoodleBackup-RECUPERACIO_ ha d'estar encès!
+- Configurar la mateixa `IP` que heu assignat al Moodle original. D'aquesta forma aconseguim que des del nostre _Host_, i utilitzant el navegador web, puguem accedir a <http://moodlebackup.cat> i veure si el _Moodle_ funciona. **IMPORTANT**: Cal que el Moodle original estigui apagat, tan sols la VM de _MoodleBackup-RECUPERACIO_ ha d'estar encès!
 - Des del _servidor de còpies_, enviar els TAR i el mysqldump cap a _MoodleBackup-RECUPERACIO_.
 - Al _MoodleBackup-RECUPERACIO_, descomprimir els TAR al les carpetes originals i carregar el _mysqldump_ al _MySQL Server_ amb la comanda `mysql -u root -p moodle < backup_BBDD-2024-11-20.sql`.
 - Reiniciar el servidor _MoodleBackup-RECUPERACIO_.
-- Verificar visitant la web [http://moodlebackup.cat](http://moodlebackup.cat) que el Moodle torna a funcionar correctament.
+- Verificar visitant la web <http://moodlebackup.cat> que el Moodle torna a funcionar correctament.
 
 # Entrega
 
@@ -256,5 +264,7 @@ Recursos per repassar els conceptes de M2 i cerca ajuda de forma autònoma:
 - [LinuxTotal](https://www.linuxtotal.com.mx/index.php?cont=info_admon_021): Tutorial de com utilitzar `mysqldump`.
 - [ubunlog](https://ubunlog.com/date-comando-conceptos-opciones-basicos/): Exemples d'ús de la comanda `date`, però no hi ha com aniuar-la amb els accents oberts.
 - [StackExchange](https://unix.stackexchange.com/questions/194863/delete-files-older-than-x-days): Com eliminar arxius més antics que X dies amb la comanda `find`.
+
 # Flipped Class
+
 ![Treball de còpies de seguretat](https://www.youtube.com/watch?v=MlTkwqA-Faw)

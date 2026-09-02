@@ -1,8 +1,13 @@
 ---
-{"publish":true,"title":"Anàlisi de Phishing","tags":["apunts","ic10/0226"],"cssclasses":""}
+publish: true
+title: Anàlisi de Phishing
+tags:
+  - apunts
+  - ic10/0226
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -13,6 +18,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 Analitzar un correu maliciós ens pot servir per molts propòsits.
 
 - Conneixer les tècniques que utilitzen els agents maliciosos.
@@ -27,7 +33,6 @@ Per tant aquesta tasca, si es realitza amb consciencia, ens donarà una vagatge 
 ## 1. Recuperació de evidències
 
 Per recuperar el email a analitzar és important que MAI l'obrim en una màquina normal. Per tant el que podem fer des de GMail per exemple es **reeviar-nos els emails com adjunts**, sense arribar a obrir-los mai.
-
 
 ![[IC10/0226/RA4/re-enviar_phishing.gif]]
 Figure 1: Així es pot obtenir el original del correu, sense obrir-lo i per tant sense infectar-se.
@@ -49,16 +54,16 @@ Típicament ens trobarem amb dos casos:
 L'origen del paquet acaba resultant un servei de Webmail (com gmail) i per tant no podem saber qui l'ha enviat. **Caldria una ordre judicidal** (prèvia demanda) per aconseguir els registres dels servidors.
 
 Received: by mail-pl1-x633.google.com with SMTP id r8so4281870pls.2
-        for <raul.gimenez@lacetania.cat>; Mon, 30 Jan 2023 02:38:08 -0800 (PST)
+for <raul.gimenez@lacetania.cat>; Mon, 30 Jan 2023 02:38:08 -0800 (PST)
 
 #### 2.1.2. IP Privada
 
 Aconseguim la IP d'un equip privat. Aquesta IP podría correspondre a veritable atacant, però és **probable que sigui un ordinador pr-eviament infectat** i controlat per l'atacant. Podriem analitzar-ho amb Shodan i intentar extreure conclusions.
 
-Received: from huawei-sim.com (huawei-sim.com. [14.192.50.48])
-        by mx.google.com with ESMTP id a9-20020a170902ecc900b0019515ca627fsi3387285plh.422.2023.01.24.11.55.31
-        for <madyyelf@gmail.com>;
-        Tue, 24 Jan 2023 11:55:32 -0800 (PST)
+Received: from huawei-sim.com (huawei-sim.com. \[14.192.50.48])
+by mx.google.com with ESMTP id a9-20020a170902ecc900b0019515ca627fsi3387285plh.422.2023.01.24.11.55.31
+for <madyyelf@gmail.com>;
+Tue, 24 Jan 2023 11:55:32 -0800 (PST)
 
 Un cop aquí podem avançar mirant a qui pertany la IP trobada, utiltizant un servei de [WhoIs](https://who.is), i **analitzar-la a fons**.
 
@@ -82,7 +87,7 @@ Multipart
 
 El correu conté diferents tipus de continguts, separats. Per tant caldrà detectar les marques de separacions i el `Content-type` de cada part. És el típic correu amb adjunts (`mixed`) o diferents formes de visualitzar-se (`alternative`). Els més complexos i per tant força utilitzats per encavir-hi malware.
 
-Application/*, audio/*, image/*, video/*
+Application/_, audio/_, image/_, video/_
 
 Contingut multimèdia adjunt que normalment es visualitza com adjunt. Si en trobem caldrà anlitzar-los apart (no entrarem en aquest treball).
 
@@ -97,8 +102,8 @@ Potser la part més interessant d'analitzar ja que aquí trobarem tant les tècn
 - **Servidor o domini objectiu**: Analitzarem el domini objectiu per determinar si és un lloc web real, una IP privada o un domini que s'hagi utilitzat alguna tècnica d'enmascarament. De nou podem **utilitzar _Shodan_ o _NMap_** per analitzar aquest nou element. També analitzarem com és el domini, i en el cas que s'estiguint fent passar per algú altre quina tècnica utilitzen (tlktok.com, tècniques de [IDN homograph attakcs](https://en.wikipedia.org/wiki/IDN_homograph_attack), etc…).
 - **Enllaços**: Normalment tots els enllaços apuntaràn al mateix lloc, ja que es centralitza l'atac, però cal verificar-los tots un a un.
 - **Contingut del lloc enllaçat**: Obrirem els enllaços **des d'una màquina virtual neta** (sense dades personals), visitarem i analitzarem el lloc on ens porten (que ens demanen, si hi ha javascript, etc) i finalment eliminarem la màquina virtual per evitar derivades d'una infecció.
-- També utilitzeu la web de [https://www.virustotal.com](https://www.virustotal.com) per analitzar la web (URL), podent detectar atacs.
-- Les URLs i dominis que han desaparegut (ja no són funcionals) podem encara donar un cop d'ull per veure com eren des de la web de [https://www.waybackmachine.com](https://www.waybackmachine.com).
+- També utilitzeu la web de <https://www.virustotal.com> per analitzar la web (URL), podent detectar atacs.
+- Les URLs i dominis que han desaparegut (ja no són funcionals) podem encara donar un cop d'ull per veure com eren des de la web de <https://www.waybackmachine.com>.
 
 #### 2.3.2. JavaScript i altres llenguatges de la banda del client
 
@@ -151,7 +156,7 @@ Com podem veure és `text-html`, tanmateix està **codificat en base64**.
 
 ![[IC10/0226/RA4/Pasted image 20260421180953.png]]
 
- Aquesta codificació segurament s'està utilitzant com a **tècnica per evadir els sistemes anti-spam**. Si decodifiquem el base64 amb [aquest enllaç](https://www.base64decode.org/) obtenim el contingut del correu en text/html.
+Aquesta codificació segurament s'està utilitzant com a **tècnica per evadir els sistemes anti-spam**. Si decodifiquem el base64 amb [aquest enllaç](https://www.base64decode.org/) obtenim el contingut del correu en text/html.
 
 ### 3.3. Contingut del correu
 

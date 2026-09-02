@@ -1,8 +1,13 @@
 ---
-{"publish":true,"title":"TREBALL - Enginyeria Social i Phishing","tags":["apunts","ic10/0226"],"cssclasses":""}
+publish: true
+title: TREBALL - Enginyeria Social i Phishing
+tags:
+  - apunts
+  - ic10/0226
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -13,6 +18,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 ## 1. Objectius
 
 - Contrastar la incidència de les tècniques d'enginyera social. -> Analitzar informes/ trucada.
@@ -23,7 +29,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 ### 2.1. Anàlisis estafa telefónica de Microsoft
 
-Escolteu [aquest àudio](https://www.youtube.com/watch?v=kRazUHK9JHM&t=1s) i contesteu a les següent preguntes:
+Escolteu [aquest àudio](https://www.youtube.com/watch?v=kRazUHK9JHM\&t=1s) i contesteu a les següent preguntes:
 
 - Quins elements utilitzen per generar confiança?
 - Quins elements utilitzen per generar por?
@@ -45,6 +51,7 @@ Obrir el correu brossa del vostre GMail (o si no teniu emails d'aquest tipus, qu
 Tots els punts han d'anar acompanyats amb captures on apareguin les dades trobades i **SOBRETOT LA INTERPRETACIÓ** que en feu vosaltes.
 
 **NOTA**: Els correus de phishing són fàcils de trobar, tanmateix si no en teniu prou a la vostra safata d'entrada, demaneu-ne a companys i amics i feu intercanvis!
+
 ## 3. Entrega i Qualificació
 
 ### 3.1. Entrega

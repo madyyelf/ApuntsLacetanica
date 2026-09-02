@@ -1,8 +1,13 @@
 ---
-{"publish":true,"title":"Gestió de permisos","tags":["apunts","ic10/0226"],"cssclasses":""}
+publish: true
+title: Gestió de permisos
+tags:
+  - apunts
+  - ic10/0226
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -13,6 +18,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # Ciberseguretat
 
 Evolució del concepte:
@@ -20,16 +26,21 @@ Evolució del concepte:
 - Seguretat Informàtica
 - Seguretat de la informació
 - Ciberseguretat
+
 ---
+
 # Subcultura Hacker
 
 ---
+
 ## Filosofia
 
 - [Manifiesto hacker](https://blog.loopneo.com/wp-content/uploads/2004/05/Manifiesto-Hacker-Completo.pdf) (The Mentor - 08/01/86)
 - Es valora el coneixements i habilitats.
 - Aprenentatge profund mitjnaçant la pràctica personal.
+
 ---
+
 ## Ecosistema Hacker
 
 - Hacker (white/grey/black hat)
@@ -39,34 +50,45 @@ Evolució del concepte:
 - Red Team
 - Purpel Team
 - Policia
+
 ---
+
 # Què protegim?
 
 ---
+
 ## Elements del sistema informàtic
 
 - Maquinari
 - Programari
 - Dades
 - Usuaris
+
 ---
+
 ## Pilars de la ciberseguretat
+
 Els clàssics (CIA):
+
 - Confidencialitat
 - Integritat
 - Disponibilitat
 
 I les extensions habituals (AAA):
+
 - Autenticació
 - Autorització
 - Auditoria
+
 ---
+
 ## Classificació de la seguretat
 
 Les mesures de seguretat es classifiquen en:
 
 - Física / lògica
 - Activa / passiva
+
 ---
 
 ![[IC10/0226/RA1/Pasted image 20260901101542.png]]

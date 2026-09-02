@@ -1,8 +1,11 @@
 ---
-{"publish":true,"tags":["apunts"],"cssclasses":""}
+publish: true
+tags:
+  - apunts
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -13,4 +16,5 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # Càpsula Metasploit Framework

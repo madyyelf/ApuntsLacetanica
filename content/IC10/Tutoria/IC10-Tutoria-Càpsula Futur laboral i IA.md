@@ -1,8 +1,13 @@
 ---
-{"publish":true,"title":"Càpsula Futur laboral i IA","tags":["apunts","ic10/tutoria"],"cssclasses":""}
+publish: true
+title: Càpsula Futur laboral i IA
+tags:
+  - apunts
+  - ic10/tutoria
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -13,6 +18,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # Càpsula Futur laboral i IA
 
 ## Evolució tecnològica
@@ -31,6 +37,7 @@ Una derivada és que cada dos anys dupliquem la capacitat de càlcul i per tant 
 - **Lvl 4**:  Innovadors.
 - **Lvl 5**:  Gestors d'organitzacions.
 - **Lvl 6**:  IA General -> Dubtes si amb la tecno actual és possible.
+
 ## Impacte laboral de la IA
 
 ### Curt termini
@@ -65,7 +72,7 @@ Una estratègia és treballar per sota del cost de la IA. Gairebé inviable ja q
 
 Tot i que ChatGPT 4 no raona ni es capaç de fer feines com una persona, sembla que no serà una bona estratègia.
 
-Es creu que per al 2045 els robots ja tindran capacitat de fer totes les feines millor que nosaltres i per un cost marginal (un robot de 10.000€ que treballi 22h diàries i s'amortitzi a 5 anys, tindrà un cost de 0,25$/h).
+Es creu que per al 2045 els robots ja tindran capacitat de fer totes les feines millor que nosaltres i per un cost marginal (un robot de 10.000€ que treballi 22h diàries i s'amortitzi a 5 anys, tindrà un cost de 0,25\$/h).
 
 #### Estar per sobre del llindar de reducció
 

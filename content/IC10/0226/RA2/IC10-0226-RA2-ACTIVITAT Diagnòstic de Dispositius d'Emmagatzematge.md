@@ -1,19 +1,26 @@
 ---
-{"publish":true,"title":"ACTIVITAT Diagnòstic de Dispositius d'Emmagatzematge","tags":["apunts"],"cssclasses":""}
+publish: true
+title: ACTIVITAT Diagnòstic de Dispositius d'Emmagatzematge
+tags:
+  - apunts
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
-![by-nc-sa-eu_.png](http://alquimiabinaria.cat/by-nc-sa-eu_.png)
+![by-nc-sa-eu\_.png](http://alquimiabinaria.cat/by-nc-sa-eu_.png)
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
 
 ## 2025 Raul Gimenez Herrada
+
 (raul.gimenez@lacetania.cat)
 [lacetanica.cat](https://lacetanica.cat/)
 
 [![Ko-fi Raul Gimenez Herrada](https://alquimiabinaria.cat/kofi.png)](https:/ko-fi.com/raulgimenezherrada)
+
 # ACTIVITAT Diagnòstic de Dispositius d'Emmagatzematge
+
 ## Objectius
 
 L’objectiu d’aquesta activitat és conèixer i practicar algunes de les eines disponibles actualment per a realitzar bancs de proves de rendiment del discos durs i consultes i automatitzacions de les propietats SMART d’aquests.
@@ -60,11 +67,13 @@ L’activitat es valorarà mitjançant un test, tant a nivell de continguts teò
 
 - Apreneu a utilitzar les eines de “l’altre sistema operatius”.
 - Podeu consultar els següents enllaços:
-    - [https://www.howtoforge.com/checking-hard-disk-sanity-with-smartmontools-debian-ubuntu](https://www.howtoforge.com/checking-hard-disk-sanity-with-smartmontools-debian-ubuntu)
-    - [https://www.youtube.com/watch?v=bL_X3OZh0zw](https://www.youtube.com/watch?v=bL_X3OZh0zw)
-    - [https://androidpc.es/blog/2014/01/06/comprueba-el-estado-y-rendimiento-de-tu-disco-duro/](https://androidpc.es/blog/2014/01/06/comprueba-el-estado-y-rendimiento-de-tu-disco-duro/)
-    - [https://es.wikipedia.org/wiki/S.M.A.R.T](https://es.wikipedia.org/wiki/S.M.A.R.T).
+  - <https://www.howtoforge.com/checking-hard-disk-sanity-with-smartmontools-debian-ubuntu>
+  - <https://www.youtube.com/watch?v=bL_X3OZh0zw>
+  - <https://androidpc.es/blog/2014/01/06/comprueba-el-estado-y-rendimiento-de-tu-disco-duro/>
+  - <https://es.wikipedia.org/wiki/S.M.A.R.T>.
 
 ---
+
 # Flipped Class
-![Flipped Class Diagnòstic de dispositius d'emmagatzematge](https://www.youtube.com/watch?v=uUC0eKNpeJM&feature=youtu.be)
+
+![Flipped Class Diagnòstic de dispositius d'emmagatzematge](https://www.youtube.com/watch?v=uUC0eKNpeJM\&feature=youtu.be)

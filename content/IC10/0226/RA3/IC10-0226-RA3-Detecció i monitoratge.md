@@ -1,8 +1,11 @@
 ---
-{"publish":true,"tags":["apunts"],"cssclasses":""}
+publish: true
+tags:
+  - apunts
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)**
 
 **2025 Raul Gimenez Herrada**
@@ -11,6 +14,7 @@ Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA
 [![[Meta/Plantilles/buymeacoffee.png]]](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # Com detectar una intrusió?
 
 ¿Com podem saber si han entrat en els nostres ordinadors?
@@ -20,11 +24,11 @@ Realment aquesta és una pregunta molt complicada de respondre. De fet es tracta
 Tanmateix hi han uns quants punts que cal repassar de forma periòdica a la cerca de canvis:
 
 - Usuaris del sistema i els seus permisos.
-- Arxius log del sistema i dels serveis.    
-- Arxiu Hosts per entrades forçades.    
-- Connexions actives (p.e.: amb netstat)    
-- Registre de Windows    
-- Monitoratge de xarxa en punts crítics (NATs, proxys, etc) a la recerca de tràfic estrany.    
+- Arxius log del sistema i dels serveis.
+- Arxiu Hosts per entrades forçades.
+- Connexions actives (p.e.: amb netstat)
+- Registre de Windows
+- Monitoratge de xarxa en punts crítics (NATs, proxys, etc) a la recerca de tràfic estrany.
 
 Analitzant tots aquests registres i configuracions podem detectar gran part de les intrusions, ja que en un lloc o altre queden traces de tota activitat.  Al principi serà molt complicat, però a mesura que ens habituem i coneguem el sistema serem capaços de detectar irregularitats de forma ràpida.  A partir d’aquí caldria investigar.
 
@@ -32,9 +36,8 @@ Analitzant tots aquests registres i configuracions podem detectar gran part de l
 
 Fer tot aquest seguiment de forma manual és una tasca que ens ajudarà a entendre millor el nostre S.I., tanmateix per facilitar-nos la vida també podem recorre a software especialitzat, concretament a detectores d'intrusos (IDS). En podem trobar de dos gustos:
 
-- **HIDS**: Especialment interessant per a servidors i equips "importants", es tracta de Host Intruder Detection System.  Alguns exemples poden ser OSSEC o TripWire.    
+- **HIDS**: Especialment interessant per a servidors i equips "importants", es tracta de Host Intruder Detection System.  Alguns exemples poden ser OSSEC o TripWire.
 - **NIDS**: Si es col·loquen les sondes de forma correcta, aquest tipus de sistemes detectaràn activitat sospitosa en el tràfic de xarxa. Per tant cal col·locar-los en llocs estratègics son sortides, proxys, nats, etc... Alguns exemples poden ser SNORT o SURICATA.
-    
 
 També existeixen els anomenats IPS (Intruder Prevention System) que no deixen de ser IDS però amb funcionalitats de resposta més agressives contra l’atacant, el que en la literatura cyberpunk anomenariem Black Ice.
 

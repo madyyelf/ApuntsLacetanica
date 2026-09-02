@@ -1,8 +1,13 @@
 ---
-{"publish":true,"title":"Càpsula Google","tags":["apunts","ic10/tutoria"],"cssclasses":""}
+publish: true
+title: Càpsula Google
+tags:
+  - apunts
+  - ic10/tutoria
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)**
 
 [Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)
@@ -13,10 +18,12 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 [Ko-Fi Raul Gimenez Herrada - Convida'm a un cafè!](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # Càpsula Google
+
 ## Esmolant la destral
 
-Tot sovint ens oblidem d'*esmolar la destral*; millorar en les coses utilitàries que fem tot sovint dia a dia. Tanmateix la millora d'aquestes tasques repetitives i ús d'eines que utilitzem molts cops cada dia ens farà poder treballar molt millor, ser més efectius, més ràpids i dedicar el temps guanyat a esmolar encara més la nostra destral!
+Tot sovint ens oblidem d'_esmolar la destral_; millorar en les coses utilitàries que fem tot sovint dia a dia. Tanmateix la millora d'aquestes tasques repetitives i ús d'eines que utilitzem molts cops cada dia ens farà poder treballar molt millor, ser més efectius, més ràpids i dedicar el temps guanyat a esmolar encara més la nostra destral!
 
 Una d'aquestes habilitats que utilitzem tot sovint és cercar informació a Internet. Afinar aquesta habilitat ens permetrà trobar molt més ràpidament la informació que busquem i fins i tot trobar "joies" (informació molt rellevant i singular) dins de tot l'oceà d'informació que és Internet.
 
@@ -116,7 +123,7 @@ Per cercar informació concreta ens hem d'imaginar on apareixerà (lloc, tipus d
 - Còpies de seguretat SQL que continguin passwords: `inurl:backup ext:sql -github intext:password`
 - Pàgines de login de tots els subdominis de Coca-Cola: `site:*.coca-cola.com intext:login`
 
-###  Google Dorks
+### Google Dorks
 
 Els _Google Dorks_ són cerques perfetes que busquen certs resultats prefixats. Tenim llocs com [Exploit-DB](https://www.exploit-db.com/google-hacking-database) on podem trobar tot de _dorks_ ja creats per trobar informació molt específica com dispositius, logs amb errors, usuaris i passwords, etc.
 
@@ -167,5 +174,5 @@ Cercador de serveis, no de continguts.
 
 ## Webgrafía
 
-- [Ajuda de Google](https://support.google.com/websearch/answer/35890?hl=ca&co=GENIE.Platform%3DDesktop#zippy=%2Cde-p%C3%A0gines-web-i-fitxers)
+- [Ajuda de Google](https://support.google.com/websearch/answer/35890?hl=ca\&co=GENIE.Platform%3DDesktop#zippy=%2Cde-p%C3%A0gines-web-i-fitxers)
 - [BrigadaOSINT](https://www.brigadaosint.com/)

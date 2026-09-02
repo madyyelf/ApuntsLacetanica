@@ -1,8 +1,11 @@
 ---
-{"publish":true,"tags":["apunts"],"cssclasses":""}
+publish: true
+tags:
+  - apunts
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)**
 
 **2025 Raul Gimenez Herrada**
@@ -11,36 +14,44 @@ Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA
 [![[Meta/Plantilles/buymeacoffee.png]]](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # ACTIVITAT: Analitzar els cyberatacs en temps real
 
 ## Mapes en temps real
+
 Actualment hi han varies empreses, principalment proveïdors d'antivirus i solucions de seguretat, que publiquen en temps real els atacs que detecten.
 
 Analitza els que mostra [Kaspersky](https://cybermap.kaspersky.com/), també en el apartat d'[estadístiques](https://cybermap.kaspersky.com/stats), i reflexiona sobre varis punts:
 
--  Com saben els atacs que s'estan donant en temps real?    
--  Pq hi han països amb més cyberatacs? Quins son?    
--  El gruix d'atacs provenen de /hackers/ o de governs?    
--  Aquests atacs s'estan realitzant "a mà" o s'automatitzen d'alguna manera?    
--  Quins són els tipus d'atacs més numerosos? Son també els més perillosos?    
+-  Com saben els atacs que s'estan donant en temps real?
+-  Pq hi han països amb més cyberatacs? Quins son?
+-  El gruix d'atacs provenen de /hackers/ o de governs?
+-  Aquests atacs s'estan realitzant "a mà" o s'automatitzen d'alguna manera?
+-  Quins són els tipus d'atacs més numerosos? Son també els més perillosos?
 -  Hi ha algun tipus d'infecció que destaqui sobre els altres? De quin tipus és?
 
 ## Honeypots
-Com hem vist anteriorment un dels elements que podem utilitzar per veure les activitats de hacking real són els *honeypots*.  Aquests ens proporcionen les següents avantatges:
+
+Com hem vist anteriorment un dels elements que podem utilitzar per veure les activitats de hacking real són els _honeypots_.  Aquests ens proporcionen les següents avantatges:
+
 - Alerta preventiva.
 - Anàlisi de comportament.
 - Anàlisi d'eines utilitzades
 
-Quan intentem classificar els *honeypots* podem distingit tres nivells d'interacció, amb les seves avantatges e inconvenients:
+Quan intentem classificar els _honeypots_ podem distingit tres nivells d'interacció, amb les seves avantatges e inconvenients:
+
 - Baixa interacció: Normalment tan sols obren el port i permeten tan sols una primera interacció (com un intent de login).
 - Mitjana interacció: Simulen un servei real, però en realitat l'atacant no està interactuant amb el servei.  La dificultat resideix en com de be "simulen el servei".
 - Alta interacció: Es munta un servei real i l'atacant hi interactua lliurement.  Cal afegir grans mesures de seguretat i tenir-ho extremadament controlat.
 
-Així doncs, tal com veieu, els més interessants són els de mitjana interacció.  Un dels més interessants i que ha aparegut recentment és [Beelzebub](https://github.com/mariocandela/beelzebub) que bàsicament és un *honeypot de interacció mitja* que pot utilitzar models LLM per a interactuar amb l'atacant i simular les respostes del servei.
+Així doncs, tal com veieu, els més interessants són els de mitjana interacció.  Un dels més interessants i que ha aparegut recentment és [Beelzebub](https://github.com/mariocandela/beelzebub) que bàsicament és un _honeypot de interacció mitja_ que pot utilitzar models LLM per a interactuar amb l'atacant i simular les respostes del servei.
 
 ### Anàlisi dades Beelzebub
+
 Aquest honeypot s'ha tingut en servei vàries hores i algunes dades que podem extreure i analitzar són:
+
 #### IPs d'origen
+
 ```
 584	134.199.196.232	(US, United States)
 581	129.212.188.139	(US, United States)
@@ -77,11 +88,15 @@ can't resolve hostname (  ))
 ```
 
 Coses que poden ser interessants d'analitzar:
+
 - Paisos i geopolítica.
 - Màquines compromeses o atacs directes?
 - Reputació de IPs.
+
 #### Usuaris i passwords utilitzats
+
 Usuaris:
+
 ```
    343 root
      75 admin
@@ -400,6 +415,7 @@ Usuaris:
 ```
 
 Contrasenyes:
+
 ```
    450 
     120 123456
@@ -841,10 +857,12 @@ Contrasenyes:
 ```
 
 Coses interessants a analitzar:
+
 - Llistats utilitzats reals (i per tant amb números de funcionar).
 - Tecnologies que s'estan apuntant, trending.
 
 #### Clients
+
 ```
    1354 SSH-2.0-Go
     447 
@@ -856,8 +874,10 @@ Coses interessants a analitzar:
 ```
 
 Coses interessants a analitzar:
+
 - Llibreries i llenguatges més utilitzats.
 - Son bots o és un atac manual?
+
 #### Comandes executades
 
 ```
@@ -893,6 +913,7 @@ uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
 ```
 
 Coses interessants a analitzar:
+
 - Comandes i eines utilitzades.
 - Motivació dels atacants.
 - Primers passos després d'entrar.

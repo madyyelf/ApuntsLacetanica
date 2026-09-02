@@ -1,45 +1,56 @@
 ---
-{"publish":true,"title":"(0226) Seguretat Informàtica","tags":["apunts","ic10/0226"],"cssclasses":""}
+publish: true
+title: (0226) Seguretat Informàtica
+tags:
+  - apunts
+  - ic10/0226
 ---
 
 # General
-- [[IC10/0226/IC10-0226-RA0-Presentació del mòdul, metodologia i avaluació\| Presentació del mòdul, metodologia i avaluació]]
+
+- [[IC10-0226-RA0-Presentació del mòdul, metodologia i avaluació| Presentació del mòdul, metodologia i avaluació]]
+
 # Continguts
+
 ## RA1
-- [[IC10-0226-RA1-Introducció a la ciberseguretat \| Introducció a la ciberseguretat]]
-- [[IC10/0226/RA1/IC10-0226-RA1-Seguretat física i ambiental]]
-- [[IC10/0226/RA1/IC10-0226-RA1-ACTIVITAT Atac a Windows]]
-- [[IC10/0226/RA1/IC10-0226-RA1-ACTIVITAT Atac a Linux]]
-- [[IC10-0226-RA1-Gestió de permisos \| Gestió de permisos]]
-- [[IC10-RA1-TREBALL Implementar política de contrasenyes a Linux \| TREBALL Implementació política de contrasenyes a Linux]]
+
+- [[IC10-0226-RA1-Introducció a la ciberseguretat | Introducció a la ciberseguretat]]
+- [[IC10-0226-RA1-Seguretat física i ambiental]]
+- [[IC10-0226-RA1-ACTIVITAT Atac a Windows]]
+- [[IC10-0226-RA1-ACTIVITAT Atac a Linux]]
+- [[IC10-0226-RA1-Gestió de permisos | Gestió de permisos]]
+- [[IC10-RA1-TREBALL Implementar política de contrasenyes a Linux | TREBALL Implementació política de contrasenyes a Linux]]
 - [Tips: Què fa suspendre el treball...](https://docs.google.com/presentation/d/1rfpl-UfHr7po7eUND2x75ltnl_CFN1lZfzBpolPkyyI/edit)
-- [[IC10/0226/RA1/IC10-0226-RA1-SAIs\| SAI]]
+- [[IC10-0226-RA1-SAIs| SAI]]
 
 ## RA2
 
-- [[IC10-0226-RA2-Politica d'Emmagatzematge \| Política d'emmagatzematge]]
-- [[IC10-0226-RA2-Mitjans d'Emmagatzematge \| Mitjans d'emmagatzematge]]
-- [[IC10-0226-RA2-Activitat IPFS \| Activitat IPFS]]
-- [[IC10-0226-RA2-RAIDs \| RAIDs]]
-- [[IC10-0226-RA2-Diagnòstic de dispositus d'emmagatzematge \| Diagnòstic de dispositius d'emmagatzematge]]
-- [[IC10-0226-RA2-ACTIVITAT Diagnòstic de Dispositius d'Emmagatzematge \| ACTIVITAT Diagnòstic de dispositius d'emmagatzematge]]
-- [[IC10-0226-RA2-Política de còpies de seguretat \| Política de Còpies de Seguretat]]
-- [[IC10/0226/RA2/IC10-0226-RA2-T_CopiesSeguretat\| Treball de Còpies de Seguretat]]
+- [[IC10-0226-RA2-Politica d'Emmagatzematge | Política d'emmagatzematge]]
+- [[IC10-0226-RA2-Mitjans d'Emmagatzematge | Mitjans d'emmagatzematge]]
+- [[IC10-0226-RA2-Activitat IPFS | Activitat IPFS]]
+- [[IC10-0226-RA2-RAIDs | RAIDs]]
+- [[IC10-0226-RA2-Diagnòstic de dispositus d'emmagatzematge | Diagnòstic de dispositius d'emmagatzematge]]
+- [[IC10-0226-RA2-ACTIVITAT Diagnòstic de Dispositius d'Emmagatzematge | ACTIVITAT Diagnòstic de dispositius d'emmagatzematge]]
+- [[IC10-0226-RA2-Política de còpies de seguretat | Política de Còpies de Seguretat]]
+- [[IC10-0226-RA2-T_CopiesSeguretat| Treball de Còpies de Seguretat]]
+
 ## RA3
-- [[IC10-0226-RA3-Detecció i monitoratge \| Detecció i monitoratge]]
-- [[IC10/0226/RA3/IC10-0226-RA3-Activitat HIDS amb OSSEC\| Activitat: OSSEC]]
-- [[IC10/0226/RA3/IC10-0226-RA3-SOC\| Security Operation Center]]
-- [[IC10-0226-RA3-Com reaccionar davant una intrussió \| Com reaccionar davant una intrusió]]
-- [[IC10-0226-RA3-Activitat-Analitzar les cyberatacs en temps real \| Activitat: Analitzar els cyberatacs en temps real]].
+
+- [[IC10-0226-RA3-Detecció i monitoratge | Detecció i monitoratge]]
+- [[IC10-0226-RA3-Activitat HIDS amb OSSEC| Activitat: OSSEC]]
+- [[IC10-0226-RA3-SOC| Security Operation Center]]
+- [[IC10-0226-RA3-Com reaccionar davant una intrussió | Com reaccionar davant una intrusió]]
+- [[IC10-0226-RA3-Activitat-Analitzar les cyberatacs en temps real | Activitat: Analitzar els cyberatacs en temps real]].
 
 ## RA4
-- [[IC10/0226/RA4/IC10-0226-RA4-Disseny Segur i Seguretat Perimetral\| Disseny segur i seguretat perimetral]]
-- [[IC10/0226/RA4/IC10-0226-RA4-Tallafocs\| Tallafocs]]
-- [[IC10/0226/RA4/IC10-0226-RA4-Mikrotik - Securització 101\| Mikrotik - Securització 101]]
-- [[IC10-0226-RA4-Mikrotik DMZ \| Mikrotik DMZ]]
-- [[IC10-0226-RA4-Tallafocs a Mikrotik \| Tallafocs a Mikrotik]]
-- [[IC10-0226-RA4-Mikrotik Llistes Negres \| Mikrotik - Llistes negres]]
-- [[IC10-0226-RA4-Mikrotik Llistes Blanques \| Mikrotik - Llistes blanques]]
-- [[IC10-0226-RA4-Taller de seguretat inal·làmbrica \| Taller de seguretat inal·làmbrica]]
-- [[IC10-0226-RA4-Anàlisi de Phishing \| Anàlisi de Phising]]
-- [[IC10-0226-RA4-TREBALL - Enginyeria Social i Phishing \| Treball: Enginyeria social i phishing]]
+
+- [[IC10-0226-RA4-Disseny Segur i Seguretat Perimetral| Disseny segur i seguretat perimetral]]
+- [[IC10-0226-RA4-Tallafocs| Tallafocs]]
+- [[IC10-0226-RA4-Mikrotik - Securització 101| Mikrotik - Securització 101]]
+- [[IC10-0226-RA4-Mikrotik DMZ | Mikrotik DMZ]]
+- [[IC10-0226-RA4-Tallafocs a Mikrotik | Tallafocs a Mikrotik]]
+- [[IC10-0226-RA4-Mikrotik Llistes Negres | Mikrotik - Llistes negres]]
+- [[IC10-0226-RA4-Mikrotik Llistes Blanques | Mikrotik - Llistes blanques]]
+- [[IC10-0226-RA4-Taller de seguretat inal·làmbrica | Taller de seguretat inal·làmbrica]]
+- [[IC10-0226-RA4-Anàlisi de Phishing | Anàlisi de Phising]]
+- [[IC10-0226-RA4-TREBALL - Enginyeria Social i Phishing | Treball: Enginyeria social i phishing]]

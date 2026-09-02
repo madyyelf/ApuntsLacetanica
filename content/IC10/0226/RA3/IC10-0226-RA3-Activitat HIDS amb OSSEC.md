@@ -1,8 +1,11 @@
 ---
-{"publish":true,"tags":["apunts"],"cssclasses":""}
+publish: true
+tags:
+  - apunts
 ---
 
 # Llicència
+
 Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.ca)**
 
 **2025 Raul Gimenez Herrada**
@@ -11,6 +14,7 @@ Aquest document es publica sota llicència **[Creative Commons 3.0 (BY - NC - SA
 [![[Meta/Plantilles/buymeacoffee.png]]](https://ko-fi.com/raulgimenezherrada)
 
 ---
+
 # IC10-0226-RA3 Activitat HIDS amb OSSEC
 
 Algunes de les característiques de OSSEC:
@@ -48,29 +52,29 @@ I a partrid aquí anirem seguint els passos de l'assistent d'instal·lació.
 
 ![[IC10/0226/RA3/OSSEC_Idioma.png]]
 
-Després ens informa que instal·larem OSSEC. Premem `ENTER`. 
+Després ens informa que instal·larem OSSEC. Premem `ENTER`.
 
 ![[IC10/0226/RA3/OSSEC_Confirmacio.png]]
 
-El següent pas és triar el tipus d'instal·lació, en el nostre cas `local` ja que així instal·larem tant l'agent com el servidor en el mateix equip. 
+El següent pas és triar el tipus d'instal·lació, en el nostre cas `local` ja que així instal·larem tant l'agent com el servidor en el mateix equip.
 
 ![[IC10/0226/RA3/OSSEC_Local.png]]
 
-Ruta per defecte `/var/ossec/` ja està OK, així que premem `ENTER`. 
+Ruta per defecte `/var/ossec/` ja està OK, així que premem `ENTER`.
 
 ![[IC10/0226/RA3/OSSEC_PuntInstalacio.png]]
 
-Ens demana si volem activar les notificaicons per correu electrònic, per defecte [s] per tant premem `ENTER`. Després ens demanarà el correu electrònic dos cops i ens detectarà un servidor SMTP de Google que podrem utilitzar. Tanmateix per a que funcioni caldría configurar un servidor `postfix` en local per enviar l'alerta, això ja ho sabeu fer de M7. 
+Ens demana si volem activar les notificaicons per correu electrònic, per defecte \[s] per tant premem `ENTER`. Després ens demanarà el correu electrònic dos cops i ens detectarà un servidor SMTP de Google que podrem utilitzar. Tanmateix per a que funcioni caldría configurar un servidor `postfix` en local per enviar l'alerta, això ja ho sabeu fer de M7.
 
 ![[IC10/0226/RA3/OSSEC_NotificacionsCorreu.png]]
 
-Després ens demanarà si volem activar un parell de monitoritzacions més, lògicament triem l'opció per defecte en tots dos casos que és [s]. 
+Després ens demanarà si volem activar un parell de monitoritzacions més, lògicament triem l'opció per defecte en tots dos casos que és \[s].
 
 ![[IC10/0226/RA3/OSSEC_ActivarDeteccions.png]]
 
-També ens demana si volem que pugui agregar regles al tallafocs, l'hi indiquem que si. ![OSSEC_Firewall.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF4/OSSEC_Firewall.png)
+També ens demana si volem que pugui agregar regles al tallafocs, l'hi indiquem que si. ![OSSEC\_Firewall.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF4/OSSEC_Firewall.png)
 
-Finalment ens mostra un llistat de IPs que considera segures i ens demana si en volem afegir més. Aquestes IPs es consideraràn segures i per tant no s'activaràn alarmes relacionades amb elles. 
+Finalment ens mostra un llistat de IPs que considera segures i ens demana si en volem afegir més. Aquestes IPs es consideraràn segures i per tant no s'activaràn alarmes relacionades amb elles.
 
 ![[IC10/0226/RA3/OSSEC_IPsLlistaBlanca.png]]
 
@@ -78,7 +82,7 @@ Per acabar, una petit text de com configurar algunes coses més de forma manual 
 
 ![[IC10/0226/RA3/OSSEC_ConfirmacioFinal.png]]!
 
-Un cop tot instal·lat, ens dona missatge de finalització junt amb instruccions de com arrencar i parar el servei alhora de com modificar-ne la configuració. 
+Un cop tot instal·lat, ens dona missatge de finalització junt amb instruccions de com arrencar i parar el servei alhora de com modificar-ne la configuració.
 
 ![[IC10/0226/RA3/OSSEC_Finalitzacio.png]]
 
@@ -94,13 +98,15 @@ cat /var/ossec/logs/alerts/alerts.log
 
 Per verificar el bon funcionament de OSSEC farem, des d'un altre màquina un SSH tot equivocant-nos d'usuari i/o contrasenya. Un cop fet veurem que la reacció de OSSEC ha bloquejar la IP mitjançant `iptables` (recordeu que ho podem veure amb la comanda `iptables -S`) i generar una alerta que trobarem a `/var/ossec/logs/alerts/alerts.log`.
 
-![[IC10/0226/RA3/OSSEC_RespostaActiva.png]] 
+![[IC10/0226/RA3/OSSEC_RespostaActiva.png]]
 
 ![[IC10/0226/RA3/OSSEC_AlertaSSH.png]]
 
 # Webgrafia
 
-- [https://techviewleo.com/install-and-configure-ossec-hids-agent-on-debian/](https://techviewleo.com/install-and-configure-ossec-hids-agent-on-debian/)
-- [https://github.com/ossec/ossec-hids/issues/2039](https://github.com/ossec/ossec-hids/issues/2039)
+- <https://techviewleo.com/install-and-configure-ossec-hids-agent-on-debian/>
+- <https://github.com/ossec/ossec-hids/issues/2039>
+
 # Flipped class
+
 ![Flipped Class](https://www.youtube.com/watch?v=8qksSowfS1k)
