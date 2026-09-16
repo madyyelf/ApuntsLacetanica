@@ -134,7 +134,7 @@ Tres hores setmanals (2+1) x 33 setmanes.
 
 Cadascuna de les RAs s'avaluarà de forma independent seguint el següent criteri:
 
-RA = Mitja ponderada entre els test i el treball de la RA.
+RA = **Mitja ponderada** entre els test i el treball de la RA. Tenint que **superar un 4** tant la mitjana de **test com el treball**.
 
 La nota final de mòdul serà la mitja ponderada de les RAs on totes han d'estar superades (>=5)
 
