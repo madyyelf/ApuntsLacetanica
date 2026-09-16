@@ -492,3 +492,9 @@ Prepareu una presentació per a compartir amb els altres grups la vostra experi�
 - Resum de les mètriques obtingudes i punts clau del feedback qualitatiu.
 - Presa de decisió i i proposta de noves hipòtesis.
   Aquesta presentació cal que intervingueu tots, però no ha de durar més de 15 minuts.
+
+# Apèndix
+
+## Projectes 2026-27
+
+- [[IC10-1713-Projecte Learnwise - 26-27 - Kit adopció IA per a direccions de centre]]
