@@ -48,7 +48,7 @@ Imaginem que ens han contractat en una petita empresa que funciona amb [aquest s
 
 > **ATENCIÓ:** Cal que _Windows Server_ s'apagui correctament, sinó bloqueja el sistema de fitxers i per tant des de Ubuntu no podrem fer els canvis necessaris. Si teniu Windows apagat malament, la forma més simple és eliminar la màquina virtual i tornar-la a importar.
 
-Arranqueu una màquina virtual de Windows amb un _LiveCD_, situeu-vos al sistema de fitxers de Windows i dins de `C:\Windows\System32` i substituïu el programa `SETHC.exe` per `CMD.exe`. Per fer-ho:
+Arranqueu una màquina virtual de Windows amb un _LiveCD_ (us recomano [Hiren's Boot](https://www.hirensbootcd.org/files/HBCD_PE_x64.iso), situeu-vos al sistema de fitxers de Windows i dins de `C:\Windows\System32` i substituïu el programa `SETHC.exe` per `CMD.exe`. Per fer-ho:
 
 1. Simularem un USB amb l'Ubuntu tot afegint la seva ISO al CD de la màquina virtual. ![sticky\_livecd.png](https://educaciodigital.cat/inslacetania/moodle/pluginfile.php/331443/mod_resource/content/1/sticky_livecd.png)
 
