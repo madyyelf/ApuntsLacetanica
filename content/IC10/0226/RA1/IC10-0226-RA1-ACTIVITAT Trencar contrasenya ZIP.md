@@ -24,7 +24,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 ## 3. Enunciat
 
-Per veure com de senzill és crackejar una contrasenya no robusta el que heu de fer és utilitzar un dels dos tipus d’atacs per aconseguir accedir als arxius que hi han comprimits en [aquest arxiu ZIP](file:///run/media/rgimenezh/36167eda-1ffc-44d1-9e8e-ebbe470f63ff/Docs/www/apunts/SMX/MP06/UF1/Geheim.zip).
+Per veure com de senzill és crackejar una contrasenya no robusta el que heu de fer és utilitzar un dels dos tipus d’atacs per aconseguir accedir als arxius que hi han comprimits en [aquest arxiu ZIP](https://drive.google.com/file/d/1klGMHnJWjfULe0qa-nhhaWGKinAtY1g5/view?usp=sharing).
 
 Recordeu que bàsicament per crackejar una contrasenya existeixen bàsicament dos tipus d’atacs:
 
