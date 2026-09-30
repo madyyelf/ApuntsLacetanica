@@ -34,12 +34,17 @@ Busqueu i instal·leu l'aplicació `hydra` (mitjançant repositoris o [web ofici
 Tenim un servidor Debian, amb el servei SSH obert.  Farem un atac de diccionari/força bruta sobre aquest servei i l'usuari `pere`.
 
 Per atacar per diccionari:
-`hydra -l pere -P diccionari ssh://<IP>`
+`hydra -l pere -P /usr/share/wordlists/rock-you.txt ssh://10.50.13.10`
+On:
+
+- `-l`: És el nom d'usuari a atacar.
+- `-P`: Ruta al diccionari a utilitzar.
+- `ssh://<IP>`: Servei a atacar, en aquest cas _ssh_ i la _IP_ objectiu.
 
 Per un atac de força bruta:
-`hydra -l pere -x 4:8:aA1! ssh://<IP>`
+`hydra -l pere -x 4:8:aA1! ssh://10.50.13.10`
 
-On:
+On `-x` marca que farem un atac de _força bruta_ amb el patró:
 
 - `4`: Longitud mínima.
 - `8`: Longitud màxima.
