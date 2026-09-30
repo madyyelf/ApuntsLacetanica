@@ -33,6 +33,7 @@ Tenim un servidor Debian, amb el servei SSH obert.  Farem un atac de força brut
 Per atacar per diccionari:
 `hydra -l pere -P diccionari ssh://<IP>`
 
+Podeu utilitzar el [Top 200 contrasenyes més utilitzades el 2025](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/2025-199_most_used_passwords.txt).
 Nota: Per defecte Debian tan sols deixa 6 intents per connexió. LoginGraceTime ampliat a 30m.
 
 Per un atac de força bruta:
