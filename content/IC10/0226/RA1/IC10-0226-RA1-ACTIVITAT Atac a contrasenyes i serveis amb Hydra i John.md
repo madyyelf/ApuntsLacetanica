@@ -20,7 +20,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 - Prendre consciència de la necessitat d’utilitzar contrasenyes robustes.
 - La utilitat d'altres configuracions defensives com limitar intents, bloqueig comptes, etc.
-- Veure atacs de cracking de contrasenyes amb eines avançades.
+- Veure atacs de cracking de contrasenyes amb eines avançades (_hydra-thq_ i \*John The Ripper).
 - concepte _Hash_.
 - Concepte _RainbowTables_.
 - Conceptes de contrasenyes a Linux.
