@@ -61,10 +61,32 @@ Tenim dues vies:
 - Buscar [Rainbow Tables](https://en.wikipedia.org/wiki/Rainbow_table) que resolguin el hash.
 - Programa John the Ripper per craquejar les contrasenyes en local
 
-## John the Ripper
+### John the Ripper
 
 Anem per parts.
-q
+Primer combinarem els dos arxius de `/etc/passwd/`i `/etc/shadow/`per generar un arxiu base de hash que utilitzarem amb `john`.
+
+Creeu un arxiu anomenat `passwd.txt`amb el contingut de `/etc/passwd` i un `shadow.txt`amb el contingut de `/etc/shadow`.  Ho podeu fer amb _copy/paste_ o per `scp`.
+
+Els combinarem utiltizant la comanda `unshadow passwd-txt shadow.txt > hashes.txt`
+
+#### Atac de diccionari
+
+Si volem fer un atac de diccionari farem: `john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt`.  Els paràmetres són evidents ja a aquestes alçades.
+
+#### Atac de força bruta
+
+Si no trobem les contrasenyes amb el diccionari, podem optar per generar un diccionari personalitzar o fer un atac de força bruta, aprofitant que l'estem fent en local.
+
+Llancem `john`per crackejar les contrasenyes utilitzant força bruta mitjançant la comanda: `john --incremental=All hashes.txt`
+
+On:
+
+- `--incremental=All`: Indica que el conjunt de caràcters és l'alfabet complet, incloent minúscules, majúscules, dígits i caràcters especials.
+
+#### Veure contrasenyes
+
+Un cop acabat podem veure els passowords amb: `john --show hashes.txt`
 
 # Recursos
 
