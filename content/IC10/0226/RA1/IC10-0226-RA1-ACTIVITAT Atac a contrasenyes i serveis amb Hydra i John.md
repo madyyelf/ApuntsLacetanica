@@ -68,6 +68,8 @@ Primer combinarem els dos arxius de `/etc/passwd/`i `/etc/shadow/`per generar un
 
 Creeu un arxiu anomenat `passwd.txt`amb el contingut de `/etc/passwd` i un `shadow.txt`amb el contingut de `/etc/shadow`.  Ho podeu fer amb _copy/paste_ o per `scp`.
 
+Instal·larem la eina `unshadow`amb `sudo apt install unshadow`.
+
 Els combinarem utiltizant la comanda `unshadow passwd-txt shadow.txt > hashes.txt`
 
 #### Atac de diccionari
