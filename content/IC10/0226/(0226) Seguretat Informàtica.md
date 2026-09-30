@@ -21,7 +21,7 @@ tags:
 - [[IC10-0226-RA1-Polítiques de seguretat]]
 - [[IC10-0226-RA1-Polítiques de contrasenyes]]
 - [[IC10-0226-RA1-ACTIVITAT Trencar contrasenya ZIP]]
-- [[IC10-0226-RA1-ACTIVITAT Atac a contrasenyes i serveis amb Hydra]]
+- [[IC10-0226-RA1-ACTIVITAT Atac a contrasenyes i serveis amb Hydra i John]]
 - [[IC10-0226-RA1-Gestió de permisos | Gestió de permisos]]
 - [[IC10-RA1-TREBALL Implementar política de contrasenyes a Linux | TREBALL Implementació política de contrasenyes a Linux]]
 - [Tips: Què fa suspendre el treball...](https://docs.google.com/presentation/d/1rfpl-UfHr7po7eUND2x75ltnl_CFN1lZfzBpolPkyyI/edit)
