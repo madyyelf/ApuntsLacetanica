@@ -19,10 +19,10 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 # Objectius
 
 - Prendre consciència de la necessitat d’utilitzar contrasenyes robustes.
-- Veure atacs de cracking de contrasenyes.
-- Extrapolar possibles defenses, especialment en serveis.
-- Entendre què és un hash.
-- Concepte RainbowTables.
+- La utilitat d'altres configuracions defensives com limitar intents, bloqueig comptes, etc.
+- Veure atacs de cracking de contrasenyes amb eines avançades.
+- concepte _Hash_.
+- Concepte _RainbowTables_.
 - Conceptes de contrasenyes a Linux.
 
 # Enunciat
