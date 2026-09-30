@@ -24,6 +24,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 - concepte _Hash_.
 - Concepte _RainbowTables_.
 - Conceptes de contrasenyes a Linux.
+- Com es veuen els atacs als registres del sistema.
 
 # Enunciat
 
@@ -88,6 +89,14 @@ On:
 
 Un cop acabat podem veure els passowords amb: `john --show hashes.txt`
 
+## Registres de l'atac
+
+Ara que ja esteu dins i teniu accés, consulteu el _logs_ de _ssh_ amb la comanda `journalctl -u ssh`.
+
+- Com d'evident és que hem estat atacats?
+- Sabem l'atacant?
+- Podem arribar a esbrinar si han aconseguit entrar finalment?
+
 # Recursos
 
 Si us encalleu amb la contrasenya de `pere` proveu amb el diccionari: [Top 200 contrasenyes més utilitzades el 2025](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/2025-199_most_used_passwords.txt).
@@ -104,4 +113,5 @@ També recordeu que teniu disponibles.
 
 # Tasques
 
-- [ ] #2do #ic10/0226 Part de atac a /etc/shadow.
+- [x] #2do #ic10/0226 Part de atac a /etc/shadow. ✅ 2026-09-30
+- [x] #2do #ic10/0226 Part veure registres. ✅ 2026-09-30
