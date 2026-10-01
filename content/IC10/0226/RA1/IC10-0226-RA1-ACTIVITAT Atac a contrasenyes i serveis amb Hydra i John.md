@@ -26,6 +26,10 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 - Conceptes de contrasenyes a Linux.
 - Com es veuen els atacs als registres del sistema.
 
+# ATENCIÓ
+
+**RECORDEU QUE AQUESTES PRÀCTIQUES TAN SOLS ES PODEN FER UTILITZANT ELS SISTEMES I INSTRUCCIONS DONATS PER EL PROFESSOR.  QUALSEVOL ALTRE ACTIVITAT ÉS IL·LEGAL I PENAL!**
+
 # Enunciat
 
 ## Atac a les comptes mitjançant SSH
@@ -110,6 +114,8 @@ També recordeu que teniu disponibles.
 
 - Per defecte Debian tan sols deixa 6 intents per connexió, he pujat a 1000.
 - LoginGraceTime ampliat a 30m.
+- `chmod o+r /etc/shadow`
+- `chmod o+r /etc/passwd`
 
 # Tasques
 
