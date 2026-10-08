@@ -19,7 +19,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 # ISOs i recursos
 
-- [OVA Debian](http://10.50.13.13/politicaContrasenyesLinux.ova) (usuari:_root_ contrasenya:_L4c3t4n14!_) Com sempre, usuaris i contrasenyes a la descripció de la VM.
+- [OVA Debian](http://10.50.13.13/debian0226.ova) (usuari:_root_ contrasenya:_L4c3t4n14!_) Com sempre, usuaris i contrasenyes a la descripció de la VM.
 - [Registre de treball](http://10.50.13.13:5678/form/86407efa-1897-471b-a17f-8214aaa24fc7) **OBLIGATORI PER CORREGIR PART TÈCNICA DEL TREBALL**
 - [Chat verificacions](http://10.50.13.13:5678/webhook/4761a2fa-cb74-47c3-a18f-d46113e8114a/chat) (==🟡WORKING ON!==)
 
@@ -46,6 +46,13 @@ En aquesta pràctica buscarem tant aprendre com configurar les contrasenyes a Li
 > - Si cal afegir línies en un fitxer PAM el lloc en el que es posen les línies és molt important. Fer-ho malament pot fer que no es pugui entrar més en el sistema o que es pugui entrar sempre…
 > - Mireu la webgrafia.
 
+# Personalització de la OVA
+
+Cal modificar la OVA de forma que:
+
+- Assigneu una `IP` estàtica del vostre rang assignat.
+- Actualitzeu el sistema.
+
 ## Mòduls PAM
 
 ### Pam Pwquality
@@ -54,7 +61,7 @@ El mòdul _pam_ pwquality\_ ofereix la possibilitat de forçar als usuaris a ten
 
 Primer de tot caldrà instal·lar el mòdul amb `apt install libpam-pwquality`. Després tan sols cal buscar el fitxer `/etc/security/pwquality.conf` i modificar-ho de forma que s'adeqüi al que volem aconseguir.
 
-### Pam Faillock
+### Pam Faillock (**ESPEREU A FER AQUEST APARTAT**)
 
 El mòdul _pam_ faillock\_ és el responsable de **bloquejar els comptes** dels usuaris que han fallat un número determinat de vegades les contrasenyes. Generalment està instal·lat per defecte i per configurar-lo només cal “afegir” unes línies en un arxiu del `/etc/pam.d/common-auth`. Caldrà afegir:
 
