@@ -50,7 +50,7 @@ En aquesta pràctica buscarem tant aprendre com configurar les contrasenyes a Li
 
 Cal modificar la OVA de forma que:
 
-- Assigneu una `IP` estàtica del vostre rang assignat a `/etc/network/interface`.
+- Assigneu una `IP` estàtica del vostre rang assignat a `/etc/network/interfaces`.
 - Assignar un DNS a `/etc/resolv.con`
 - Actualitzeu el sistema.
 
@@ -62,7 +62,7 @@ El mòdul _pam_ pwquality\_ ofereix la possibilitat de forçar als usuaris a ten
 
 Primer de tot caldrà instal·lar el mòdul amb `apt install libpam-pwquality`. Després tan sols cal buscar el fitxer `/etc/security/pwquality.conf` i modificar-ho de forma que s'adeqüi al que volem aconseguir.
 
-### Pam Faillock (**ESPEREU A FER AQUEST APARTAT**)
+### Pam Faillock
 
 El mòdul _pam_ faillock\_ és el responsable de **bloquejar els comptes** dels usuaris que han fallat un número determinat de vegades les contrasenyes. Generalment està instal·lat per defecte i per configurar-lo només cal “afegir” unes línies en un arxiu del `/etc/pam.d/common-auth`. Caldrà afegir:
 
