@@ -20,7 +20,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 # ISOs i recursos
 
 - [OVA Debian](http://10.50.13.13/politicaContrasenyesLinux.ova)
-- [Chat verificacions](http://10.50.13.13:5678/webhook/4761a2fa-cb74-47c3-a18f-d46113e8114a/chat)
+- [Chat verificacions](http://10.50.13.13:5678/webhook/4761a2fa-cb74-47c3-a18f-d46113e8114a/chat) (==🟡WORKING ON!==)
 
 # Objectius
 
