@@ -19,26 +19,8 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 # ISOs i recursos
 
-- [ISO Debian 11 al ROBUST. (intern INS Lacetània)](http://robust.infla.cat/~rgimenez/ISO/debian-11.5.0-amd64-DVD-1.iso)
-- [ISO Debian 11 al Drive.](https://drive.google.com/file/d/1rlXpNqd20gGQ2c25mNmxwQdQXuyR4oHm/view?usp=sharing)
-
-## Repositoris
-
-Els repositoris (Arxiu `/etc/apt/sources.list`) de Debian 11 han de ser:
-
-S'ha de comentar, la línia del `cdrom`.
-
-> deb <http://ftp.caliu.cat/debian/> bullseye main
->
-> deb-src <http://ftp.caliu.cat/debian/> bullseye main
->
-> deb <http://security.debian.org/debian-security> bullseye-security main contrib
->
-> deb-src <http://security.debian.org/debian-security> bullseye-security main contrib
->
-> deb <http://ftp.caliu.cat/debian/> bullseye-updates main contrib
->
-> deb-src <http://ftp.caliu.cat/debian/> bullseye-updates main contrib
+- [OVA Debian](http://10.50.13.13/politicaContrasenyesLinux.ova)
+- [Chat verificacions](http://10.50.13.13:5678/webhook/4761a2fa-cb74-47c3-a18f-d46113e8114a/chat)
 
 # Objectius
 
