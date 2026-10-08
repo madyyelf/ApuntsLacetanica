@@ -19,7 +19,7 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 
 # ISOs i recursos
 
-- [OVA en Local](http://10.50.13.13/debian0226.ova) (usuari:_root_ contrasenya:_L4c3t4n14!_) Com sempre, usuaris i contrasenyes a la descripció de la VM. **Cal canviar la IP!** ([OVA al Drive](https://drive.google.com/file/d/12j6P5TAvu18_cx3IoR0bVVJjjVIsJWxc/view?usp=sharing))
+- [OVA en Local](http://10.50.13.13/debian0226.ova) (usuari:_root_ contrasenya:_L4c3t4n14!_) Com sempre, usuaris i contrasenyes a la descripció de la VM. **Cal canviar la IP i DNS!** ([OVA al Drive](https://drive.google.com/file/d/12j6P5TAvu18_cx3IoR0bVVJjjVIsJWxc/view?usp=sharing))
 - [Registre de treball](http://10.50.13.13:5678/form/86407efa-1897-471b-a17f-8214aaa24fc7) **OBLIGATORI PER CORREGIR PART TÈCNICA DEL TREBALL**
 - [Chat verificacions](http://10.50.13.13:5678/webhook/4761a2fa-cb74-47c3-a18f-d46113e8114a/chat) (==🟡WORKING ON!==)
 
@@ -50,7 +50,8 @@ En aquesta pràctica buscarem tant aprendre com configurar les contrasenyes a Li
 
 Cal modificar la OVA de forma que:
 
-- Assigneu una `IP` estàtica del vostre rang assignat.
+- Assigneu una `IP` estàtica del vostre rang assignat a `/etc/network/interface`.
+- Assignar un DNS a `/etc/resolv.con`
 - Actualitzeu el sistema.
 
 ## Mòduls PAM
