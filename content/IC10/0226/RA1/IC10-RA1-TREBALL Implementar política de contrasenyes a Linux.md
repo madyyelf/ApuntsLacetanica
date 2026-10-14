@@ -132,6 +132,7 @@ Aquest treball computa com **QUATRE** activitats normals. La valoració del treb
 ## Tot i configurar l'arxiu `/etc/security/pwquality.conf` al crear un usuari nou ignora la configuració
 
 - Has configurat l'arxiu però no instal·lat el paquet `libpam-pwquality`.
+- Has activat (descomentat) l'opció _enforce\_for\_root_?
 
 ## Al configurar el `faillock` ja no puc entrar al sistema
 
