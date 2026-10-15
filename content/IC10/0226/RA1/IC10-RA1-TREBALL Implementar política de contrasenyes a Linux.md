@@ -98,7 +98,7 @@ L'activitat consta de reproduïr la política de contrasenyes vista en l'activit
 3. Reinicieu el sistema
 4. Intenteu entrar amb un dels usuaris creats anteriorment. Què fa el sistema?
 5. Intenteu crear un usuari nou amb una contrasenya senzilla que no compleixi la política i comproveu que el sistema no el deixa crear.
-6. Amb un usuari qualsevol intenteu entrar en el sistema fallant la contrasenya 4 vegades. Què passa?
+6. Amb un usuari qualsevol intenteu entrar en el sistema fallant la contrasenya 3 vegades. Què passa al quart intent de login?
 7. Busqueu com podeu fer per, com administrador, desbloquejar un compte bloquejat (que no calgui esperar els 5 minuts).
 8. Finalment, creeu un nou usuari i verifiqueu al `/etc/shadow` que la data de caducitat del nou compte és d'aquí 365 dies.
 

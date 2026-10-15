@@ -186,7 +186,7 @@ On:
    La comanda `scp` demanarà password cada cop que s'executi, per automatitzar-ho del tot l'haurem de combinar amb `sshpass` que té el format: `sshpass -p <password> <comanda SSH/SCP>` i per tant la comanda final serà quelcom semblant a:
 
 ```
-sshpass -p moltdificil scp /tmp/complerta-*.tar rgimenezh@10.34.22.33:/backup/
+ sshpass -p moltdificil scp /tmp/complerta-*.tar rimenezh@10.34.22.33:/backup/
 ```
 
 ### Eliminar arxius anteriors als 18 messos
