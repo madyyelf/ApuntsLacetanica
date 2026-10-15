@@ -92,8 +92,8 @@ L'activitat consta de reproduïr la política de contrasenyes vista en l'activit
 1. En una màquina virtual amb Debian 11 definiu-hi tres usuaris amb contrasenyes simples: “12345”, “1Ab”, “patata” (en cas que existeixi una política de contrasenyes vigent, elimineu-la per a poder crear aquests comptes amb contrasenyes poc segures).
 2. Definiu una política de contrasenyes que obligui als usuaris a:
    - Tenir contrasenyes de 9 o més caràcters amb complexitat (números, lletres i símbols).
-   - Que caduquin cada any (365 dies), avisi 15 dies abans de caducar i com a mínim passin 7 dies abans de tornar-la a canviar.
    - Que bloquegi el compte si l'usuari falla la contrasenya tres vegades seguides i que calgui esperar-se 5 minuts per tornar a intentar entrar.
+   - Que caduquin cada any (365 dies), avisi 15 dies abans de caducar i com a mínim passin 7 dies abans de poder tornar-la a canviar.
 3. Reinicieu el sistema
 4. Intenteu entrar amb un dels usuaris creats anteriorment. Què fa el sistema?
 5. Intenteu crear un usuari nou amb una contrasenya senzilla que no compleixi la política i comproveu que el sistema no el deixa crear.
