@@ -270,18 +270,22 @@ Recupereu les mètriques definides en la tasca anterior i tingeu-les sempre a m�
 
 Per cada mètrica (tant principal com secundària) definiu les **característiques mínimes** que ha de tenir el PMV **per contribuir a la mètrica**.
 
+Aquestes característiques poden fer referència com ha de ser la solució per **aconseguir el comportament esperat** del usuari i contribuir positivament a la mètrica (per exemple un correu, al email corporatiu, convidant als docents a accedir al curs de formació, que sigui molt persuasiu destacant les avantatges que tindrà aprendre l'ús de IA) o les **característiques que ha de tenir per recollir les mètriques** establertes (els materials estaran continguts en un curs de moodle del propi centre on podrem consultar el registres i veure qui hi ha accedit).
+
+En tot cas estem definit a nivell tècnic com serà la solució, per tant **cal concretar** tecnologies, característiques, etc.
+
 Qualsevol característica que no contribueixi directament a una mètrica s'ha de descartar en el PMV.
 
 ### Exemple de característiques del PMV a partir de la primera hipòtesi
 
 Per exemple, amb la mètrica principal de "Docents que accedeixen al PMV" hi contribuirà:
 
-- Cal identificar qui accedeix al PMV.
-- L'invitació (captació) ha de ser atractiva i explicar de forma breu el PMV.
-- El tema tractat ha de ser atractiu per al client.
-- Canal de distribució utilitzat ha de ser molt simple i fàcil.
-- PMV enfocat a tasques repetitives o difícils del dia a dia del docent.
-- Online 24/7 i des de qualsevol lloc.
+- Cal identificar qui accedeix al PMV -> (_logs del curs de Moodle_)
+- L'invitació (captació) ha de ser atractiva i explicar de forma breu el PMV i els seus avantatges.
+- El tema tractat ha de ser atractiu per al client. -> (_ús de la IA per estalviar feina de correcció_)
+- Canal de distribució utilitzat ha de ser molt simple i fàcil. -> (_correu corporatiu_)
+- PMV enfocat a tasques repetitives o difícils del dia a dia del docent. -> (_correcció de tasques_)
+- Online 24/7 i des de qualsevol lloc. -> (_Plataforma Moodle_)
 
 En la mètrica secundària de "docents que miren més d'un PMV":
 
