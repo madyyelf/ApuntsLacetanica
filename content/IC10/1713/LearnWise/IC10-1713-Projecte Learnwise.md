@@ -499,6 +499,21 @@ Prepareu una presentació per a compartir amb els altres grups la vostra experi�
 
 # Apèndix
 
+## Dificultats detectades
+
+- Els alumnes tot sovint proposen projectes poc realistes (sense mercat), tot i tenir un marc de referència d'entorn proper.
+- Tot sovint la qualitat final és molt baixa, i no podem publicar.
+- Els costa molt concretar les solucions tècniques.
+- Els costa entendre la relació entre els objectius (corroborar hipòtesi), les mètriques i les característiques associades del PMV.
+- Els falta coordinació i treball d'equip (cohesió de grup).
+
+## Millores i ampliacions del mòdul
+
+- La gent paga per _resoldre problemes_, _eliminar friccions_ o _experiències_.
+- Ús de _Trello_ per a gestió de tasques i coordinació.
+- Aplicació de mètode _Get Things Done_.
+- Incorporar en projectes creatius el concepte de _Show your work!_ de Austin Kleon.
+
 ## Projectes 2026-27
 
 - [[IC10-1713-Projecte Learnwise - 26-27 - Kit adopció IA per a direccions de centre]]

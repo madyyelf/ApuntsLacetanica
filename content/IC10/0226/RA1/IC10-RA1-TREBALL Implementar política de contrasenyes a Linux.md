@@ -20,6 +20,9 @@ Aquest document es publica sota llicència **Creative Commons 3.0 (BY - NC - SA)
 # ISOs i recursos
 
 - [OVA en Local](http://10.50.13.13/debian0226.ova) (usuari:_root_ contrasenya:_L4c3t4n14!_) Com sempre, usuaris i contrasenyes a la descripció de la VM. **Cal canviar la IP i DNS!** ([OVA al Drive](https://drive.google.com/file/d/12j6P5TAvu18_cx3IoR0bVVJjjVIsJWxc/view?usp=sharing))
+
+## Tan sols durant les classes
+
 - [Registre de treball](http://10.50.13.13:5678/form/86407efa-1897-471b-a17f-8214aaa24fc7) **OBLIGATORI PER CORREGIR PART TÈCNICA DEL TREBALL**
 - [Web de resultats](http://10.50.13.13:5678/webhook/resultats_contrasenyes_linux) On podeu veure el resultat de les proves automàtiques i si aneu avançant o no.
 
