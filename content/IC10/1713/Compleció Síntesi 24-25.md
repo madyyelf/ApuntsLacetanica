@@ -297,6 +297,7 @@ Caldrà afegir al servidor AD el servei de correu electrònic, amb comptes per a
 - Es pugui utilitzar des dels ordinadors de la _VLAN-INTERNA_ utilitzant el client _Thunderbird_ (per tant enviar i rebre emails entre dos ordinadors client diferents).
 - Obligatorietat d'us de protocols segurs (_SASL_, tan sols permetent _SMTPS, POPS i IMAPS_ i no les seves versions insegures).
 - Finalment, que permeti xifrar el contingut dels correus i signar-los (_OpenPGP_).
+  Aquest servidor es pot fer al AD (Windows) o en un nou servidor dins la mateixa xarxa amb _Dovecot + Postfix_ (Linux).
 
 # Bloc 9
 
