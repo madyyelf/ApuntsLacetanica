@@ -30,7 +30,7 @@ Cal recordar que el procediment de compleció no dona dret a l'assistència a cl
 
 Si teniu dubtes envieu un email al professorat voluntari, que us respondran tan aviat com puguin, però tingueu present que poden trigar varis dies en respondre i que depenent dels dubtes a vegades es fa molt difícil o fins i tot inviable solucionar-ho via email.
 
-És per aquest motiu que cal que sigueu el màxim d'autònoms possibles alhora de resoldre dubtes i fer les tasques amb temps i previsió.  Repasseu bé tots els materials i activitats prèvies fetes en les diferents assignatures i sempre **feu comprovacions adients**.
+És per aquest motiu que cal que sigueu el màxim d'autònoms possibles alhora de resoldre dubtes (és una part molt important de l'objectiu del treball) i fer les tasques amb temps i previsió.  Repasseu bé tots els vostres materials i activitats prèvies fetes en les diferents assignatures i sempre **feu comprovacions adients**.
 
 ## Entrega
 
@@ -38,7 +38,7 @@ L'entrega del treball constarà tant de la presentació de la memòria escrita (
 
 ## Avaluació
 
-Donada la natura de la compleció i el guiatge del projecte, aquest donarà peu a una **nota màxima de 7**.  Si es vol optar a **més nota cal afegir-hi apartats** com per exemple l'inclusiu d'un servei de correu electrònic, Alfresco, plans de contingència, afegir noves tecnologies no vistes a classe, o altres serveis no esmentats en aquesta guia.
+Donada la natura de la compleció i el guiatge del projecte, aquest donarà peu a una **nota màxima de 6**.  Si es vol optar a **més nota cal afegir-hi apartats** com per exemple, Alfresco, plans de contingència, afegir noves tecnologies no vistes a classe, o altres serveis no esmentats en aquesta guia.
 
 A més, cal remarcar que la guia esmenta els punts clau que cal implementar, però més enllà d'aquests **es valorarà la qualitat del treball així com la funcionalitat plena** de tots els components.
 
@@ -46,7 +46,8 @@ A més, cal remarcar que la guia esmenta els punts clau que cal implementar, per
 
 ## Situar-nos
 
-- Repassar tota la documentació del Moodle del projecte de síntesi, especialment els documents d'exemple i ajudes.
+- Repassar tot aquest enunciat de dalt a abaix i entendre tot el seu contingut.  Si hi ha quelcom que no enteneu envieu un email per demanar-ho.
+- Recopilar també tots els apunts propis, activitats i treballs que tingueu de _SMX_.
 
 ## Compartir documentació
 
@@ -288,6 +289,15 @@ Caldrà fer una reserva de IPs en e#l DHCP corresponent a _VLAN-INTERNA_ per a r
 
 En la _VLAN-TALLER_ no cal fer reserva i també tots els equips d'aquest VLAN han d'anar per DHCP.
 
+## Correu electrònic
+
+Caldrà afegir al servidor AD el servei de correu electrònic, amb comptes per a tot el personal de l'empresa.  Aquest servei haurà de complir els següents requisits:
+
+- Associat al domini de l'empresa.
+- Es pugui utilitzar des dels ordinadors de la _VLAN-INTERNA_ utilitzant el client _Thunderbird_ (per tant enviar i rebre emails entre dos ordinadors client diferents).
+- Obligatorietat d'us de protocols segurs (_SASL_, tan sols permetent _SMTPS, POPS i IMAPS_ i no les seves versions insegures).
+- Finalment, que permeti xifrar el contingut dels correus i signar-los (_OpenPGP_).
+
 # Bloc 9
 
 ## Servidor web
@@ -380,9 +390,7 @@ Cal aconseguir fer aquest esquema de còpies del _SRV-WEB_:
 - Arxius web de Moodle, Wordpress i Landing Page.
 - Arxius de configuració del _SRV-WEB_.
 
-Aquestes còpies s'han de fer amb _TAR_ i el _SRV-BACKUP_ les ha de recuperar a les 03:00AM del _SRV-WEB_ mitjançant _scp_.
-
-En definitiva s'ha de fer un sistema de còpies igual al fet al treball de MP06-UF2.  Consulteu l'enunciat dins del seu Moodle per més informació.
+Aquestes còpies s'han de fer amb _TAR_ i el _SRV-BACKUP_ **les ha de recuperar a les 03:00AM del _SRV-WEB_ mitjançant _scp_**.
 
 # Bloc 14
 
