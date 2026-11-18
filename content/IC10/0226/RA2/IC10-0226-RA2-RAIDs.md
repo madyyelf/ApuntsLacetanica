@@ -57,9 +57,11 @@ De cada tipus de RAID cal analitzar:
 
 Suposarem discos de 1TB per fer càlculs simples.
 
+---
+
 ### RAID 0
 
-![RAID0.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF2/RAID0.png)
+![Raid0](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Raid0.png/500px-Raid0.png?utm_source=es.wikipedia.org\&utm_campaign=parser\&utm_content=thumbnail)
 
 ---
 
@@ -73,7 +75,7 @@ Suposarem discos de 1TB per fer càlculs simples.
 
 ### RAID 1 (Mirall)
 
-![RAID1.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF2/RAID1.png)
+![Raid 1](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Raid1.png/500px-Raid1.png?utm_source=es.wikipedia.org\&utm_campaign=parser\&utm_content=thumbnail)
 
 ---
 
@@ -88,7 +90,7 @@ Suposarem discos de 1TB per fer càlculs simples.
 
 ### RAID4
 
-![RAID4.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF2/RAID4.png)
+![Raid 4](https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Raid4.png/500px-Raid4.png?utm_source=es.wikipedia.org\&utm_campaign=parser\&utm_content=thumbnail)
 
 ---
 
@@ -116,7 +118,7 @@ Permet recuperar la informació d'un disc en cas de fallida, verificar integrita
 
 ### RAID 5
 
-![RAID5.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF2/RAID5.png)
+![RAID 5](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Raid5.png/500px-Raid5.png?utm_source=es.wikipedia.org\&utm_campaign=parser\&utm_content=thumbnail)
 
 ---
 
@@ -132,7 +134,7 @@ Permet recuperar la informació d'un disc en cas de fallida, verificar integrita
 
 ### RAID 1+0
 
-![RAID1+0.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF2/RAID1+0.png)
+![RAID 1+0](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Raid0mas1.png/500px-Raid0mas1.png?utm_source=es.wikipedia.org\&utm_campaign=parser\&utm_content=thumbnail)
 
 ---
 
@@ -148,7 +150,7 @@ Permet recuperar la informació d'un disc en cas de fallida, verificar integrita
 
 ### RAID 0+1
 
-![RAID0+1.png](file:///home/rgimenezh/Escriptori/lacetanica/apunts/SMX/MP06/UF2/RAID0+1.png)
+![RAID 0+1](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Raid10.png/500px-Raid10.png?utm_source=es.wikipedia.org\&utm_campaign=parser\&utm_content=thumbnail)
 
 ---
 

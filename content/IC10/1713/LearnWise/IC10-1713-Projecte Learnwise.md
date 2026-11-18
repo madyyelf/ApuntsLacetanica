@@ -414,6 +414,14 @@ Cada sessió del mòdul de projecte l'iniciareu fent una reunió del equip **d'e
 - Establir blocs de treball de les tasques prioritàries, que es puguin finalitzar en la sessió d'avuí.
 - Assignar els blocs de treball a cada membre de l'equip.
 
+D'aquesta reunió cal **fer i entregar el diari de desenvolupament**, que serà l'acta d'aquestes reunions.  Podeu seguir un format semblant a aquest:
+
+Per cada reunió i membre del equip omplir:
+
+- Nom.
+- S'ha acabat la feina assignada anteriorment? (Si no, quin _bloquer_ ha aparegut).
+- Quina tasca es farà en el bloc de treball?
+
 #### Tècnica de treball per blocs i pomodoro
 
 La recomanació és utilitzar **treball per blocs** on cada bloc és una tasca que es pot finalitzar en el temps marcat.  Si teniu una sessió de 4 hores, haureu de planificar quins blocs de treball feu que acabin sumant aquestes 4 hores.
@@ -448,7 +456,7 @@ En aquesta reunió cal que analitzeu el trascurs de la setmana i reflexioneu de 
 
 # TASCA (RA4) - Entrega i publicació del PMV
 
-Com passa en la vida real, el resultat final (en aquest cas el PMV) no té pes real sinó que és simplement la conseqüència del camí que heu fet per arribar fins aquest punt.
+Com passa en la vida real, el resultat final (en aquest cas el PMV) és simplement la conseqüència del camí que heu fet per arribar fins aquest punt.
 
 Per tant aquí tan sols cal entregar tot el que implica el vostre PMV, fer les últimes tasques per a fer-ho arribar als nostres clients i esperar els 15 dies per a recollir les mètriques.
 
