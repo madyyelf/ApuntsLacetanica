@@ -100,7 +100,7 @@ La paritat "fa que" el recompte de 1s sigui parell per cada posició d'informaci
 
 | DISC 1 | DISC 2 | DISC 3 |
 | ------ | ------ | ------ |
-| 1001   | 1101   | P=0110 |
+| 1001   | 1101   | P=0100 |
 
 Permet recuperar la informació d'un disc en cas de fallida, verificar integritat i fins i tot treballar sense un disc.
 
